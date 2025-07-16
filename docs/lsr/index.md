@@ -5,10 +5,8 @@ mapped_pages:
 
 # Logstash Plugins [introduction]
 
-Logstash has a rich collection of input, filter, codec, and output plugins.
+Logstash has a rich collection of input, filter, codec, and output plugins that make up your Logstash pipeline.
 Check out the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins) to see which plugins are supported at various levels.
-
-The plugins make up your Logstash pipeline.  
 
 * [**Integration plugins**](plugin-integrations.md) combine related plugins—​inputs, outputs, and sometimes filters and codecs—​into one package.
 
