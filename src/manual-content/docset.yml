@@ -1,0 +1,15 @@
+project: 'Logstash versioned plugin reference'
+products:
+  - id: logstash
+cross_links:
+  - beats
+  - docs-content
+  - ecs
+  - elasticsearch
+  - integration-docs
+  - logstash
+toc:
+  - toc: lsr
+  - toc: vpr
+subs:
+  ls:   "Logstash"

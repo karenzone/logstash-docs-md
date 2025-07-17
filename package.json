@@ -1,0 +1,29 @@
+{
+  "name": "@elastic/logstash-plugins-md",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "get-resources": "scripts/get-resources.sh",
+    "build-docs": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "compare-versions": "^6.1.1",
+    "glob": "^11.0.3",
+    "hast-util-from-html": "^2.0.3",
+    "rehype-parse": "^9.0.1",
+    "rehype-remark": "^10.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unist-util-find": "^3.0.0",
+    "unist-util-remove": "^4.0.0",
+    "unist-util-visit": "^5.0.0",
+    "yaml": "^2.8.0"
+  }
+}

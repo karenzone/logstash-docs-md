@@ -1,0 +1,50 @@
+{
+  "codec": [
+    "compress_spooler",
+    "oldlogstashjson",
+    "s3plain",
+    "sflow"
+  ],
+  "filter": [
+    "anonymize",
+    "checksum",
+    "collate",
+    "emoji",
+    "hashid",
+    "kubernetes_metadata",
+    "math",
+    "metaevent",
+    "multiline",
+    "oui",
+    "punct",
+    "unique",
+    "yaml",
+    "zeromq"
+  ],
+  "input": [
+    "drupal_dblog",
+    "eventlog",
+    "gemfire",
+    "heroku",
+    "journald",
+    "mongodb",
+    "neo4j",
+    "rackspace",
+    "zenoss",
+    "zeromq"
+  ],
+  "integration": [],
+  "output": [
+    "elasticsearch_java",
+    "gemfire",
+    "hipchat",
+    "jira",
+    "jms",
+    "monasca_log_api",
+    "neo4j",
+    "null",
+    "rackspace",
+    "slack",
+    "zeromq"
+  ]
+}
