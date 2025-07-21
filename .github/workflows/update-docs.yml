@@ -41,7 +41,7 @@ jobs:
       # Check if there were any commits in the last 8 hours
       - name: Check for lsr updates
         id: lsr_updates
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         env:
           TIMESTAMP: ${{ steps.timestamp.outputs.TIMESTAMP }}
         with:
@@ -57,7 +57,7 @@ jobs:
       # Check if there were any commits in the last 8 hours
       - name: Check for vpr updates
         id: vpr_updates
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         env:
           TIMESTAMP: ${{ steps.timestamp.outputs.TIMESTAMP }}
         with:
@@ -77,9 +77,9 @@ jobs:
     steps:
       # Set up
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Checkout elastic/built-docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           repository: elastic/built-docs
           sparse-checkout: |
@@ -88,7 +88,7 @@ jobs:
           sparse-checkout-cone-mode: true
           path: 'temp/built-docs'
       - name: Checkout elastic/logstash-docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           repository: elastic/logstash-docs
           sparse-checkout: |
@@ -98,7 +98,7 @@ jobs:
 
       - name: Get gemfile
         id: get_gemfile
-        uses: actions/github-script@v6
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           script: |
             const fs = require('fs')
@@ -122,7 +122,7 @@ jobs:
             )
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
 
       - name: Generate files
         run: |
