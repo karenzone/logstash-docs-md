@@ -1,6 +1,6 @@
 # Logstash plugin docs
 
-Documentation for [Logstash plugins (LSR)](https://www.elastic.co/docs/reference/logstash/plugins) and [Logstash Versioned Plugin Reference (VPR)](https://www.elastic.co/docs/reference/logstash/versioned-plugins), where VPR includes a page for every versions of every plugin and LSR includes just one page per plugin &mdash; the latest plugin version that was released with the current Elastic Stack version.
+Documentation for [Logstash plugins (LSR)](https://www.elastic.co/docs/reference/logstash/plugins) and [Logstash Versioned Plugin Reference (VPR)](https://www.elastic.co/docs/reference/logstash/versioned-plugins), where VPR includes a page for every versions of every plugin and LSR includes just one page per plugin &mdash; the latest plugin version.
 
 >[!IMPORTANT]
 >This repo contains generated Markdown files. The files in the `docs/` directory should _never_ be manually edited because any changes will be overwritten with the next update.
@@ -39,7 +39,7 @@ nvm use && npm ci
 To get all the resources needed to build the Markdown docs ([more details below](#source-files)), run:
 
 ```sh
-scripts/get-resources.sh <stack version>
+scripts/get-resources.sh
 ```
 
 >[!NOTE]
@@ -86,7 +86,6 @@ We need several source files to generate the appropriate Markdown files. The log
 
 * HTML files from the elastic/built-docs repo's `raw/en/logstash/current` and `raw/en/logstash-versioned-plugins/current` directories.
 * The overview pages for each plugin type from the elastic/logstash-docs repo.
-* The Gemfile from the elastic/logstash repo's branch for the specified Elastic Stack version.
 
 These files are stored in a Git-ignored `temp` directory.
 
@@ -117,11 +116,9 @@ When you update the LSR docs, you will update the VPR docs, too. The process for
     1. Specify the Elastic Stack version.
 1. The GitHub action gets this content:
     1. **elastic/built-docs**: The latest versioned HTML files from the elastic/built-docs repo's versioned-plugin-reference directory.
-    1. **elastic/logstash**: The latest `Gemfile` lock file from the specified Elastic Stack version branch from the [elastic/logstash](https://github.com/elastic/logstash) repo.
 1. **elastic/logstash-docs-md**: Then back in elastic/logstash-docs-md it starts building out the Markdown:
     1. It translates the versioned-plugin-reference HTML files to docs-builder compatible Markdown.
-    1. It uses the `Gemfile` lock file to generate a list of all plugins and the plugin version that is aligned with the specified Elastic Stack version ([more details below](#plugin-version-to elastic-stack-version-mapping)).
-    1. For each plugin, find the versioned plugin Markdown file that is aligned with the specified Elastic Stack version, copy it to the `docs/lsr` directory, and make some minor changes ([more details below](#vpr-to-lsr-processing)).
+    1. For each plugin, find the latest versioned plugin Markdown file that, copy it to the `docs/lsr` directory, and make some minor changes ([more details below](#vpr-to-lsr-processing)).
     1. For each plugin type, build the overview page listing all plugins with a description.
     1. The Logstash docs team reviews and merges the PR.
 
@@ -174,25 +171,9 @@ To account for these differences, we find all tables, check for these conditions
 
 Find and remove irregular white spaces that can cause rendering issues and noisy hints in the build logs.
 
-### Plugin version to Elastic Stack version mapping
-
-To build the LSR docs, we need to know which version to grab from the VPR for each plugin. To do this, we generate a mapping of each plugin version to each Elastic Stack version using the Gemfile from the specified Elastic Stack version.
-
-The logic for building this mapping lives in `get-version-data.js`. Here's how it works:
-
-1. Get the Gem lock file for the specified Elastic Stack version from the elastic/logstash repo using the GitHub API.
-1. If this mapping already exists, we update it:
-    * For patch versions, update the mapping for the existing minor version.
-    * For minor versions, add a new mapping for the new minor version.
-1. Iterate through all the plugins in the VPR and
-    * If the plugin name exists in the Gemfile and there is a file for that version in the VPR, use that version.
-    * If the plugin name does not exist in the Gemfile or there is no file for that version in the VPR, use the latest available version in the VPR.
-1. Add an entry for each [manually maintained plugin file](#manual-content) (including core plugins and partner-built plugins).
-1. Save this mapping to [`data/versions.json`](data/versions.json).
-
 ### VPR to LSR processing
 
-When copying a the VPR file for the latest plugin version to LSR, we need to make some changes to account for the new location. To make those changes, we read the contents of the VPR Markdown file and use [remark](https://github.com/remarkjs/remark) to parse the MArkdown into an abstract syntax tree (AST), specifically [mdast](https://github.com/syntax-tree/mdast?tab=readme-ov-file). From there we use a custom remark plugin to walk the tree, transform nodes (elements and text) based on a set of conditions, and transform the AST back into Markdown.
+When copying the VPR file for the latest plugin version to the LSR, we need to make some changes to account for the new location. To make those changes, we read the contents of the VPR Markdown file and use [remark](https://github.com/remarkjs/remark) to parse the Markdown into an abstract syntax tree (AST), specifically [mdast](https://github.com/syntax-tree/mdast?tab=readme-ov-file). From there we use a custom remark plugin to walk the tree, transform nodes (elements and text) based on a set of conditions, and transform the AST back into Markdown.
 
 The custom rehype plugin that processes VPR Markdown files into LSR files lives in [`src/generate-lsr-files/clean-md.js`](src/generate-lsr-files/clean-md.js).
 
@@ -204,7 +185,6 @@ Change the frontmatter so it makes sense in the LSR context including:
 
 * Changing the `navigation_title` to the name of the plugin instead of the version number.
 * Changing the `mapped_pages` to the old Logstash Reference book instead of to the old Versioned Plugin Reference book.
-* Adding `applies_to` for the specified Elastic Stack version.
 
 #### Update headings
 
@@ -213,12 +193,6 @@ Update headings to remove the version number from the first heading (the page ti
 #### Update links
 
 Update all local links to remove version numbers and add the `/vpr/` prefix to `*-*-index.md` links.
-
-#### Create list of Elastic Stack version to plugin version mapping
-
-Starting with the Elastic Stack 9.0.0 release, [we write docs cumulatively](https://elastic.github.io/docs-builder/contribute/cumulative-docs/). This means that there is no longer a new documentation set published with every minor release: the same page stays valid over time and shows version-related evolutions.
-
-To accommodate this approach to versioning, on each LSR page we create a list of all past Elastic Stack minor versions and which plugin version aligns with it.
 
 ### Build table of contents
 

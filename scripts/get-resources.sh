@@ -1,17 +1,3 @@
-# Example: `scripts/get-resources.sh 9.1`
-
-# Validate arguments
-VERSION="$1"
-if [[ ! "$1" ]]; then
-  echo "⚠️  Missing a minor version"
-  exit [1]
-elif [[ ! "$1" =~ ^[0-9]+\.[0-9]+$ ]]; then
-  echo "⚠️  Use a minor version format (for example, \`9.1\`)"
-  exit [1]
-else
-  echo "Using minor version $1"
-fi
-
 # Make a temporary directory
 mkdir -p temp
 cd temp
@@ -43,8 +29,3 @@ cd logstash-docs
 git sparse-checkout set --cone
 git checkout main
 git sparse-checkout set docs/plugins
-
-# Get the Gemfile from the logstash repo
-cd ../
-mkdir -p "logstash/$1"
-curl -L "https://raw.githubusercontent.com/elastic/logstash/$1/Gemfile.jruby-3.1.lock.release" > "logstash/$1/Gemfile.jruby-3.1.lock.release"

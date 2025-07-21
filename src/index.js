@@ -1,4 +1,3 @@
-import { getVersionData } from "./get-version-data.js"
 import { clearDocsDir } from "./clear-docs-dir.js"
 import { generateVprFiles } from "./generate-vpr-files/index.js"
 import { generateLsrFiles } from "./generate-lsr-files/index.js"
@@ -8,8 +7,9 @@ import { buildToc } from "./toc.js"
  * Validate arguments
  */
 const TYPE = process.argv[2]
-const STACK_VERSION = process.argv[3]
-let MINOR_VERSION
+let STACK_VERSION = process.argv[3]
+let PATCH_VERSION
+
 const validTypes = ['lsr', 'vpr']
 if (!validTypes.includes(TYPE) || !TYPE) {
   console.log(`Needs a valid type. Use either: ${validTypes.join(',')}`)
@@ -17,16 +17,16 @@ if (!validTypes.includes(TYPE) || !TYPE) {
 }
 if (TYPE === 'lsr') {
   if (!STACK_VERSION) {
-    console.log(`Needs a minor version when using the \`lsr\` type. For example: \`9.1\`.`)
+    console.log(`Needs a version when using the \`lsr\` type. For example: \`9.1.0\`.`)
     process.exit()
   }
-  MINOR_VERSION = getMinor(STACK_VERSION)
-  if (!MINOR_VERSION) {
-    console.log(`Version is incorrectly formatted. Use a minor version, for example: \`9.1\`.`)
+  PATCH_VERSION = getPatch(STACK_VERSION)
+  if (!PATCH_VERSION) {
+    console.log(`Version is incorrectly formatted. Use a full version, for example: \`9.1.0\`.`)
     process.exit()
   }
-  if (STACK_VERSION !== MINOR_VERSION) {
-    console.log(`✅ Using minor version \`${MINOR_VERSION}\`.`)
+  if (STACK_VERSION !== PATCH_VERSION) {
+    console.log(`✅ Using version \`${PATCH_VERSION}\`.`)
   }
 }
 
@@ -34,10 +34,7 @@ if (TYPE === 'lsr') {
  * Do this prep only if the specified
  * `TYPE` is `lsr`.
  */
-if (TYPE === 'lsr') {
-  await getVersionData(MINOR_VERSION)
-  clearDocsDir('lsr')
-}
+if (TYPE === 'lsr') clearDocsDir('lsr')
 
 /**
  * Always update the VPR docs regardless of the
@@ -52,11 +49,14 @@ buildToc('vpr')
  * If the `TYPE` is `lsr`, update the LSR files.
  */
 if (TYPE === 'lsr') {
-  await generateLsrFiles(MINOR_VERSION)
+  await generateLsrFiles(PATCH_VERSION)
   buildToc('lsr')
 }
 
-function getMinor(version) {
-  const match = version.match(/^\d+\.\d+/m)
-  return match && match[0]
+function getPatch(version) {
+  const match = version.match(/^(?<major>\d+)\.?(?<minor>\d+)?\.?(?<patch>\d+)?/m)
+  const major = match && match.groups.major
+  const minor = match && match.groups.minor || '0'
+  const patch = match && match.groups.patch || '0'
+  return match && `${major}.${minor}.${patch}`
 }

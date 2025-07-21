@@ -1,15 +1,16 @@
 import { visit } from 'unist-util-visit'
 import { remove } from 'unist-util-remove'
+import { getTypes } from '../util.js'
 import yaml from 'yaml'
 
-export function cleanMd(options = { pluginType, pluginName, stackVersion, otherStackVersions }) {
-  const { pluginType, pluginName, stackVersion, otherStackVersions } = options
+export function cleanMd(options = { pluginType, pluginName }) {
+  const { pluginType, pluginName } = options
   return (tree) => {
     let updatedTree = tree
-    updatedTree = updateFrontmatter(updatedTree, pluginName, stackVersion)
+    updatedTree = updateFrontmatter(updatedTree, pluginName)
     updatedTree = updateHeadings(updatedTree)
     updatedTree = updateLinks(updatedTree)
-    updatedTree = updateVersionLink(updatedTree, pluginType, pluginName, otherStackVersions)
+    updatedTree = updateVersionLink(updatedTree, pluginType, pluginName)
     return updatedTree
   }
 }
@@ -22,7 +23,7 @@ export function cleanMd(options = { pluginType, pluginName, stackVersion, otherS
  *   guide page instead of the VPR page.
  * - Add applies_to for the specified Stack version.
  */
-function updateFrontmatter(updatedTree, pluginName, stackVersion) {
+function updateFrontmatter(updatedTree, pluginName) {
   visit(updatedTree, (node) => {
     if (node.type === 'yaml') {
       const frontmatter = yaml.parse(node.value)
@@ -31,8 +32,6 @@ function updateFrontmatter(updatedTree, pluginName, stackVersion) {
         return mp.replace(/\/logstash-versioned-plugins\//, '/logstash/')
                  .replace(/v\d+\.\d+\.\d+-/, '')
       })
-      frontmatter['applies_to'] = {}
-      frontmatter['applies_to']['stack'] = `ga ${stackVersion}`
       node.value = yaml.stringify(frontmatter)
     }
   })
@@ -71,7 +70,7 @@ function updateHeadings(updatedTree) {
  * - Add /vpr/ prefix to index links
  */
 function updateLinks(updatedTree) {
-  const types = [ 'codec', 'filter', 'input', 'integration', 'output' ]
+  const types = getTypes()
   const indexRegex = new RegExp(`(${types.join('\|')})-[^ ]+-index\.md`)
   visit(updatedTree, (node) => {
     if (node.type === 'link') {
@@ -87,11 +86,9 @@ function updateLinks(updatedTree) {
   return updatedTree
 }
 
-/**
- *
- */
-function updateVersionLink(updatedTree, pluginType, pluginName, otherStackVersions) {
-  visit(updatedTree, (node, i, parent) => {
+/** Clean up intro section */
+function updateVersionLink(updatedTree, pluginType, pluginName) {
+  visit(updatedTree, (node) => {
     if (node.type === 'listItem') {
       const text = node.children[0].children[0].value
       if (/^Plugin version: */m.test(text)) {
@@ -109,70 +106,10 @@ function updateVersionLink(updatedTree, pluginType, pluginName, otherStackVersio
     if (
       node.type === 'paragraph'
       && node.children.length > 0
-      && /For other versions, see the/.test(node.children[0].value)
-    ) {
-      if (Object.keys(otherStackVersions).length > 0) {
-        parent.children.splice(i, 1,
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: ':::{dropdown} Plugin versions for earlier Elastic Stack v9.x versions'
-              }
-            ]
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: `Plugin versions for earlier Elastic Stack 9.x versions:`
-              }
-            ]
-          },
-          {
-            type: 'list',
-            ordered: false,
-            children: Object.keys(otherStackVersions).map(stackV => {
-              const pluginVersion = otherStackVersions[stackV][pluginType][pluginName]
-              const vprLink = `/vpr/v${pluginVersion.replace(/\./g, '-')}-plugins-${pluginType}-${pluginName}.md`
-              return {
-                type: 'listItem',
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'text',
-                        value: `{applies_to}\`stack: ga ${stackV}\` `
-                      },
-                      {
-                        type: 'link',
-                        url: vprLink,
-                        children: [
-                          {
-                            type: 'text',
-                            value: `v${pluginVersion}`
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            })
-          },
-          { type: 'paragraph', children: [ { type: 'text', value: ':::' } ] },
-        )
-      } else {
-        remove(node)
-      }
-    }
-    if (
-      node.type === 'paragraph'
-      && node.children.length > 0
-      && /To learn more about Logstash, see the/.test(node.children[0].value)
+      && (
+        /For other versions, see the/.test(node.children[0].value)
+        || /To learn more about Logstash, see the/.test(node.children[0].value)
+      )
     ) {
       remove(node)
     }

@@ -46,6 +46,10 @@ function getTypeInfo(type) {
   }
 }
 
+function getTypes() {
+  return [ 'codec', 'filter', 'input', 'integration', 'output' ]
+}
+
 function replaceWhitespace(string) {
   return string.replace(
     /(\v|\f|\u00A0|\u1680|\u2000-|\u200A|\u200B|\u2009|\u2028|\u2029|\u202F|\u205F|\u3000)/g,
@@ -57,5 +61,6 @@ export {
   cleanMarkdown,
   fileFilterRegex,
   getTypeInfo,
-  replaceWhitespace
+  getTypes,
+  replaceWhitespace,
 }

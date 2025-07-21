@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
@@ -7,15 +8,19 @@ import remarkStringify from 'remark-stringify'
 import remarkParse from 'remark-parse'
 import { unified } from 'unified'
 import { cleanMd } from './clean-md.js'
-import { cleanMarkdown } from '../util.js'
+import { cleanMarkdown, getTypes } from '../util.js'
 import { compareVersions } from 'compare-versions'
 import { introPages } from './intro-pages.js'
 
 export async function generateLsrFiles(stackVersion) {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  /** Get all VPR files */
   const vprFiles = glob.sync(`./docs/vpr/*-index.md`)
   /** Get the plugin skip list */
   const skipList = fs.existsSync('./data/skip-list.json')
     && JSON.parse(fs.readFileSync('./data/skip-list.json', 'utf-8'))
+  /** Store version data */
+  const pluginTypes = getTypes()
   /** Get the plugin versioning data */
   const versionData = fs.existsSync('./data/versions.json')
     && JSON.parse(fs.readFileSync('./data/versions.json', 'utf-8'))
@@ -24,10 +29,9 @@ export async function generateLsrFiles(stackVersion) {
     process.exit()
   }
   if (!versionData[stackVersion]) {
-    console.log(`⚠️  No data for version \`${stackVersion}\`. Run \`npm run get-files -- <stackVersion>\`.`)
-    process.exit()
+    versionData[stackVersion] = {}
+    pluginTypes.forEach(t => versionData[stackVersion][t] = {})
   }
-  const currentData = versionData[stackVersion]
   /** Iterate through all the plugins included in the VPR */
   vprFiles.map(vprFile => {
     /** Parse the filename to get the plugin type and plugin name */
@@ -46,55 +50,22 @@ export async function generateLsrFiles(stackVersion) {
     let version
     const { type, name } = details
     /**
-     * If we got a version from the Gem lock file,
-     * try using that version.
+     * Use the latest version from the VPR.
      */
-    if (currentData[type][name]) {
-      version = currentData[type][name]
-      /**
-       * If that version doesn't exist in the vpr directory,
-       * set it to undefined so we can look up the latest version.
-       */
-      const vprFilename = `./docs/vpr/v${version.replace(/\./g, '-')}-plugins-${type}s-${name}.md`
-      if (!fs.existsSync(vprFilename)) currentData[type][name] = undefined
-    }
-    /**
-     * If there was no version in the Gem lock file,
-     * use the latest version.
-     */
-    if (!currentData[type][name]) {
-      const versionedFiles = glob.sync(`./docs/vpr/v*-${type}s-${name}.md`)
-      const versions = versionedFiles.map(file => {
-        return file.match(/\d+-\d+-\d+/)[0].replace(/-/g, '.')
-      }).sort((a, b) => {
-        return compareVersions(a, b)
-      }).reverse()
-      version = versions[0]
-      if (!version) {
-        console.log(`⚠️  Could not get version for \`${type}-${name}\``)
-        return
-      }
-      versionData[stackVersion][type][name] = version
-    }
-
-    const oldestStackVersion = Object.keys(versionData).filter(stackV => {
-      return versionData[stackV][type][name] === versionData[stackVersion][type][name]
+    const versionedFiles = glob.sync(`./docs/vpr/v*-${type}s-${name}.md`)
+    const versions = versionedFiles.map(file => {
+      return file.match(/\d+-\d+-\d+/)[0].replace(/-/g, '.')
     }).sort((a, b) => {
       return compareVersions(a, b)
-    })[0] || '9.0'
-
-    const otherStackVersions = {}
-    if (oldestStackVersion !== '9.0') {
-      Object.keys(versionData).sort((a, b) => compareVersions(a, b)).reverse().forEach((stackV) => {
-        const greater = compareVersions(stackVersion, stackV) > 0 ? true : false
-        if (greater && versionData[stackV][type][name]) {
-          if (!otherStackVersions[stackV]) otherStackVersions[stackV] = {}
-          if (!otherStackVersions[stackV][type]) otherStackVersions[stackV][type] = {}
-          otherStackVersions[stackV][type][name] = versionData[stackV][type][name]
-        }
-      })
+    }).reverse()
+    version = versions[0]
+    if (!version) {
+      console.log(`⚠️  Could not get version for \`${type}-${name}\``)
+      return
     }
-
+    if (!versionData[stackVersion][type][name]) {
+      versionData[stackVersion][type][name] = version
+    }
     const vprFilename = `./docs/vpr/v${version.replace(/\./g, '-')}-plugins-${type}s-${name}.md`
     if (!fs.existsSync(vprFilename)) {
       console.log(`⚠️  Could not find VPR file for \`${type}-${name}\`.`)
@@ -111,8 +82,6 @@ export async function generateLsrFiles(stackVersion) {
       .use(cleanMd, {
         pluginType: type,
         pluginName: name,
-        stackVersion: oldestStackVersion,
-        otherStackVersions: otherStackVersions
       })
       .use(remarkStringify)
       .process(vprContent)
@@ -121,12 +90,36 @@ export async function generateLsrFiles(stackVersion) {
     let markdownContent = String(lsrContent)
     markdownContent = cleanMarkdown(markdownContent)
     fs.writeFileSync(lsrFilename, markdownContent)
+  })
+
+  /** Add manual plugin pages to version data */
+  const dir = path.resolve(__dirname, process.cwd())
+  const manualLsrDir = path.join(dir, 'src', 'manual-content', 'lsr')
+  const copiedFiles = fs.readdirSync(manualLsrDir, { recursive: true })
+  const manualFileRegex = /^plugins-(?<type>[^- ]+)s-(?<name>[^ ]+)\.md$/m
+  copiedFiles.filter(f => manualFileRegex.test(f)).forEach(f => {
+    const { type, name } = f.match(manualFileRegex).groups
+    if (!versionData[stackVersion][type][name]) {
+      versionData[stackVersion][type][name] = ''
+    }
+  })
+
+  /** Sort version data */
+  const sortedVersionData = {}
+  sortedVersionData[stackVersion] = {}
+  pluginTypes.forEach(type => {
     /** Build intro pages for each plugin type */
-    introPages(versionData, stackVersion)
+    introPages(type, versionData[stackVersion][type])
+    sortedVersionData[stackVersion][type] = {}
+    Object.keys(versionData[stackVersion][type])
+      .sort()
+      .forEach(key => {
+          sortedVersionData[stackVersion][type][key] = versionData[stackVersion][type][key]
+       })
   })
 
   /** Save the latest versioning data for next time */
   const versionDir = `./data/`
   if (!fs.existsSync(versionDir)) fs.mkdirSync(versionDir, { recursive: true })
-  fs.writeFileSync(`${versionDir}/versions.json`, JSON.stringify(versionData, null, 2))
+  fs.writeFileSync(`${versionDir}/versions.json`, JSON.stringify(sortedVersionData, null, 2))
 }
