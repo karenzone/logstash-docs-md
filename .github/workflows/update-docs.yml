@@ -12,68 +12,13 @@ on:
           - vpr
           - lsr
       stack_version:
-        description: The Elastic Stack minor version (for example, `9.1`)
+        description: Elastic Stack version (for example, `9.0.4`)
         type: string
-  pull_request:
-
-env:
-  LSR_ID: logstash
-  LSR_BRANCH: main
-  VPR_ID: logstash-docs
-  VPR_BRANCH: versioned_plugin_docs
-  TEST_DOC_TYPE: lsr
-  TEST_STACK_VERSION: '9.0'
 
 jobs:
-  check-for-updates:
-    runs-on: ubuntu-latest
-    outputs:
-      lsr_updates: ${{ steps.lsr_updates.outputs.result }}
-      vpr_updates: ${{ steps.vpr_updates.outputs.result }}
-    steps:
-      # Get current time, subtract 8 hours, convert to ISO 8601
-      - name: Get timestamp for 8 hours ago
-        id: timestamp
-        run: |
-          TIMESTAMP="$(date +'%Y-%m-%dT')$(($(date +%H) - 8))$(date +':%M:%S')"
-          echo $TIMESTAMP
-
-      # Check if there were any commits in the last 8 hours
-      - name: Check for lsr updates
-        id: lsr_updates
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
-        env:
-          TIMESTAMP: ${{ steps.timestamp.outputs.TIMESTAMP }}
-        with:
-          script: |
-            const commits = await github.rest.repos.listCommits({
-              owner: 'elastic',
-              repo: process.env.LSR_ID,
-              sha: process.env.LSR_BRANCH,
-              since: '2025-06-10T9:52:00'
-            })
-            return commits.data.length > 0
-
-      # Check if there were any commits in the last 8 hours
-      - name: Check for vpr updates
-        id: vpr_updates
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
-        env:
-          TIMESTAMP: ${{ steps.timestamp.outputs.TIMESTAMP }}
-        with:
-          script: |
-            const commits = await github.rest.repos.listCommits({
-              owner: 'elastic',
-              repo: process.env.VPR_ID,
-              sha: process.env.VPR_BRANCH,
-              since: '2025-06-10T9:52:00'
-            })
-            return commits.data.length > 0
-
   generate-docs:
     runs-on: ubuntu-latest
     needs: check-for-updates
-    if: ${{ needs.check-for-updates.outputs.lsr_updates || needs.check-for-updates.outputs.vpr_updates }}
     steps:
       # Set up
       - name: Checkout
@@ -96,46 +41,23 @@ jobs:
           sparse-checkout-cone-mode: true
           path: 'temp/logstash-docs'
 
-      - name: Get gemfile
-        id: get_gemfile
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
-        with:
-          script: |
-            const fs = require('fs')
-            const gemfilename = 'Gemfile.jruby-3.1.lock.release'
-            const gemfile = await github.rest.repos.getContent({
-              owner: 'elastic',
-              repo: 'logstash',
-              path: gemfilename,
-              ref: process.env.TEST_STACK_VERSION,
-              headers: {
-                accept: "application/vnd.github.raw+json",
-              },
-            });
-            fs.mkdirSync(
-              `${process.env.GITHUB_WORKSPACE}/temp/logstash/${process.env.TEST_STACK_VERSION}/`,
-              { recursive: true }
-            )
-            fs.writeFileSync(
-              `${process.env.GITHUB_WORKSPACE}/temp/logstash/${process.env.TEST_STACK_VERSION}/${gemfilename}`,
-              gemfile.data
-            )
-
       - name: Set up Node.js
         uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
 
       - name: Generate files
         run: |
           npm ci
-          node $GITHUB_WORKSPACE/src/index.js $TEST_DOC_TYPE $TEST_STACK_VERSION
+          node $GITHUB_WORKSPACE/src/index.js ${{ inputs.doc_type }} ${{ inputs.stack_version || '' }}
 
-      # - name: Create pull request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     commit-message: update lsr and vpr docs
-      #     branch: lsr-update
-      #     branch-suffix: timestamp
-      #     title: '[TEST] Update LSR docs'
-      #     body: "This is just a test!!"
-      #     add-paths: docs/
-      #     base: ${{ github.head_ref }}
+      - name: Open PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: |
+            update ${{ inputs.doc_type == 'lsr' && 'lsr and vpr' || 'vpr' }} docs
+          branch: ${{ inputs.doc_type }}-update
+          branch-suffix: timestamp
+          title: |
+            ${{ inputs.doc_type == 'lsr' && format('[{0}] ', inputs.stack_version) || ''}}Update ${{ inputs.doc_type == 'lsr' && 'LSR and VPR' || 'VPR' }} docs
+          body: |
+            Updates the ${{ inputs.doc_type == 'lsr' && 'LSR and VPR' || 'VPR' }} docs with the latest from elastic/logstash-docs.
+          add-paths: docs/

@@ -7,24 +7,36 @@ Documentation for [Logstash plugins (LSR)](https://www.elastic.co/docs/reference
 
 ## Update schedule
 
-The LSR and VPR are updated on different schedules:
+For the first iteration, all LSR and VPR updates will be made manually.
+
+<!-- The LSR and VPR are updated on different schedules:
 
 * LSR pages are updated once per release.
-* We check for VPR updates every 8 hours.
+* We check for VPR updates every 8 hours. -->
 
 ## Update docs
 
 ### In the GitHub UI
 
-**LSR**
-
-_TO DO: Can't be added until this PR is merged into `main`._
-
-**VPR**
-
-_TO DO: Can't be added until this PR is merged into `main`._
+1. Go to [Actions → Run generate-md-docs](https://github.com/elastic/logstash-docs-md/actions/workflows/update-docs.yml).
+1. Click **Run action**.
+1. Set the inputs:
+  1. Keep _Use workflow from_ set to **main**.
+  1. Specify inputs based on the docs to be generated:
+      * To update VPR docs:
+        1. Set `Which docs to generate` to `vpr`.
+        1. `Elastic Stack version` is not required.
+      * To update LSR docs:
+        1. Set `Which docs to generate` to `lsr`.
+        1. Set `Elastic Stack version` to the full version number including the major, minor, and patch (for example, `9.0.4`).
+1. Click **Run workflow**.
+1. This will create a new [pull request](https://github.com/elastic/logstash-docs-md/pulls).
+1. Review the PR including both the diff and the updated preview pages.
+1. Approve and merge the PR to publish the updates.
 
 ### Locally
+
+If you're working on updates to the logic, it might be helpful to run updates locally.
 
 **Prerequisites**
 
