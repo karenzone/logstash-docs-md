@@ -8,6 +8,8 @@ cross_links:
   - elasticsearch
   - integration-docs
   - logstash
+features:
+  disable-github-edit-link: true
 toc:
   - toc: lsr
   - toc: vpr
