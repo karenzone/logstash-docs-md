@@ -1,29 +1,25 @@
 ---
-navigation_title: "riemann"
+navigation_title: riemann
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-riemann.html
+
 ---
 
-# Riemann output plugin [plugins-outputs-riemann]
+# Riemann output plugin
 
-
-* Plugin version: v3.0.7
+* Plugin version: v3.0.7 ([Other versions](/vpr/output-riemann-index.md))
 * Released on: 2020-07-15
 * [Changelog](https://github.com/logstash-plugins/logstash-output-riemann/blob/v3.0.7/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/output-riemann-index.md).
-
-## Installation [_installation_45]
-
-For plugins not bundled by default, it is easy to install by running `bin/logstash-plugin install logstash-output-riemann`. See [Working with plugins](logstash://reference/working-with-plugins.md) for more details.
 
 
-## Getting help [_getting_help_106]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-riemann). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_105]
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-riemann). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 Riemann is a network event stream processing system.
 
@@ -33,57 +29,52 @@ Riemann is used in Logstash much like statsd or other metric-related outputs
 
 You can learn about Riemann here:
 
-* [http://riemann.io/](http://riemann.io/)
+* <http://riemann.io/>
 
 You can see the author talk about it here:
 
-* [http://vimeo.com/38377415](http://vimeo.com/38377415)
-
+* <http://vimeo.com/38377415>
 
 ## Riemann Output Configuration Options [plugins-outputs-riemann-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-riemann.md#plugins-outputs-riemann-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`debug`](plugins-outputs-riemann.md#plugins-outputs-riemann-debug) | [boolean](value-types.md#boolean) | No |
-| [`host`](plugins-outputs-riemann.md#plugins-outputs-riemann-host) | [string](value-types.md#string) | No |
-| [`map_fields`](plugins-outputs-riemann.md#plugins-outputs-riemann-map_fields) | [boolean](value-types.md#boolean) | No |
-| [`port`](plugins-outputs-riemann.md#plugins-outputs-riemann-port) | [number](value-types.md#number) | No |
-| [`protocol`](plugins-outputs-riemann.md#plugins-outputs-riemann-protocol) | [string](value-types.md#string), one of `["tcp", "udp"]` | No |
-| [`riemann_event`](plugins-outputs-riemann.md#plugins-outputs-riemann-riemann_event) | [hash](value-types.md#hash) | No |
-| [`sender`](plugins-outputs-riemann.md#plugins-outputs-riemann-sender) | [string](value-types.md#string) | No |
+| :- | :- | :- |
+| [`debug`](plugins-outputs-riemann.md#plugins-outputs-riemann-debug) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`host`](plugins-outputs-riemann.md#plugins-outputs-riemann-host) | [string](/lsr/value-types.md#string) | No |
+| [`map_fields`](plugins-outputs-riemann.md#plugins-outputs-riemann-map_fields) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`port`](plugins-outputs-riemann.md#plugins-outputs-riemann-port) | [number](/lsr/value-types.md#number) | No |
+| [`protocol`](plugins-outputs-riemann.md#plugins-outputs-riemann-protocol) | [string](/lsr/value-types.md#string), one of `["tcp", "udp"]` | No |
+| [`riemann_event`](plugins-outputs-riemann.md#plugins-outputs-riemann-riemann_event) | [hash](/lsr/value-types.md#hash) | No |
+| [`sender`](plugins-outputs-riemann.md#plugins-outputs-riemann-sender) | [string](/lsr/value-types.md#string) | No |
 
 Also see [Common options](plugins-outputs-riemann.md#plugins-outputs-riemann-common-options) for a list of options supported by all output plugins.
 
- 
-
 ### `debug` [plugins-outputs-riemann-debug]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 Enable debugging output?
 
-
 ### `host` [plugins-outputs-riemann-host]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * Default value is `"localhost"`
 
 The address of the Riemann server.
 
-
 ### `map_fields` [plugins-outputs-riemann-map_fields]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 If set to true automatically map all logstash defined fields to riemann event fields. All nested logstash fields will be mapped to riemann fields containing all parent keys separated by dots and the deepest value.
 
 As an example, the logstash event:
 
-```ruby
+```
    {
      "@timestamp":"2013-12-10T14:36:26.151+0000",
      "@version": 1,
@@ -97,7 +88,7 @@ As an example, the logstash event:
 
 Is mapped to this riemann event:
 
-```ruby
+```
   {
     :time 1386686186,
     :host host.domain.com,
@@ -108,14 +99,12 @@ Is mapped to this riemann event:
 
 It can be used in conjunction with or independent of the riemann_event option. When used with the riemann_event any duplicate keys receive their value from riemann_event instead of the logstash event itself.
 
-
 ### `port` [plugins-outputs-riemann-port]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `5555`
 
 The port to connect to on your Riemann server.
-
 
 ### `protocol` [plugins-outputs-riemann-protocol]
 
@@ -126,13 +115,12 @@ The protocol to use UDP is non-blocking TCP is blocking
 
 Logstash’s default output behaviour is to never lose events As such, we use tcp as default here
 
-
 ### `riemann_event` [plugins-outputs-riemann-riemann_event]
 
-* Value type is [hash](value-types.md#hash)
+* Value type is [hash](/lsr/value-types.md#hash)
 * There is no default value for this setting.
 
-A Hash to set Riemann event fields ([http://riemann.io/concepts.html](http://riemann.io/concepts.md)).
+A Hash to set Riemann event fields (<http://riemann.io/concepts.html>).
 
 The following event fields are supported: `description`, `state`, `metric`, `ttl`, `service`
 
@@ -142,7 +130,7 @@ Any other field set here will be passed to Riemann as an event attribute.
 
 Example:
 
-```ruby
+```
     riemann {
         riemann_event => {
             "metric"  => "%{metric}"
@@ -155,61 +143,48 @@ Example:
 
 `description`, by default, will be set to the event message but can be overridden here.
 
-
 ### `sender` [plugins-outputs-riemann-sender]
 
-* Value type is [string](value-types.md#string)
-* Default value is `"%{{host}}"`
+* Value type is [string](/lsr/value-types.md#string)
+* Default value is `"%{host}"`
 
 The name of the sender. This sets the `host` value in the Riemann event
-
-
 
 ## Common options [plugins-outputs-riemann-common-options]
 
 These configuration options are supported by all output plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`codec`](plugins-outputs-riemann.md#plugins-outputs-riemann-codec) | [codec](logstash://reference/configuration-file-structure.md#codec) | No |
-| [`enable_metric`](plugins-outputs-riemann.md#plugins-outputs-riemann-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-outputs-riemann.md#plugins-outputs-riemann-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
+| :- | :- | :- |
+| [`codec`](plugins-outputs-riemann.md#plugins-outputs-riemann-codec) | [codec](/lsr/value-types.md#codec) | No |
+| [`enable_metric`](plugins-outputs-riemann.md#plugins-outputs-riemann-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-outputs-riemann.md#plugins-outputs-riemann-id) | [string](/lsr/value-types.md#string) | No |
 
 ### `codec` [plugins-outputs-riemann-codec]
 
-* Value type is [codec](logstash://reference/configuration-file-structure.md#codec)
+* Value type is [codec](/lsr/value-types.md#codec)
 * Default value is `"plain"`
 
 The codec used for output data. Output codecs are a convenient method for encoding your data before it leaves the output without needing a separate filter in your Logstash pipeline.
 
-
 ### `enable_metric` [plugins-outputs-riemann-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
 Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
-
 ### `id` [plugins-outputs-riemann-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type. For example, if you have 2 riemann outputs. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
 output {
   riemann {
     id => "my_plugin_id"
   }
 }
 ```
-
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
-

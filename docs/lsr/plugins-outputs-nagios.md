@@ -1,24 +1,25 @@
 ---
-navigation_title: "nagios"
+navigation_title: nagios
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-nagios.html
+
 ---
 
-# Nagios output plugin [plugins-outputs-nagios]
+# Nagios output plugin
 
-
-* Plugin version: v3.0.6
+* Plugin version: v3.0.6 ([Other versions](/vpr/output-nagios-index.md))
 * Released on: 2018-04-06
 * [Changelog](https://github.com/logstash-plugins/logstash-output-nagios/blob/v3.0.6/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/output-nagios-index.md).
-
-## Getting help [_getting_help_97]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-nagios). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_96]
+
+
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-nagios). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 The Nagios output is used for sending passive check results to Nagios via the Nagios command file. This output currently supports Nagios 3.
 
@@ -35,40 +36,36 @@ These Logstash event fields are supported, but optional:
 There are two configuration options:
 
 * `commandfile` - The location of the Nagios external command file. Defaults to */var/lib/nagios3/rw/nagios.cmd*
+
 * `nagios_level` - Specifies the level of the check to be sent. Defaults to CRITICAL and can be overriden by setting the "nagios_level" field to one of "OK", "WARNING", "CRITICAL", or "UNKNOWN"
 
-    ```ruby
-        output{
-          if [message] =~ /(error|ERROR|CRITICAL)/ {
-            nagios {
-              # your config here
-            }
+  ```
+      output{
+        if [message] =~ /(error|ERROR|CRITICAL)/ {
+          nagios {
+            # your config here
           }
         }
-    ```
-
-
+      }
+  ```
 
 ## Nagios Output Configuration Options [plugins-outputs-nagios-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-nagios.md#plugins-outputs-nagios-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
+| :- | :- | :- |
 | [`commandfile`](plugins-outputs-nagios.md#plugins-outputs-nagios-commandfile) | <<,>> | No |
-| [`nagios_level`](plugins-outputs-nagios.md#plugins-outputs-nagios-nagios_level) | [string](value-types.md#string), one of `["0", "1", "2", "3"]` | No |
+| [`nagios_level`](plugins-outputs-nagios.md#plugins-outputs-nagios-nagios_level) | [string](/lsr/value-types.md#string), one of `["0", "1", "2", "3"]` | No |
 
 Also see [Common options](plugins-outputs-nagios.md#plugins-outputs-nagios-common-options) for a list of options supported by all output plugins.
 
- 
-
 ### `commandfile` [plugins-outputs-nagios-commandfile]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * Default value is `"/var/lib/nagios3/rw/nagios.cmd"`
 
 The full path to your Nagios command file.
-
 
 ### `nagios_level` [plugins-outputs-nagios-nagios_level]
 
@@ -77,53 +74,41 @@ The full path to your Nagios command file.
 
 The Nagios check level. Should be one of 0=OK, 1=WARNING, 2=CRITICAL, 3=UNKNOWN. Defaults to 2 - CRITICAL.
 
-
-
 ## Common options [plugins-outputs-nagios-common-options]
 
 These configuration options are supported by all output plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`codec`](plugins-outputs-nagios.md#plugins-outputs-nagios-codec) | [codec](logstash://reference/configuration-file-structure.md#codec) | No |
-| [`enable_metric`](plugins-outputs-nagios.md#plugins-outputs-nagios-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-outputs-nagios.md#plugins-outputs-nagios-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
+| :- | :- | :- |
+| [`codec`](plugins-outputs-nagios.md#plugins-outputs-nagios-codec) | [codec](/lsr/value-types.md#codec) | No |
+| [`enable_metric`](plugins-outputs-nagios.md#plugins-outputs-nagios-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-outputs-nagios.md#plugins-outputs-nagios-id) | [string](/lsr/value-types.md#string) | No |
 
 ### `codec` [plugins-outputs-nagios-codec]
 
-* Value type is [codec](logstash://reference/configuration-file-structure.md#codec)
+* Value type is [codec](/lsr/value-types.md#codec)
 * Default value is `"plain"`
 
 The codec used for output data. Output codecs are a convenient method for encoding your data before it leaves the output without needing a separate filter in your Logstash pipeline.
 
-
 ### `enable_metric` [plugins-outputs-nagios-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
 Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
-
 ### `id` [plugins-outputs-nagios-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type. For example, if you have 2 nagios outputs. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
 output {
   nagios {
     id => "my_plugin_id"
   }
 }
 ```
-
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
-

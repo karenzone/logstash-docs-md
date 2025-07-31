@@ -1,53 +1,46 @@
 ---
-navigation_title: "datadog"
+navigation_title: datadog
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-datadog.html
+
 ---
 
-# Datadog output plugin [plugins-outputs-datadog]
+# Datadog output plugin
 
-
-* Plugin version: v3.0.6
+* Plugin version: v3.0.6 ([Other versions](/vpr/output-datadog-index.md))
 * Released on: 2023-05-31
 * [Changelog](https://github.com/logstash-plugins/logstash-output-datadog/blob/v3.0.6/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/output-datadog-index.md).
-
-## Installation [_installation_23]
-
-For plugins not bundled by default, it is easy to install by running `bin/logstash-plugin install logstash-output-datadog`. See [Working with plugins](logstash://reference/working-with-plugins.md) for more details.
 
 
-## Getting help [_getting_help_69]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-datadog). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_68]
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-datadog). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 This output sends events to DataDogHQ based on Logstash events.
 
 Note that since Logstash maintains no state these will be one-shot events
-
 
 ## Datadog Output Configuration Options [plugins-outputs-datadog-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-datadog.md#plugins-outputs-datadog-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`alert_type`](plugins-outputs-datadog.md#plugins-outputs-datadog-alert_type) | [string](value-types.md#string), one of `["info", "error", "warning", "success"]` | No |
-| [`api_key`](plugins-outputs-datadog.md#plugins-outputs-datadog-api_key) | [password](value-types.md#password) | Yes |
-| [`date_happened`](plugins-outputs-datadog.md#plugins-outputs-datadog-date_happened) | [string](value-types.md#string) | No |
-| [`dd_tags`](plugins-outputs-datadog.md#plugins-outputs-datadog-dd_tags) | [array](value-types.md#array) | No |
-| [`priority`](plugins-outputs-datadog.md#plugins-outputs-datadog-priority) | [string](value-types.md#string), one of `["normal", "low"]` | No |
-| [`source_type_name`](plugins-outputs-datadog.md#plugins-outputs-datadog-source_type_name) | [string](value-types.md#string), one of `["nagios", "hudson", "jenkins", "user", "my apps", "feed", "chef", "puppet", "git", "bitbucket", "fabric", "capistrano"]` | No |
-| [`text`](plugins-outputs-datadog.md#plugins-outputs-datadog-text) | [string](value-types.md#string) | No |
-| [`title`](plugins-outputs-datadog.md#plugins-outputs-datadog-title) | [string](value-types.md#string) | No |
+| :- | :- | :- |
+| [`alert_type`](plugins-outputs-datadog.md#plugins-outputs-datadog-alert_type) | [string](/lsr/value-types.md#string), one of `["info", "error", "warning", "success"]` | No |
+| [`api_key`](plugins-outputs-datadog.md#plugins-outputs-datadog-api_key) | [password](/lsr/value-types.md#password) | Yes |
+| [`date_happened`](plugins-outputs-datadog.md#plugins-outputs-datadog-date_happened) | [string](/lsr/value-types.md#string) | No |
+| [`dd_tags`](plugins-outputs-datadog.md#plugins-outputs-datadog-dd_tags) | [array](/lsr/value-types.md#array) | No |
+| [`priority`](plugins-outputs-datadog.md#plugins-outputs-datadog-priority) | [string](/lsr/value-types.md#string), one of `["normal", "low"]` | No |
+| [`source_type_name`](plugins-outputs-datadog.md#plugins-outputs-datadog-source_type_name) | [string](/lsr/value-types.md#string), one of `["nagios", "hudson", "jenkins", "user", "my apps", "feed", "chef", "puppet", "git", "bitbucket", "fabric", "capistrano"]` | No |
+| [`text`](plugins-outputs-datadog.md#plugins-outputs-datadog-text) | [string](/lsr/value-types.md#string) | No |
+| [`title`](plugins-outputs-datadog.md#plugins-outputs-datadog-title) | [string](/lsr/value-types.md#string) | No |
 
 Also see [Common options](plugins-outputs-datadog.md#plugins-outputs-datadog-common-options) for a list of options supported by all output plugins.
-
- 
 
 ### `alert_type` [plugins-outputs-datadog-alert_type]
 
@@ -56,31 +49,27 @@ Also see [Common options](plugins-outputs-datadog.md#plugins-outputs-datadog-com
 
 Alert type
 
-
 ### `api_key` [plugins-outputs-datadog-api_key]
 
 * This is a required setting.
-* Value type is [password](value-types.md#password)
+* Value type is [password](/lsr/value-types.md#password)
 * There is no default value for this setting.
 
 Your DatadogHQ API key
 
-
 ### `date_happened` [plugins-outputs-datadog-date_happened]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Date Happened
 
-
 ### `dd_tags` [plugins-outputs-datadog-dd_tags]
 
-* Value type is [array](value-types.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * There is no default value for this setting.
 
 Tags Set any custom tags for this event Default are the Logstash tags if any
-
 
 ### `priority` [plugins-outputs-datadog-priority]
 
@@ -89,7 +78,6 @@ Tags Set any custom tags for this event Default are the Logstash tags if any
 
 Priority
 
-
 ### `source_type_name` [plugins-outputs-datadog-source_type_name]
 
 * Value can be any of: `nagios`, `hudson`, `jenkins`, `user`, `my apps`, `feed`, `chef`, `puppet`, `git`, `bitbucket`, `fabric`, `capistrano`
@@ -97,69 +85,55 @@ Priority
 
 Source type name
 
-
 ### `text` [plugins-outputs-datadog-text]
 
-* Value type is [string](value-types.md#string)
-* Default value is `"%{{message}}"`
+* Value type is [string](/lsr/value-types.md#string)
+* Default value is `"%{message}"`
 
 Text
 
-
 ### `title` [plugins-outputs-datadog-title]
 
-* Value type is [string](value-types.md#string)
-* Default value is `"Logstash event for %{{host}}"`
+* Value type is [string](/lsr/value-types.md#string)
+* Default value is `"Logstash event for %{host}"`
 
 Title
-
-
 
 ## Common options [plugins-outputs-datadog-common-options]
 
 These configuration options are supported by all output plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`codec`](plugins-outputs-datadog.md#plugins-outputs-datadog-codec) | [codec](logstash://reference/configuration-file-structure.md#codec) | No |
-| [`enable_metric`](plugins-outputs-datadog.md#plugins-outputs-datadog-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-outputs-datadog.md#plugins-outputs-datadog-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
+| :- | :- | :- |
+| [`codec`](plugins-outputs-datadog.md#plugins-outputs-datadog-codec) | [codec](/lsr/value-types.md#codec) | No |
+| [`enable_metric`](plugins-outputs-datadog.md#plugins-outputs-datadog-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-outputs-datadog.md#plugins-outputs-datadog-id) | [string](/lsr/value-types.md#string) | No |
 
 ### `codec` [plugins-outputs-datadog-codec]
 
-* Value type is [codec](logstash://reference/configuration-file-structure.md#codec)
+* Value type is [codec](/lsr/value-types.md#codec)
 * Default value is `"plain"`
 
 The codec used for output data. Output codecs are a convenient method for encoding your data before it leaves the output without needing a separate filter in your Logstash pipeline.
 
-
 ### `enable_metric` [plugins-outputs-datadog-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
 Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
-
 ### `id` [plugins-outputs-datadog-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type. For example, if you have 2 datadog outputs. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
 output {
   datadog {
     id => "my_plugin_id"
   }
 }
 ```
-
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
-

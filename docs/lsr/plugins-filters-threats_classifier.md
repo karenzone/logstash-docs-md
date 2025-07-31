@@ -17,7 +17,7 @@ For plugins not bundled by default, it is easy to install by running `bin/logsta
 
 ## Description [_description_160]
 
-This plugin uses the cyber-kill-chain and MITRE representation language to enrich security logs with information about the attacker’s intent—​what the attacker is trying to achieve, who they are targeting, and how they plan to carry out the attack.
+This plugin uses the cyber-kill-chain and MITRE representation language to enrich security logs with information about the attacker’s intent—what the attacker is trying to achieve, who they are targeting, and how they plan to carry out the attack.
 
 
 ## Documentation [_documentation_3]

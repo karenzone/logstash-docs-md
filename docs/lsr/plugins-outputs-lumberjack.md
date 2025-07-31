@@ -1,66 +1,62 @@
 ---
-navigation_title: "lumberjack"
+navigation_title: lumberjack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-lumberjack.html
+
 ---
 
-# Lumberjack output plugin [plugins-outputs-lumberjack]
+# Lumberjack output plugin
 
-
-* Plugin version: v3.1.9
+* Plugin version: v3.1.9 ([Other versions](/vpr/output-lumberjack-index.md))
 * Released on: 2021-08-30
 * [Changelog](https://github.com/logstash-plugins/logstash-output-lumberjack/blob/v3.1.9/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/output-lumberjack-index.md).
-
-## Getting help [_getting_help_94]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-lumberjack). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_93]
+
+
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-lumberjack). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 This output sends events using the lumberjack protocol.
-
 
 ## Lumberjack Output Configuration Options [plugins-outputs-lumberjack-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`flush_size`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-flush_size) | [number](value-types.md#number) | No |
-| [`hosts`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-hosts) | [array](value-types.md#array) | Yes |
-| [`idle_flush_time`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-idle_flush_time) | [number](value-types.md#number) | No |
-| [`port`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-port) | [number](value-types.md#number) | Yes |
+| :- | :- | :- |
+| [`flush_size`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-flush_size) | [number](/lsr/value-types.md#number) | No |
+| [`hosts`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-hosts) | [array](/lsr/value-types.md#array) | Yes |
+| [`idle_flush_time`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-idle_flush_time) | [number](/lsr/value-types.md#number) | No |
+| [`port`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-port) | [number](/lsr/value-types.md#number) | Yes |
 | [`ssl_certificate`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-ssl_certificate) | a valid filesystem path | Yes |
 
 Also see [Common options](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-common-options) for a list of options supported by all output plugins.
 
- 
-
 ### `flush_size` [plugins-outputs-lumberjack-flush_size]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `1024`
 
 To make efficient calls to the lumberjack output we are buffering events locally. if the number of events exceed the number the declared `flush_size` we will send them to the logstash server.
 
-
 ### `hosts` [plugins-outputs-lumberjack-hosts]
 
 * This is a required setting.
-* Value type is [array](value-types.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * There is no default value for this setting.
 
 List of addresses lumberjack can send to. When the plugin needs to connect to the remote peer, it randomly selects one of the hosts.
 
 When the plugin is registered, it opens a connection to one of the hosts. If the plugin detects a connection error, it selects a different host from the list and opens a new connection.
 
-
 ### `idle_flush_time` [plugins-outputs-lumberjack-idle_flush_time]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `1`
 
 The amount of time since last flush before a flush is forced.
@@ -69,71 +65,57 @@ This setting helps ensure slow event rates don’t get stuck in Logstash. For ex
 
 This helps keep both fast and slow log streams moving along in near-real-time.
 
-
 ### `port` [plugins-outputs-lumberjack-port]
 
 * This is a required setting.
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 the port to connect to
 
-
 ### `ssl_certificate` [plugins-outputs-lumberjack-ssl_certificate]
 
 * This is a required setting.
-* Value type is [path](value-types.md#path)
+* Value type is [path](/lsr/value-types.md#path)
 * There is no default value for this setting.
 
 ssl certificate to use
-
-
 
 ## Common options [plugins-outputs-lumberjack-common-options]
 
 These configuration options are supported by all output plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`codec`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-codec) | [codec](logstash://reference/configuration-file-structure.md#codec) | No |
-| [`enable_metric`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
+| :- | :- | :- |
+| [`codec`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-codec) | [codec](/lsr/value-types.md#codec) | No |
+| [`enable_metric`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-outputs-lumberjack.md#plugins-outputs-lumberjack-id) | [string](/lsr/value-types.md#string) | No |
 
 ### `codec` [plugins-outputs-lumberjack-codec]
 
-* Value type is [codec](logstash://reference/configuration-file-structure.md#codec)
+* Value type is [codec](/lsr/value-types.md#codec)
 * Default value is `"plain"`
 
 The codec used for output data. Output codecs are a convenient method for encoding your data before it leaves the output without needing a separate filter in your Logstash pipeline.
 
-
 ### `enable_metric` [plugins-outputs-lumberjack-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
 Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
-
 ### `id` [plugins-outputs-lumberjack-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type. For example, if you have 2 lumberjack outputs. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
 output {
   lumberjack {
     id => "my_plugin_id"
   }
 }
 ```
-
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
-

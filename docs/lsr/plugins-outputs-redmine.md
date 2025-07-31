@@ -1,37 +1,33 @@
 ---
-navigation_title: "redmine"
+navigation_title: redmine
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-redmine.html
+
 ---
 
-# Redmine output plugin [plugins-outputs-redmine]
+# Redmine output plugin
 
-
-* Plugin version: v3.0.4
+* Plugin version: v3.0.4 ([Other versions](/vpr/output-redmine-index.md))
 * Released on: 2018-04-06
 * [Changelog](https://github.com/logstash-plugins/logstash-output-redmine/blob/v3.0.4/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/output-redmine-index.md).
-
-## Installation [_installation_43]
-
-For plugins not bundled by default, it is easy to install by running `bin/logstash-plugin install logstash-output-redmine`. See [Working with plugins](logstash://reference/working-with-plugins.md) for more details.
 
 
-## Getting help [_getting_help_104]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-redmine). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_103]
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-output-redmine). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 The redmine output is used to create a ticket via the API redmine.
 
 It send a POST request in a JSON format and use TOKEN authentication
 
- — Exemple of use — 
+—Exemple of use—
 
-```ruby
+```
  output {
    redmine {
      url => "http://redmineserver.tld"
@@ -45,185 +41,158 @@ It send a POST request in a JSON format and use TOKEN authentication
  }
 ```
 
-
 ## Redmine Output Configuration Options [plugins-outputs-redmine-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-redmine.md#plugins-outputs-redmine-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`assigned_to_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-assigned_to_id) | [number](value-types.md#number) | No |
-| [`categorie_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-categorie_id) | [number](value-types.md#number) | No |
-| [`description`](plugins-outputs-redmine.md#plugins-outputs-redmine-description) | [string](value-types.md#string) | No |
-| [`fixed_version_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-fixed_version_id) | [number](value-types.md#number) | No |
-| [`parent_issue_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-parent_issue_id) | [number](value-types.md#number) | No |
-| [`priority_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-priority_id) | [number](value-types.md#number) | Yes |
-| [`project_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-project_id) | [number](value-types.md#number) | Yes |
-| [`ssl`](plugins-outputs-redmine.md#plugins-outputs-redmine-ssl) | [boolean](value-types.md#boolean) | No |
-| [`status_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-status_id) | [number](value-types.md#number) | Yes |
-| [`subject`](plugins-outputs-redmine.md#plugins-outputs-redmine-subject) | [string](value-types.md#string) | No |
-| [`token`](plugins-outputs-redmine.md#plugins-outputs-redmine-token) | [string](value-types.md#string) | Yes |
-| [`tracker_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-tracker_id) | [number](value-types.md#number) | Yes |
-| [`url`](plugins-outputs-redmine.md#plugins-outputs-redmine-url) | [string](value-types.md#string) | Yes |
+| :- | :- | :- |
+| [`assigned_to_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-assigned_to_id) | [number](/lsr/value-types.md#number) | No |
+| [`categorie_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-categorie_id) | [number](/lsr/value-types.md#number) | No |
+| [`description`](plugins-outputs-redmine.md#plugins-outputs-redmine-description) | [string](/lsr/value-types.md#string) | No |
+| [`fixed_version_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-fixed_version_id) | [number](/lsr/value-types.md#number) | No |
+| [`parent_issue_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-parent_issue_id) | [number](/lsr/value-types.md#number) | No |
+| [`priority_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-priority_id) | [number](/lsr/value-types.md#number) | Yes |
+| [`project_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-project_id) | [number](/lsr/value-types.md#number) | Yes |
+| [`ssl`](plugins-outputs-redmine.md#plugins-outputs-redmine-ssl) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`status_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-status_id) | [number](/lsr/value-types.md#number) | Yes |
+| [`subject`](plugins-outputs-redmine.md#plugins-outputs-redmine-subject) | [string](/lsr/value-types.md#string) | No |
+| [`token`](plugins-outputs-redmine.md#plugins-outputs-redmine-token) | [string](/lsr/value-types.md#string) | Yes |
+| [`tracker_id`](plugins-outputs-redmine.md#plugins-outputs-redmine-tracker_id) | [number](/lsr/value-types.md#number) | Yes |
+| [`url`](plugins-outputs-redmine.md#plugins-outputs-redmine-url) | [string](/lsr/value-types.md#string) | Yes |
 
 Also see [Common options](plugins-outputs-redmine.md#plugins-outputs-redmine-common-options) for a list of options supported by all output plugins.
 
- 
-
 ### `assigned_to_id` [plugins-outputs-redmine-assigned_to_id]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `nil`
 
 redmine issue assigned_to not required for post_issue
 
-
 ### `categorie_id` [plugins-outputs-redmine-categorie_id]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `nil`
 
 not required for post_issue
 
-
 ### `description` [plugins-outputs-redmine-description]
 
-* Value type is [string](value-types.md#string)
-* Default value is `"%{{message}}"`
+* Value type is [string](/lsr/value-types.md#string)
+* Default value is `"%{message}"`
 
 redmine issue description required
 
-
 ### `fixed_version_id` [plugins-outputs-redmine-fixed_version_id]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `nil`
 
 redmine issue fixed_version_id
 
-
 ### `parent_issue_id` [plugins-outputs-redmine-parent_issue_id]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `nil`
 
 redmine issue parent_issue_id not required for post_issue
 
-
 ### `priority_id` [plugins-outputs-redmine-priority_id]
 
 * This is a required setting.
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 redmine issue priority_id required
 
-
 ### `project_id` [plugins-outputs-redmine-project_id]
 
 * This is a required setting.
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 redmine issue projet_id required
 
-
 ### `ssl` [plugins-outputs-redmine-ssl]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
-
 
 ### `status_id` [plugins-outputs-redmine-status_id]
 
 * This is a required setting.
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 redmine issue status_id required
 
-
 ### `subject` [plugins-outputs-redmine-subject]
 
-* Value type is [string](value-types.md#string)
-* Default value is `"%{{host}}"`
+* Value type is [string](/lsr/value-types.md#string)
+* Default value is `"%{host}"`
 
 redmine issue subject required
-
 
 ### `token` [plugins-outputs-redmine-token]
 
 * This is a required setting.
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 redmine token user used for authentication
 
-
 ### `tracker_id` [plugins-outputs-redmine-tracker_id]
 
 * This is a required setting.
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 redmine issue tracker_id required
 
-
 ### `url` [plugins-outputs-redmine-url]
 
 * This is a required setting.
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
-host of redmine app value format : *http://urlofredmine.tld* - Not add */issues* at end
-
-
+host of redmine app value format : *<http://urlofredmine.tld>* - Not add */issues* at end
 
 ## Common options [plugins-outputs-redmine-common-options]
 
 These configuration options are supported by all output plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`codec`](plugins-outputs-redmine.md#plugins-outputs-redmine-codec) | [codec](logstash://reference/configuration-file-structure.md#codec) | No |
-| [`enable_metric`](plugins-outputs-redmine.md#plugins-outputs-redmine-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-outputs-redmine.md#plugins-outputs-redmine-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
+| :- | :- | :- |
+| [`codec`](plugins-outputs-redmine.md#plugins-outputs-redmine-codec) | [codec](/lsr/value-types.md#codec) | No |
+| [`enable_metric`](plugins-outputs-redmine.md#plugins-outputs-redmine-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-outputs-redmine.md#plugins-outputs-redmine-id) | [string](/lsr/value-types.md#string) | No |
 
 ### `codec` [plugins-outputs-redmine-codec]
 
-* Value type is [codec](logstash://reference/configuration-file-structure.md#codec)
+* Value type is [codec](/lsr/value-types.md#codec)
 * Default value is `"plain"`
 
 The codec used for output data. Output codecs are a convenient method for encoding your data before it leaves the output without needing a separate filter in your Logstash pipeline.
 
-
 ### `enable_metric` [plugins-outputs-redmine-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
 Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
-
 ### `id` [plugins-outputs-redmine-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type. For example, if you have 2 redmine outputs. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
 output {
   redmine {
     id => "my_plugin_id"
   }
 }
 ```
-
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
-

@@ -1,28 +1,27 @@
 ---
-navigation_title: "rabbitmq"
+navigation_title: rabbitmq
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-integrations-rabbitmq.html
+
 ---
 
-# Rabbitmq Integration Plugin [plugins-integrations-rabbitmq]
+# Rabbitmq Integration Plugin
 
-
-* Plugin version: v7.4.0
+* Plugin version: v7.4.0 ([Other versions](/vpr/integration-rabbitmq-index.md))
 * Released on: 2024-09-16
 * [Changelog](https://github.com/logstash-plugins/logstash-integration-rabbitmq/blob/v7.4.0/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/integration-rabbitmq-index.md).
-
-## Getting help [_getting_help_6]
-
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-integration-rabbitmq). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
 
-## Description [_description_6]
+
+
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-integration-rabbitmq). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
+
+## Description [_description]
 
 The RabbitMQ Integration Plugin provides integrated plugins for working with [RabbitMQ](http://www.rabbitmq.com/).
 
-* [RabbitMQ Input Plugin](plugins-inputs-rabbitmq.md)
-* [RabbitMQ Output Plugin](plugins-outputs-rabbitmq.md)
-
-
+* [RabbitMQ Input Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-rabbitmq.html)
+* [RabbitMQ Output Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-rabbitmq.html)

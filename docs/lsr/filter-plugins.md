@@ -3,15 +3,16 @@ mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/filter-plugins.html
 ---
 
-# Filter plugins [filter-plugins]
+# Filter plugins
 
-A filter plugin performs intermediary processing on an event. Filters are often applied conditionally depending on the characteristics of the event.
+A filter plugin performs intermediary processing on an event. Filters are often applied conditionally depending on the
+characteristics of the event.
 
-For a list of Elastic supported plugins, please consult the [Support Matrix](https://www.elastic.co/support/matrix#show_logstash_plugins).
+The following filter plugins are available below. For a list of Elastic supported plugins, please consult the [Support Matrix](https://www.elastic.co/support/matrix#show_logstash_plugins).
 
-|     |     |     |
-| --- | --- | --- |
+
 | Plugin | Description | Github repository |
+|---|---|---|
 | [age](plugins-filters-age.md) | Calculates the age of an event by subtracting the event timestamp from the current timestamp | [logstash-filter-age](https://github.com/logstash-plugins/logstash-filter-age) |
 | [aggregate](plugins-filters-aggregate.md) | Aggregates information from several events originating with a single task | [logstash-filter-aggregate](https://github.com/logstash-plugins/logstash-filter-aggregate) |
 | [alter](plugins-filters-alter.md) | Performs general alterations to fields that the `mutate` filter does not handle | [logstash-filter-alter](https://github.com/logstash-plugins/logstash-filter-alter) |
@@ -36,7 +37,6 @@ For a list of Elastic supported plugins, please consult the [Support Matrix](htt
 | [http](plugins-filters-http.md) | Provides integration with external web services/REST APIs | [logstash-filter-http](https://github.com/logstash-plugins/logstash-filter-http) |
 | [i18n](plugins-filters-i18n.md) | Removes special characters from a field | [logstash-filter-i18n](https://github.com/logstash-plugins/logstash-filter-i18n) |
 | [java_uuid](plugins-filters-java_uuid.md) | Generates a UUID and adds it to each processed event | [core plugin](https://github.com/elastic/logstash/blob/master/logstash-core/src/main/java/org/logstash/plugins/filters/Uuid.java) |
-| [jdbc_static](plugins-filters-jdbc_static.md) | Enriches events with data pre-loaded from a remote database | [logstash-integration-jdbc](https://github.com/logstash-plugins/logstash-integration-jdbc) |
 | [jdbc_streaming](plugins-filters-jdbc_streaming.md) | Enrich events with your database data | [logstash-integration-jdbc](https://github.com/logstash-plugins/logstash-integration-jdbc) |
 | [json](plugins-filters-json.md) | Parses JSON events | [logstash-filter-json](https://github.com/logstash-plugins/logstash-filter-json) |
 | [json_encode](plugins-filters-json_encode.md) | Serializes a field to JSON | [logstash-filter-json_encode](https://github.com/logstash-plugins/logstash-filter-json_encode) |
@@ -61,53 +61,3 @@ For a list of Elastic supported plugins, please consult the [Support Matrix](htt
 | [uuid](plugins-filters-uuid.md) | Adds a UUID to events | [logstash-filter-uuid](https://github.com/logstash-plugins/logstash-filter-uuid) |
 | [wurfl_device_detection](plugins-filters-wurfl_device_detection.md) | Enriches logs with device information such as brand, model, OS | [logstash-filter-wurfl_device_detection](https://github.com/WURFL/logstash-filter-wurfl_device_detection) |
 | [xml](plugins-filters-xml.md) | Parses XML into fields | [logstash-filter-xml](https://github.com/logstash-plugins/logstash-filter-xml) |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,22 +1,23 @@
 ---
-navigation_title: "aggregate"
+navigation_title: aggregate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-aggregate.html
+
 ---
 
-# Aggregate filter plugin [plugins-filters-aggregate]
+# Aggregate filter plugin
 
-
-* Plugin version: v2.10.0
+* Plugin version: v2.10.0 ([Other versions](/vpr/filter-aggregate-index.md))
 * Released on: 2021-10-11
 * [Changelog](https://github.com/logstash-plugins/logstash-filter-aggregate/blob/v2.10.0/CHANGELOG.md)
 
-For other versions, see the [Versioned plugin docs](/vpr/filter-aggregate-index.md).
 
-## Getting help [_getting_help_124]
 
-For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-filter-aggregate). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#logstash_plugins).
 
+
+## Getting help [_getting_help]
+
+For questions about the plugin, open a topic in the [Discuss](http://discuss.elastic.co) forums. For bugs or feature requests, open an issue in [Github](https://github.com/logstash-plugins/logstash-filter-aggregate). For the list of Elastic supported plugins, please consult the [Elastic Support Matrix](https://www.elastic.co/support/matrix#matrix_logstash_plugins).
 
 ## Description [plugins-filters-aggregate-description]
 
@@ -24,12 +25,11 @@ The aim of this filter is to aggregate information available among several event
 
 You should be very careful to set Logstash filter workers to 1 (`-w 1` flag) for this filter to work correctly otherwise events may be processed out of sequence and unexpected results will occur.
 
-
 ## Example #1 [plugins-filters-aggregate-example1]
 
 * with these given logs :
 
-```ruby
+```
  INFO - 12345 - TASK_START - start
  INFO - 12345 - SQL - sqlQuery1 - 12
  INFO - 12345 - SQL - sqlQuery2 - 34
@@ -38,7 +38,7 @@ You should be very careful to set Logstash filter workers to 1 (`-w 1` flag) for
 
 * you can aggregate "sql duration" for the whole task with this configuration :
 
-```ruby
+```
  filter {
    grok {
      match => [ "message", "%{LOGLEVEL:loglevel} - %{NOTSPACE:taskid} - %{NOTSPACE:logger} - %{WORD:label}( - %{INT:duration:int})?" ]
@@ -74,7 +74,7 @@ You should be very careful to set Logstash filter workers to 1 (`-w 1` flag) for
 
 * the final event then looks like :
 
-```ruby
+```
 {
   "message" => "INFO - 12345 - TASK_END - end message",
   "sql_duration" => 46
@@ -83,12 +83,11 @@ You should be very careful to set Logstash filter workers to 1 (`-w 1` flag) for
 
 the field `sql_duration` is added and contains the sum of all sql queries durations.
 
-
 ## Example #2 : no start event [plugins-filters-aggregate-example2]
 
 * If you have the same logs than example #1, but without a start log :
 
-```ruby
+```
  INFO - 12345 - SQL - sqlQuery1 - 12
  INFO - 12345 - SQL - sqlQuery2 - 34
  INFO - 12345 - TASK_END - end
@@ -96,7 +95,7 @@ the field `sql_duration` is added and contains the sum of all sql queries durati
 
 * you can also aggregate "sql duration" with a slightly different configuration :
 
-```ruby
+```
  filter {
    grok {
      match => [ "message", "%{LOGLEVEL:loglevel} - %{NOTSPACE:taskid} - %{NOTSPACE:logger} - %{WORD:label}( - %{INT:duration:int})?" ]
@@ -123,7 +122,6 @@ the field `sql_duration` is added and contains the sum of all sql queries durati
 * the final event is exactly the same than example #1
 * the key point is the "||=" ruby operator. It allows to initialize *sql_duration* map entry to 0 only if this map entry is not already initialized
 
-
 ## Example #3 : no end event [plugins-filters-aggregate-example3]
 
 Third use case: You have no specific end event.
@@ -134,7 +132,7 @@ In this case, we can enable the option *push_map_as_event_on_timeout* to enable 
 
 * Given these logs:
 
-```ruby
+```
 INFO - 12345 - Clicked One
 INFO - 12345 - Clicked Two
 INFO - 12345 - Clicked Three
@@ -142,7 +140,7 @@ INFO - 12345 - Clicked Three
 
 * You can aggregate the amount of clicks the user did like this:
 
-```ruby
+```
 filter {
   grok {
     match => [ "message", "%{LOGLEVEL:loglevel} - %{NOTSPACE:user_id} - %{GREEDYDATA:msg_text}" ]
@@ -162,7 +160,7 @@ filter {
 
 * After ten minutes, this will yield an event like:
 
-```json
+```
 {
   "user_id": "12345",
   "clicks": 3,
@@ -173,12 +171,11 @@ filter {
 }
 ```
 
-
 ## Example #4 : no end event and tasks come one after the other [plugins-filters-aggregate-example4]
 
 Fourth use case : like example #3, you have no specific end event, but also, tasks come one after the other.
 
-That is to say : tasks are not interlaced. All task1 events come, then all task2 events come, …​
+That is to say : tasks are not interlaced. All task1 events come, then all task2 events come, …
 
 In that case, you don’t want to wait task timeout to flush aggregation map.
 
@@ -186,7 +183,7 @@ In that case, you don’t want to wait task timeout to flush aggregation map.
 * Given that you have this SQL query : `SELECT country_name, town_name FROM town`
 * Using jdbc input plugin, you get these 3 events from :
 
-```json
+```
   { "country_name": "France", "town_name": "Paris" }
   { "country_name": "France", "town_name": "Marseille" }
   { "country_name": "USA", "town_name": "New-York" }
@@ -194,14 +191,14 @@ In that case, you don’t want to wait task timeout to flush aggregation map.
 
 * And you would like these 2 result events to push them into elasticsearch :
 
-```json
+```
   { "country_name": "France", "towns": [ {"town_name": "Paris"}, {"town_name": "Marseille"} ] }
   { "country_name": "USA", "towns": [ {"town_name": "New-York"} ] }
 ```
 
 * You can do that using `push_previous_map_as_event` aggregate plugin option :
 
-```ruby
+```
    filter {
      aggregate {
        task_id => "%{country_name}"
@@ -222,7 +219,6 @@ In that case, you don’t want to wait task timeout to flush aggregation map.
 * Initial events (which are not aggregated) are dropped because useless (thanks to `event.cancel()`)
 * Last point: if a field is not fulfilled for every event (say "town_postcode" field), the `||=` operator will let you to push into aggregate map, the first "not null" value. Example: `map['town_postcode'] ||= event.get('town_postcode')`
 
-
 ## Example #5 : no end event and push events as soon as possible [plugins-filters-aggregate-example5]
 
 Fifth use case: like example #3, there is no end event.
@@ -237,7 +233,7 @@ We can track a user by its ID through the events, however once the user stops in
 
 There is no specific event indicating the end of the user’s interaction.
 
-The user interaction will be considered as ended when no events for the specified user (task_id) arrive after the specified inactivity_timeout`.
+The user interaction will be considered as ended when no events for the specified user (task_id) arrive after the specified inactivity_timeout\`.
 
 If the user continues interacting for longer than `timeout` seconds (since first event), the aggregation map will still be deleted and pushed as a new event when timeout occurs.
 
@@ -251,7 +247,7 @@ We can also add *timeout_task_id_field* so we can correlate the task_id, which i
 
 * Given these logs:
 
-```ruby
+```
 INFO - 12345 - Clicked One
 INFO - 12345 - Clicked Two
 INFO - 12345 - Clicked Three
@@ -259,7 +255,7 @@ INFO - 12345 - Clicked Three
 
 * You can aggregate the amount of clicks the user did like this:
 
-```ruby
+```
 filter {
  grok {
    match => [ "message", "%{LOGLEVEL:loglevel} - %{NOTSPACE:user_id} - %{GREEDYDATA:msg_text}" ]
@@ -279,7 +275,7 @@ filter {
 
 * After five minutes of inactivity or one hour since first event, this will yield an event like:
 
-```json
+```
 {
  "user_id": "12345",
  "clicks": 3,
@@ -289,7 +285,6 @@ filter {
    ]
 }
 ```
-
 
 ## How it works [plugins-filters-aggregate-howitworks]
 
@@ -304,44 +299,40 @@ filter {
 * all timeout options have to be defined in only one aggregate filter per task_id pattern (per pipeline). Timeout options are : timeout, inactivity_timeout, timeout_code, push_map_as_event_on_timeout, push_previous_map_as_event, timeout_timestamp_field, timeout_task_id_field, timeout_tags
 * if `code` execution raises an exception, the error is logged and event is tagged *_aggregateexception*
 
-
 ## Use Cases [plugins-filters-aggregate-usecases]
 
 * extract some cool metrics from task logs and push them into task final log event (like in example #1 and #2)
 * extract error information in any task log line, and push it in final task event (to get a final event with all error information if any)
 * extract all back-end calls as a list, and push this list in final task event (to get a task profile)
 * extract all http headers logged in several lines to push this list in final task event (complete http request info)
-* for every back-end call, collect call details available on several lines, analyse it and finally tag final back-end call log line (error, timeout, business-warning, …​)
-* Finally, task id can be any correlation id matching your need : it can be a session id, a file path, …​
-
+* for every back-end call, collect call details available on several lines, analyse it and finally tag final back-end call log line (error, timeout, business-warning, …)
+* Finally, task id can be any correlation id matching your need : it can be a session id, a file path, …
 
 ## Aggregate Filter Configuration Options [plugins-filters-aggregate-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-filters-aggregate.md#plugins-filters-aggregate-common-options) described later.
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`aggregate_maps_path`](plugins-filters-aggregate.md#plugins-filters-aggregate-aggregate_maps_path) | [string](value-types.md#string), a valid filesystem path | No |
-| [`code`](plugins-filters-aggregate.md#plugins-filters-aggregate-code) | [string](value-types.md#string) | Yes |
-| [`end_of_task`](plugins-filters-aggregate.md#plugins-filters-aggregate-end_of_task) | [boolean](value-types.md#boolean) | No |
-| [`inactivity_timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-inactivity_timeout) | [number](value-types.md#number) | No |
-| [`map_action`](plugins-filters-aggregate.md#plugins-filters-aggregate-map_action) | [string](value-types.md#string), one of `["create", "update", "create_or_update"]` | No |
-| [`push_map_as_event_on_timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-push_map_as_event_on_timeout) | [boolean](value-types.md#boolean) | No |
-| [`push_previous_map_as_event`](plugins-filters-aggregate.md#plugins-filters-aggregate-push_previous_map_as_event) | [boolean](value-types.md#boolean) | No |
-| [`task_id`](plugins-filters-aggregate.md#plugins-filters-aggregate-task_id) | [string](value-types.md#string) | Yes |
-| [`timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout) | [number](value-types.md#number) | No |
-| [`timeout_code`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_code) | [string](value-types.md#string) | No |
-| [`timeout_tags`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_tags) | [array](value-types.md#array) | No |
-| [`timeout_task_id_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_task_id_field) | [string](value-types.md#string) | No |
-| [`timeout_timestamp_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_timestamp_field) | [string](value-types.md#string) | No |
+| :- | :- | :- |
+| [`aggregate_maps_path`](plugins-filters-aggregate.md#plugins-filters-aggregate-aggregate_maps_path) | [string](/lsr/value-types.md#string), a valid filesystem path | No |
+| [`code`](plugins-filters-aggregate.md#plugins-filters-aggregate-code) | [string](/lsr/value-types.md#string) | Yes |
+| [`end_of_task`](plugins-filters-aggregate.md#plugins-filters-aggregate-end_of_task) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`inactivity_timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-inactivity_timeout) | [number](/lsr/value-types.md#number) | No |
+| [`map_action`](plugins-filters-aggregate.md#plugins-filters-aggregate-map_action) | [string](/lsr/value-types.md#string), one of `["create", "update", "create_or_update"]` | No |
+| [`push_map_as_event_on_timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-push_map_as_event_on_timeout) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`push_previous_map_as_event`](plugins-filters-aggregate.md#plugins-filters-aggregate-push_previous_map_as_event) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`task_id`](plugins-filters-aggregate.md#plugins-filters-aggregate-task_id) | [string](/lsr/value-types.md#string) | Yes |
+| [`timeout`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout) | [number](/lsr/value-types.md#number) | No |
+| [`timeout_code`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_code) | [string](/lsr/value-types.md#string) | No |
+| [`timeout_tags`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_tags) | [array](/lsr/value-types.md#array) | No |
+| [`timeout_task_id_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_task_id_field) | [string](/lsr/value-types.md#string) | No |
+| [`timeout_timestamp_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-timeout_timestamp_field) | [string](/lsr/value-types.md#string) | No |
 
 Also see [Common options](plugins-filters-aggregate.md#plugins-filters-aggregate-common-options) for a list of options supported by all filter plugins.
 
- 
-
 ### `aggregate_maps_path` [plugins-filters-aggregate-aggregate_maps_path]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 The path to file where aggregate maps are stored when Logstash stops and are loaded from when Logstash starts.
@@ -350,7 +341,7 @@ If not defined, aggregate maps will not be stored at Logstash stop and will be l
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         aggregate_maps_path => "/path/to/.aggregate_maps"
@@ -358,11 +349,10 @@ Example:
     }
 ```
 
-
 ### `code` [plugins-filters-aggregate-code]
 
 * This is a required setting.
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 The code to execute to update aggregated map, using current event.
@@ -373,7 +363,7 @@ Available variables are:
 
 `event`: current Logstash event
 
-`map`: aggregated map associated to `task_id`, containing key/value pairs. Data structure is a ruby [Hash](http://ruby-doc.org/core-1.9.1/Hash.md)
+`map`: aggregated map associated to `task_id`, containing key/value pairs. Data structure is a ruby [Hash](http://ruby-doc.org/core-1.9.1/Hash.html)
 
 `map_meta`: meta informations associated to aggregate map. It allows to set a custom `timeout` or `inactivity_timeout`. It allows also to get `creation_timestamp`, `lastevent_timestamp` and `task_id`.
 
@@ -383,7 +373,7 @@ When option push_map_as_event_on_timeout=true, if you set `map_meta.timeout=0` i
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         code => "map['sql_duration'] += event.get('duration')"
@@ -393,7 +383,7 @@ Example:
 
 To create additional events during the code execution, to be emitted immediately, you can use `new_event_block.call(event)` function, like in the following example:
 
-```ruby
+```
     filter {
       aggregate {
         code => "
@@ -406,20 +396,18 @@ To create additional events during the code execution, to be emitted immediately
     }
 ```
 
-The parameter of the function `new_event_block.call` must be of type `LogStash::Event`. To create such an object, the constructor of the same class can be used: `LogStash::Event.new()`. `LogStash::Event.new()` can receive a parameter of type ruby [Hash](http://ruby-doc.org/core-1.9.1/Hash.md) to initialize the new event fields.
-
+The parameter of the function `new_event_block.call` must be of type `LogStash::Event`. To create such an object, the constructor of the same class can be used: `LogStash::Event.new()`. `LogStash::Event.new()` can receive a parameter of type ruby [Hash](http://ruby-doc.org/core-1.9.1/Hash.html) to initialize the new event fields.
 
 ### `end_of_task` [plugins-filters-aggregate-end_of_task]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 Tell the filter that task is ended, and therefore, to delete aggregate map after code execution.
 
-
 ### `inactivity_timeout` [plugins-filters-aggregate-inactivity_timeout]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * There is no default value for this setting.
 
 The amount of seconds (since the last event) after which a task is considered as expired.
@@ -432,10 +420,9 @@ If *push_map_as_event_on_timeout* or *push_previous_map_as_event* is set to true
 
 `inactivity_timeout` must be lower than `timeout`.
 
-
 ### `map_action` [plugins-filters-aggregate-map_action]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * Default value is `"create_or_update"`
 
 Tell the filter what to do with aggregate map.
@@ -446,32 +433,26 @@ Tell the filter what to do with aggregate map.
 
 `"create_or_update"`: create the map if it wasn’t created before, execute the code in all cases
 
-
 ### `push_map_as_event_on_timeout` [plugins-filters-aggregate-push_map_as_event_on_timeout]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 When this option is enabled, each time a task timeout is detected, it pushes task aggregation map as a new Logstash event. This enables to detect and process task timeouts in Logstash, but also to manage tasks that have no explicit end event.
 
-
 ### `push_previous_map_as_event` [plugins-filters-aggregate-push_previous_map_as_event]
 
-* Value type is [boolean](value-types.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 When this option is enabled, each time aggregate plugin detects a new task id, it pushes previous aggregate map as a new Logstash event, and then creates a new empty map for the next task.
 
-::::{warning} 
-this option works fine only if tasks come one after the other. It means : all task1 events, then all task2 events, etc…​
-::::
-
-
+this option works fine only if tasks come one after the other. It means : all task1 events, then all task2 events, etc…
 
 ### `task_id` [plugins-filters-aggregate-task_id]
 
 * This is a required setting.
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 The expression defining task ID to correlate logs.
@@ -480,7 +461,7 @@ This value must uniquely identify the task.
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         task_id => "%{type}%{my_task_id}"
@@ -488,10 +469,9 @@ Example:
     }
 ```
 
-
 ### `timeout` [plugins-filters-aggregate-timeout]
 
-* Value type is [number](value-types.md#number)
+* Value type is [number](/lsr/value-types.md#number)
 * Default value is `1800`
 
 The amount of seconds (since the first event) after which a task is considered as expired.
@@ -502,10 +482,9 @@ If *push_map_as_event_on_timeout* or *push_previous_map_as_event* is set to true
 
 Timeout can be defined for each "task_id" pattern.
 
-
 ### `timeout_code` [plugins-filters-aggregate-timeout_code]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 The code to execute to complete timeout generated event, when `'push_map_as_event_on_timeout'` or `'push_previous_map_as_event'` is set to true. The code block will have access to the newly generated timeout event that is pre-populated with the aggregation map.
@@ -514,7 +493,7 @@ If `'timeout_task_id_field'` is set, the event is also populated with the task_i
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         timeout_code => "event.set('state', 'timeout')"
@@ -522,17 +501,16 @@ Example:
     }
 ```
 
-
 ### `timeout_tags` [plugins-filters-aggregate-timeout_tags]
 
-* Value type is [array](value-types.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * Default value is `[]`
 
 Defines tags to add when a timeout event is generated and yield
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         timeout_tags => ["aggregate_timeout"]
@@ -540,10 +518,9 @@ Example:
     }
 ```
 
-
 ### `timeout_task_id_field` [plugins-filters-aggregate-timeout_task_id_field]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 This option indicates the timeout generated event’s field where the current "task_id" value will be set. This can help to correlate which tasks have been timed out.
@@ -552,7 +529,7 @@ By default, if this option is not set, task id value won’t be set into timeout
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         timeout_task_id_field => "task_id"
@@ -560,10 +537,9 @@ Example:
     }
 ```
 
-
 ### `timeout_timestamp_field` [plugins-filters-aggregate-timeout_timestamp_field]
 
-* Value type is [string](value-types.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 By default, timeout is computed using system time, where Logstash is running.
@@ -576,7 +552,7 @@ Warning : so that this option works fine, it must be set on first aggregate filt
 
 Example:
 
-```ruby
+```
     filter {
       aggregate {
         timeout_timestamp_field => "@timestamp"
@@ -584,32 +560,30 @@ Example:
     }
 ```
 
-
-
 ## Common options [plugins-filters-aggregate-common-options]
 
 These configuration options are supported by all filter plugins:
 
 | Setting | Input type | Required |
-| --- | --- | --- |
-| [`add_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-add_field) | [hash](logstash://reference/configuration-file-structure.md#hash) | No |
-| [`add_tag`](plugins-filters-aggregate.md#plugins-filters-aggregate-add_tag) | [array](logstash://reference/configuration-file-structure.md#array) | No |
-| [`enable_metric`](plugins-filters-aggregate.md#plugins-filters-aggregate-enable_metric) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`id`](plugins-filters-aggregate.md#plugins-filters-aggregate-id) | [string](logstash://reference/configuration-file-structure.md#string) | No |
-| [`periodic_flush`](plugins-filters-aggregate.md#plugins-filters-aggregate-periodic_flush) | [boolean](logstash://reference/configuration-file-structure.md#boolean) | No |
-| [`remove_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-remove_field) | [array](logstash://reference/configuration-file-structure.md#array) | No |
-| [`remove_tag`](plugins-filters-aggregate.md#plugins-filters-aggregate-remove_tag) | [array](logstash://reference/configuration-file-structure.md#array) | No |
+| :- | :- | :- |
+| [`add_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-add_field) | [hash](/lsr/value-types.md#hash) | No |
+| [`add_tag`](plugins-filters-aggregate.md#plugins-filters-aggregate-add_tag) | [array](/lsr/value-types.md#array) | No |
+| [`enable_metric`](plugins-filters-aggregate.md#plugins-filters-aggregate-enable_metric) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`id`](plugins-filters-aggregate.md#plugins-filters-aggregate-id) | [string](/lsr/value-types.md#string) | No |
+| [`periodic_flush`](plugins-filters-aggregate.md#plugins-filters-aggregate-periodic_flush) | [boolean](/lsr/value-types.md#boolean) | No |
+| [`remove_field`](plugins-filters-aggregate.md#plugins-filters-aggregate-remove_field) | [array](/lsr/value-types.md#array) | No |
+| [`remove_tag`](plugins-filters-aggregate.md#plugins-filters-aggregate-remove_tag) | [array](/lsr/value-types.md#array) | No |
 
 ### `add_field` [plugins-filters-aggregate-add_field]
 
-* Value type is [hash](logstash://reference/configuration-file-structure.md#hash)
+* Value type is [hash](/lsr/value-types.md#hash)
 * Default value is `{}`
 
-If this filter is successful, add any arbitrary fields to this event. Field names can be dynamic and include parts of the event using the `%{{field}}`.
+If this filter is successful, add any arbitrary fields to this event. Field names can be dynamic and include parts of the event using the `%{field}`.
 
 Example:
 
-```json
+```
     filter {
       aggregate {
         add_field => { "foo_%{somefield}" => "Hello world, from %{host}" }
@@ -617,7 +591,7 @@ Example:
     }
 ```
 
-```json
+```
     # You can also add multiple fields at once:
     filter {
       aggregate {
@@ -629,19 +603,18 @@ Example:
     }
 ```
 
-If the event has field `"somefield" == "hello"` this filter, on success, would add field `foo_hello` if it is present, with the value above and the `%{{host}}` piece replaced with that value from the event. The second example would also add a hardcoded field.
-
+If the event has field `"somefield" == "hello"` this filter, on success, would add field `foo_hello` if it is present, with the value above and the `%{host}` piece replaced with that value from the event. The second example would also add a hardcoded field.
 
 ### `add_tag` [plugins-filters-aggregate-add_tag]
 
-* Value type is [array](logstash://reference/configuration-file-structure.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * Default value is `[]`
 
-If this filter is successful, add arbitrary tags to the event. Tags can be dynamic and include parts of the event using the `%{{field}}` syntax.
+If this filter is successful, add arbitrary tags to the event. Tags can be dynamic and include parts of the event using the `%{field}` syntax.
 
 Example:
 
-```json
+```
     filter {
       aggregate {
         add_tag => [ "foo_%{somefield}" ]
@@ -649,7 +622,7 @@ Example:
     }
 ```
 
-```json
+```
     # You can also add multiple tags at once:
     filter {
       aggregate {
@@ -660,23 +633,21 @@ Example:
 
 If the event has field `"somefield" == "hello"` this filter, on success, would add a tag `foo_hello` (and the second example would of course add a `taggedy_tag` tag).
 
-
 ### `enable_metric` [plugins-filters-aggregate-enable_metric]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `true`
 
-Disable or enable metric logging for this specific plugin instance. By default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
-
+Disable or enable metric logging for this specific plugin instance by default we record all the metrics we can, but you can disable metrics collection for a specific plugin.
 
 ### `id` [plugins-filters-aggregate-id]
 
-* Value type is [string](logstash://reference/configuration-file-structure.md#string)
+* Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
 Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash will generate one. It is strongly recommended to set this ID in your configuration. This is particularly useful when you have two or more plugins of the same type, for example, if you have 2 aggregate filters. Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.
 
-```json
+```
     filter {
       aggregate {
         id => "ABC"
@@ -684,28 +655,21 @@ Add a unique `ID` to the plugin configuration. If no ID is specified, Logstash w
     }
 ```
 
-::::{note} 
-Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
-::::
-
-
-
 ### `periodic_flush` [plugins-filters-aggregate-periodic_flush]
 
-* Value type is [boolean](logstash://reference/configuration-file-structure.md#boolean)
+* Value type is [boolean](/lsr/value-types.md#boolean)
 * Default value is `false`
 
 Call the filter flush method at regular interval. Optional.
 
-
 ### `remove_field` [plugins-filters-aggregate-remove_field]
 
-* Value type is [array](logstash://reference/configuration-file-structure.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * Default value is `[]`
 
-If this filter is successful, remove arbitrary fields from this event. Fields names can be dynamic and include parts of the event using the `%{{field}}` Example:
+If this filter is successful, remove arbitrary fields from this event. Fields names can be dynamic and include parts of the event using the %{field} Example:
 
-```json
+```
     filter {
       aggregate {
         remove_field => [ "foo_%{somefield}" ]
@@ -713,7 +677,7 @@ If this filter is successful, remove arbitrary fields from this event. Fields na
     }
 ```
 
-```json
+```
     # You can also remove multiple fields at once:
     filter {
       aggregate {
@@ -724,17 +688,16 @@ If this filter is successful, remove arbitrary fields from this event. Fields na
 
 If the event has field `"somefield" == "hello"` this filter, on success, would remove the field with name `foo_hello` if it is present. The second example would remove an additional, non-dynamic field.
 
-
 ### `remove_tag` [plugins-filters-aggregate-remove_tag]
 
-* Value type is [array](logstash://reference/configuration-file-structure.md#array)
+* Value type is [array](/lsr/value-types.md#array)
 * Default value is `[]`
 
-If this filter is successful, remove arbitrary tags from the event. Tags can be dynamic and include parts of the event using the `%{{field}}` syntax.
+If this filter is successful, remove arbitrary tags from the event. Tags can be dynamic and include parts of the event using the `%{field}` syntax.
 
 Example:
 
-```json
+```
     filter {
       aggregate {
         remove_tag => [ "foo_%{somefield}" ]
@@ -742,7 +705,7 @@ Example:
     }
 ```
 
-```json
+```
     # You can also remove multiple tags at once:
     filter {
       aggregate {
@@ -752,6 +715,3 @@ Example:
 ```
 
 If the event has field `"somefield" == "hello"` this filter, on success, would remove the tag `foo_hello` if it is present. The second example would remove a sad, unwanted tag as well.
-
-
-

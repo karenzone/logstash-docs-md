@@ -3,20 +3,20 @@ mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/input-plugins.html
 ---
 
-# Input plugins [input-plugins]
+# Input plugins
 
 An input plugin enables a specific source of events to be read by Logstash.
 
-For a list of Elastic supported plugins, please consult the [Support Matrix](https://www.elastic.co/support/matrix#show_logstash_plugins).
+The following input plugins are available below. For a list of Elastic supported plugins, please consult the [Support Matrix](https://www.elastic.co/support/matrix#show_logstash_plugins).
 
-|     |     |     |
-| --- | --- | --- |
+
 | Plugin | Description | Github repository |
+|---|---|---|
 | [azure_event_hubs](plugins-inputs-azure_event_hubs.md) | Receives events from Azure Event Hubs | [azure_event_hubs](https://github.com/logstash-plugins/logstash-input-azure_event_hubs) |
 | [beats](plugins-inputs-beats.md) | Receives events from the Elastic Beats framework | [logstash-input-beats](https://github.com/logstash-plugins/logstash-input-beats) |
 | [cloudwatch](plugins-inputs-cloudwatch.md) | Pulls events from the Amazon Web Services CloudWatch API | [logstash-input-cloudwatch](https://github.com/logstash-plugins/logstash-input-cloudwatch) |
-| [couchdb_changes](plugins-inputs-couchdb_changes.md) | Streams events from CouchDB’s `_changes` URI | [logstash-input-couchdb_changes](https://github.com/logstash-plugins/logstash-input-couchdb_changes) |
-| [dead_letter_queue](plugins-inputs-dead_letter_queue.md) | read events from Logstash’s dead letter queue | [logstash-input-dead_letter_queue](https://github.com/logstash-plugins/logstash-input-dead_letter_queue) |
+| [couchdb_changes](plugins-inputs-couchdb_changes.md) | Streams events from CouchDB's `_changes` URI | [logstash-input-couchdb_changes](https://github.com/logstash-plugins/logstash-input-couchdb_changes) |
+| [dead_letter_queue](plugins-inputs-dead_letter_queue.md) | read events from Logstash's dead letter queue | [logstash-input-dead_letter_queue](https://github.com/logstash-plugins/logstash-input-dead_letter_queue) |
 | [elastic_agent](plugins-inputs-elastic_agent.md) | Receives events from the Elastic Agent framework | [logstash-input-beats](https://github.com/logstash-plugins/logstash-input-beats) (shared) |
 | [elastic_serverless_forwarder](plugins-inputs-elastic_serverless_forwarder.md) | Accepts events from Elastic Serverless Forwarder | [logstash-input-elastic_serverless_forwarder](https://github.com/logstash-plugins/logstash-input-elastic_serverless_forwarder) |
 | [elasticsearch](plugins-inputs-elasticsearch.md) | Reads query results from an Elasticsearch cluster | [logstash-input-elasticsearch](https://github.com/logstash-plugins/logstash-input-elasticsearch) |
@@ -41,9 +41,9 @@ For a list of Elastic supported plugins, please consult the [Support Matrix](htt
 | [jmx](plugins-inputs-jmx.md) | Retrieves metrics from remote Java applications over JMX | [logstash-input-jmx](https://github.com/logstash-plugins/logstash-input-jmx) |
 | [kafka](plugins-inputs-kafka.md) | Reads events from a Kafka topic | [logstash-integration-kafka](https://github.com/logstash-plugins/logstash-integration-kafka) |
 | [kinesis](plugins-inputs-kinesis.md) | Receives events through an AWS Kinesis stream | [logstash-input-kinesis](https://github.com/logstash-plugins/logstash-input-kinesis) |
-| [logstash](plugins-inputs-logstash.md) | Reads from {{ls}} output of another {{ls}} instance | [logstash-integration-logstash](https://github.com/logstash-plugins/logstash-integration-logstash) |
 | [log4j](plugins-inputs-log4j.md) | Reads events over a TCP socket from a Log4j `SocketAppender` object | [logstash-input-log4j](https://github.com/logstash-plugins/logstash-input-log4j) |
-| [lumberjack](plugins-inputs-lumberjack.md) | Receives events using the Lumberjack protocol | [logstash-input-lumberjack](https://github.com/logstash-plugins/logstash-input-lumberjack) |
+| [logstash](plugins-inputs-logstash.md) | Reads from {{ls}} output of another {{ls}} instance | [logstash-integration-logstash](https://github.com/logstash-plugins/logstash-integration-logstash) |
+| [lumberjack](plugins-inputs-lumberjack.md) | Receives events using the Lumberjack protocl | [logstash-input-lumberjack](https://github.com/logstash-plugins/logstash-input-lumberjack) |
 | [meetup](plugins-inputs-meetup.md) | Captures the output of command line tools as an event | [logstash-input-meetup](https://github.com/logstash-plugins/logstash-input-meetup) |
 | [pipe](plugins-inputs-pipe.md) | Streams events from a long-running command pipe | [logstash-input-pipe](https://github.com/logstash-plugins/logstash-input-pipe) |
 | [puppet_facter](plugins-inputs-puppet_facter.md) | Receives facts from a Puppet server | [logstash-input-puppet_facter](https://github.com/logstash-plugins/logstash-input-puppet_facter) |
@@ -69,61 +69,3 @@ For a list of Elastic supported plugins, please consult the [Support Matrix](htt
 | [websocket](plugins-inputs-websocket.md) | Reads events from a websocket | [logstash-input-websocket](https://github.com/logstash-plugins/logstash-input-websocket) |
 | [wmi](plugins-inputs-wmi.md) | Creates events based on the results of a WMI query | [logstash-input-wmi](https://github.com/logstash-plugins/logstash-input-wmi) |
 | [xmpp](plugins-inputs-xmpp.md) | Receives events over the XMPP/Jabber protocol | [logstash-input-xmpp](https://github.com/logstash-plugins/logstash-input-xmpp) |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
