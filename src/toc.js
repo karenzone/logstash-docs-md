@@ -118,6 +118,13 @@ function buildToc(type) {
   visit(tocJson, (node) => {
     delete node.navigation_title
     delete node.old_file
+    if (
+      type === 'vpr'
+      && !node.children
+    ) {
+      node.hidden = node.file
+      delete node.file
+    }
   })
   /** Add the index to the beginning of the toc */
   tocJson.children.unshift({ file: 'index.md' })
