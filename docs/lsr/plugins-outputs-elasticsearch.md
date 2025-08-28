@@ -7,9 +7,9 @@ mapped_pages:
 
 # Elasticsearch output plugin
 
-* Plugin version: v12.0.5 ([Other versions](/vpr/output-elasticsearch-index.md))
-* Released on: 2025-07-09
-* [Changelog](https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v12.0.5/CHANGELOG.md)
+* Plugin version: v12.0.6 ([Other versions](/vpr/output-elasticsearch-index.md))
+* Released on: 2025-07-29
+* [Changelog](https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v12.0.6/CHANGELOG.md)
 
 
 

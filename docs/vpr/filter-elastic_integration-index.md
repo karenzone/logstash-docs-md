@@ -10,15 +10,21 @@ This page lists all documentation available for this plugin. To see which plugin
 
 Versioned plugin documentation is not available for plugins released prior to Logstash 6.0.
 
+
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v9.1.1](v9-1-1-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v9.1.0](v9-1-0-plugins-filters-elastic_integration.md) | 2025-07-10 |
+| [v9.0.2](v9-0-2-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v9.0.1](v9-0-1-plugins-filters-elastic_integration.md) | 2025-06-28 |
 | [v9.0.0](v9-0-0-plugins-filters-elastic_integration.md) | 2025-04-28 |
+| [v8.19.1](v8-19-1-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v8.19.0](v8-19-0-plugins-filters-elastic_integration.md) | 2025-07-10 |
+| [v8.18.2](v8-18-2-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v8.18.1](v8-18-1-plugins-filters-elastic_integration.md) | 2025-06-28 |
 | [v8.18.0](v8-18-0-plugins-filters-elastic_integration.md) | 2025-04-17 |
+| [v8.17.3](v8-17-3-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v8.17.2](v8-17-2-plugins-filters-elastic_integration.md) | 2025-06-28 |
 | [v8.17.1](v8-17-1-plugins-filters-elastic_integration.md) | 2025-01-28 |
 | [v8.17.0](v8-17-0-plugins-filters-elastic_integration.md) | 2025-01-08 |
