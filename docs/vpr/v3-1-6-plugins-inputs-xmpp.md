@@ -42,7 +42,7 @@ Also see [Common options](v3-1-6-plugins-inputs-xmpp.md#v3.1.6-plugins-inputs-xm
 * Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
-The xmpp server to connect to. This is optional. If you omit this setting, the host on the user/identity is used. (`foo.com` for `user@foo.com`)
+The xmpp server to connect to. This is optional. If you omit this setting, the host on the user/identity is used. (`example.com` for `user@example.com`)
 
 ### `password` [v3.1.6-plugins-inputs-xmpp-password]
 

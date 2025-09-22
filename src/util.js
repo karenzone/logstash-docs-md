@@ -1,3 +1,5 @@
+import placeholderDomains from '../data/placeholder-domains.js'
+
 /**
  * Clean the Markdown after being processed
  */
@@ -16,6 +18,8 @@ function cleanMarkdown(content) {
   updatedContent = replaceWhitespace(updatedContent)
   /** Don't escape angle brackets for line breaks (used in tables) */
   updatedContent = updatedContent.replace(/\\<br>/g, '<br>')
+  const domainRegex = new RegExp(`(\\W|^)(?:${placeholderDomains.join('|')})\\.(?:co\\.uk|com?|org|edu|gov|net)(\\W|$)`, 'gm')
+  updatedContent = updatedContent.replace(domainRegex, '$1example.com$2')
   return updatedContent
 }
 

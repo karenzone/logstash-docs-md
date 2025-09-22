@@ -159,7 +159,7 @@ Example
 ```
     input {
       elasticsearch {
-        hosts => "es.production.mysite.org"
+        hosts => "es.production.example.com"
         index => "mydata-2018.09.*"
         query => '{ "query": { "query_string": { "query": "*" } } }'
         size => 500
