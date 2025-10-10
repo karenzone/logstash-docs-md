@@ -1,9 +1,10 @@
 ---
+navigation_title: "Output plugins"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/output-plugins.html
 ---
 
-# Output plugins
+# Output plugins for Logstash
 
 An output plugin sends event data to a particular destination. Outputs are the final stage in the event pipeline.
 
