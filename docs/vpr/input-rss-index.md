@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.0.6](v3-0-6-plugins-inputs-rss.md) | 2023-11-03 |
 | [v3.0.5](v3-0-5-plugins-inputs-rss.md) | 2018-04-06 |
 | [v3.0.4](v3-0-4-plugins-inputs-rss.md) | 2017-11-07 |
 | [v3.0.3](v3-0-3-plugins-inputs-rss.md) | 2017-08-16 |

@@ -15,6 +15,8 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.5.0](v3-5-0-plugins-filters-translate.md) | 2025-08-04 |
+| [v3.4.3](v3-4-3-plugins-filters-translate.md) | 2025-07-24 |
 | [v3.4.2](v3-4-2-plugins-filters-translate.md) | 2023-06-14 |
 | [v3.4.1](v3-4-1-plugins-filters-translate.md) | 2023-05-12 |
 | [v3.4.0](v3-4-0-plugins-filters-translate.md) | 2022-06-08 |

@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.0.7](v3-0-7-plugins-outputs-datadog_metrics.md) | 2024-10-25 |
 | [v3.0.6](v3-0-6-plugins-outputs-datadog_metrics.md) | 2024-08-09 |
 | [v3.0.5](v3-0-5-plugins-outputs-datadog_metrics.md) | 2023-05-31 |
 | [v3.0.4](v3-0-4-plugins-outputs-datadog_metrics.md) | 2018-04-06 |

@@ -15,10 +15,13 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v4.3.1](v4-3-1-plugins-filters-elasticsearch.md) | 2025-09-23 |
+| [v4.3.0](v4-3-0-plugins-filters-elasticsearch.md) | 2025-07-21 |
 | [v4.2.0](v4-2-0-plugins-filters-elasticsearch.md) | 2025-05-07 |
 | [v4.1.1](v4-1-1-plugins-filters-elasticsearch.md) | 2025-03-17 |
 | [v4.1.0](v4-1-0-plugins-filters-elasticsearch.md) | 2025-01-23 |
 | [v4.0.0](v4-0-0-plugins-filters-elasticsearch.md) | 2025-01-10 |
+| [v3.19.0](v3-19-0-plugins-filters-elasticsearch.md) | 2025-07-21 |
 | [v3.18.0](v3-18-0-plugins-filters-elasticsearch.md) | 2025-05-07 |
 | [v3.17.1](v3-17-1-plugins-filters-elasticsearch.md) | 2025-03-17 |
 | [v3.17.0](v3-17-0-plugins-filters-elasticsearch.md) | 2025-01-29 |

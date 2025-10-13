@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v0.0.22](v0-0-22-plugins-codecs-nmap.md) | 2022-11-16 |
 | [v0.0.21](v0-0-21-plugins-codecs-nmap.md) | 2017-11-07 |
 | [v0.0.20](v0-0-20-plugins-codecs-nmap.md) | 2017-08-15 |
 | [v0.0.19](v0-0-19-plugins-codecs-nmap.md) | 2017-06-23 |

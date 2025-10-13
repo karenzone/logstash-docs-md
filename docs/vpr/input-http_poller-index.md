@@ -16,6 +16,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | :- | :- |
 | Version | Release Date |
 | [v6.0.0](v6-0-0-plugins-inputs-http_poller.md) | 2024-12-18 |
+| [v5.6.1](v5-6-1-plugins-inputs-http_poller.md) | 2025-03-27 |
 | [v5.6.0](v5-6-0-plugins-inputs-http_poller.md) | 2024-06-19 |
 | [v5.5.1](v5-5-1-plugins-inputs-http_poller.md) | 2023-11-13 |
 | [v5.5.0](v5-5-0-plugins-inputs-http_poller.md) | 2023-09-01 |

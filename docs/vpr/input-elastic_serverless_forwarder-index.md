@@ -15,6 +15,8 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v2.0.0](v2-0-0-plugins-inputs-elastic_serverless_forwarder.md) | 2024-12-23 |
+| [v1.0.0](v1-0-0-plugins-inputs-elastic_serverless_forwarder.md) | 2024-12-18 |
 | [v0.1.5](v0-1-5-plugins-inputs-elastic_serverless_forwarder.md) | 2024-09-12 |
 | [v0.1.4](v0-1-4-plugins-inputs-elastic_serverless_forwarder.md) | 2023-11-13 |
 | [v0.1.3](v0-1-3-plugins-inputs-elastic_serverless_forwarder.md) | 2023-09-14 |

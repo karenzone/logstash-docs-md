@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.5.8](v3-5-8-plugins-filters-mutate.md) | 2023-11-22 |
 | [v3.5.7](v3-5-7-plugins-filters-mutate.md) | 2023-05-11 |
 | [v3.5.6](v3-5-6-plugins-filters-mutate.md) | 2021-12-02 |
 | [v3.5.5](v3-5-5-plugins-filters-mutate.md) | 2021-11-05 |

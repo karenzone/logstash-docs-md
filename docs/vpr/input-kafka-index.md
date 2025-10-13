@@ -15,6 +15,8 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v11.7.0](v11-7-0-plugins-inputs-kafka.md) | 2025-10-03 |
+| [v11.6.4](v11-6-4-plugins-inputs-kafka.md) | 2025-08-28 |
 | [v11.6.3](v11-6-3-plugins-inputs-kafka.md) | 2025-06-12 |
 | [v11.6.2](v11-6-2-plugins-inputs-kafka.md) | 2025-05-21 |
 | [v11.6.1](v11-6-1-plugins-inputs-kafka.md) | 2025-05-08 |

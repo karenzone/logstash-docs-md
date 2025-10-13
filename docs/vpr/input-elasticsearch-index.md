@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v5.2.1](v5-2-1-plugins-inputs-elasticsearch.md) | 2025-09-23 |
 | [v5.2.0](v5-2-0-plugins-inputs-elasticsearch.md) | 2025-06-06 |
 | [v5.1.0](v5-1-0-plugins-inputs-elasticsearch.md) | 2025-04-07 |
 | [v5.0.2](v5-0-2-plugins-inputs-elasticsearch.md) | 2025-03-17 |

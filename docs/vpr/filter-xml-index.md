@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v4.3.2](v4-3-2-plugins-filters-xml.md) | 2025-07-24 |
 | [v4.3.1](v4-3-1-plugins-filters-xml.md) | 2025-04-22 |
 | [v4.3.0](v4-3-0-plugins-filters-xml.md) | 2025-02-19 |
 | [v4.2.1](v4-2-1-plugins-filters-xml.md) | 2024-10-29 |

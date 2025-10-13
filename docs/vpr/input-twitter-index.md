@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v4.1.1](v4-1-1-plugins-inputs-twitter.md) | 2023-11-16 |
 | [v4.1.0](v4-1-0-plugins-inputs-twitter.md) | 2021-11-18 |
 | [v4.0.3](v4-0-3-plugins-inputs-twitter.md) | 2020-10-06 |
 | [v4.0.2](v4-0-2-plugins-inputs-twitter.md) | 2020-10-05 |

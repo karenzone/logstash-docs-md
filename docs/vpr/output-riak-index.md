@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.0.5](v3-0-5-plugins-outputs-riak.md) | 2019-10-09 |
 | [v3.0.4](v3-0-4-plugins-outputs-riak.md) | 2018-04-06 |
 | [v3.0.3](v3-0-3-plugins-outputs-riak.md) | 2017-11-13 |
 | [v3.0.2](v3-0-2-plugins-outputs-riak.md) | 2017-08-16 |

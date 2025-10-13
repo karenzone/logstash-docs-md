@@ -15,6 +15,9 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.2.2](v3-2-2-plugins-codecs-json_lines.md) | 2024-09-06 |
+| [v3.2.1](v3-2-1-plugins-codecs-json_lines.md) | 2024-09-05 |
+| [v3.2.0](v3-2-0-plugins-codecs-json_lines.md) | 2024-08-29 |
 | [v3.1.0](v3-1-0-plugins-codecs-json_lines.md) | 2021-07-01 |
 | [v3.0.6](v3-0-6-plugins-codecs-json_lines.md) | 2018-03-22 |
 | [v3.0.5](v3-0-5-plugins-codecs-json_lines.md) | 2017-11-07 |

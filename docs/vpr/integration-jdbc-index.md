@@ -15,6 +15,8 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v5.6.1](v5-6-1-plugins-integrations-jdbc.md) | 2025-09-30 |
+| [v5.6.0](v5-6-0-plugins-integrations-jdbc.md) | 2025-05-30 |
 | [v5.5.3](v5-5-3-plugins-integrations-jdbc.md) | 2025-03-07 |
 | [v5.5.2](v5-5-2-plugins-integrations-jdbc.md) | 2024-12-23 |
 | [v5.5.1](v5-5-1-plugins-integrations-jdbc.md) | 2024-12-03 |

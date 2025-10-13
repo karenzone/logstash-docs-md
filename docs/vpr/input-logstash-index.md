@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v1.0.4](v1-0-4-plugins-inputs-logstash.md) | 2024-12-10 |
 | [v1.0.3](v1-0-3-plugins-inputs-logstash.md) | 2024-09-12 |
 | [v1.0.2](v1-0-2-plugins-inputs-logstash.md) | 2024-01-23 |
 | [v1.0.1](v1-0-1-plugins-inputs-logstash.md) | 2023-11-16 |

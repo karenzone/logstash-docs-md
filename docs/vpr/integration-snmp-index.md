@@ -15,6 +15,9 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v4.2.0](v4-2-0-plugins-integrations-snmp.md) | 2025-10-07 |
+| [v4.1.0](v4-1-0-plugins-integrations-snmp.md) | 2025-08-18 |
+| [v4.0.7](v4-0-7-plugins-integrations-snmp.md) | 2025-07-17 |
 | [v4.0.6](v4-0-6-plugins-integrations-snmp.md) | 2025-01-23 |
 | [v4.0.5](v4-0-5-plugins-integrations-snmp.md) | 2025-01-06 |
 | [v4.0.4](v4-0-4-plugins-integrations-snmp.md) | 2024-07-08 |

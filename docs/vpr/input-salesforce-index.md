@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.3.0](v3-3-0-plugins-inputs-salesforce.md) | 2025-05-14 |
 | [v3.2.1](v3-2-1-plugins-inputs-salesforce.md) | 2023-05-30 |
 | [v3.2.0](v3-2-0-plugins-inputs-salesforce.md) | 2021-12-07 |
 | [v3.1.0](v3-1-0-plugins-inputs-salesforce.md) | 2021-11-11 |

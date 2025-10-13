@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v1.5.2](v1-5-2-plugins-inputs-azure_event_hubs.md) | 2025-07-11 |
 | [v1.5.1](v1-5-1-plugins-inputs-azure_event_hubs.md) | 2025-01-03 |
 | [v1.5.0](v1-5-0-plugins-inputs-azure_event_hubs.md) | 2024-10-25 |
 | [v1.4.9](v1-4-9-plugins-inputs-azure_event_hubs.md) | 2024-10-02 |

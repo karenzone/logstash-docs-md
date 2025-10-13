@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.0.11](v3-0-11-plugins-outputs-csv.md) | 2025-10-10 |
 | [v3.0.10](v3-0-10-plugins-outputs-csv.md) | 2023-12-19 |
 | [v3.0.9](v3-0-9-plugins-outputs-csv.md) | 2023-06-14 |
 | [v3.0.8](v3-0-8-plugins-outputs-csv.md) | 2020-01-14 |

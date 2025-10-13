@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.3.1](v3-3-1-plugins-inputs-jms.md) | 2025-09-08 |
 | [v3.3.0](v3-3-0-plugins-inputs-jms.md) | 2025-03-07 |
 | [v3.2.2](v3-2-2-plugins-inputs-jms.md) | 2022-06-13 |
 | [v3.2.1](v3-2-1-plugins-inputs-jms.md) | 2022-01-25 |
