@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.1.0"
+navigation_title: v1.1.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.1.0-plugins-inputs-google_pubsub.html
+applies_to:
+  stack: ga
 ---
 
 # Google_pubsub input plugin v1.1.0 [v1.1.0-plugins-inputs-google_pubsub]

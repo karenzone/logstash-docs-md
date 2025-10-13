@@ -2,6 +2,8 @@
 navigation_title: meetup
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-meetup.html
+applies_to:
+  stack: ga
 
 ---
 

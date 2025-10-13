@@ -2,6 +2,8 @@
 navigation_title: de_dot
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-de_dot.html
+applies_to:
+  stack: ga
 
 ---
 

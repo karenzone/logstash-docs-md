@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.2.10"
+navigation_title: v7.2.10
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.2.10-plugins-filters-geoip.html
+applies_to:
+  stack: ga
 ---
 
 # Geoip filter plugin v7.2.10 [v7.2.10-plugins-filters-geoip]

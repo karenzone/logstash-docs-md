@@ -1,7 +1,9 @@
 ---
-navigation_title: "fluent"
+navigation_title: fluent
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-fluent-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned fluent codec plugin docs [codec-fluent-index]

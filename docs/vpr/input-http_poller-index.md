@@ -1,7 +1,9 @@
 ---
-navigation_title: "http_poller"
+navigation_title: http_poller
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-http_poller-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned http_poller input plugin docs [input-http_poller-index]

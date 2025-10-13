@@ -1,7 +1,9 @@
 ---
-navigation_title: "wmi"
+navigation_title: wmi
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-wmi-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned wmi input plugin docs [input-wmi-index]

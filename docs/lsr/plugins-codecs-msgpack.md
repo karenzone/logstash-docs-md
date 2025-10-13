@@ -2,6 +2,8 @@
 navigation_title: msgpack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-msgpack.html
+applies_to:
+  stack: ga
 
 ---
 

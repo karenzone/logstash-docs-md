@@ -2,6 +2,8 @@
 navigation_title: "Output plugins"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Output plugins for Logstash

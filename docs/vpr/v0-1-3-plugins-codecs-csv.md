@@ -1,7 +1,9 @@
 ---
-navigation_title: "v0.1.3"
+navigation_title: v0.1.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v0.1.3-plugins-codecs-csv.html
+applies_to:
+  stack: ga
 ---
 
 # Csv codec plugin v0.1.3 [v0.1.3-plugins-codecs-csv]

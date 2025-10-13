@@ -1,7 +1,9 @@
 ---
-navigation_title: "unique"
+navigation_title: unique
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-unique-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned unique filter plugin docs [filter-unique-index]

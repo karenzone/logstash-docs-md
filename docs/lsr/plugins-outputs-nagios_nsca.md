@@ -2,6 +2,8 @@
 navigation_title: nagios_nsca
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-nagios_nsca.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -2,6 +2,8 @@
 navigation_title: translate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-translate.html
+applies_to:
+  stack: ga
 
 ---
 

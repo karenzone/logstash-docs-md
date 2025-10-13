@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.2.0"
+navigation_title: v7.2.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.2.0-plugins-inputs-rabbitmq.html
+applies_to:
+  stack: ga
 ---
 
 # Rabbitmq input plugin v7.2.0 [v7.2.0-plugins-inputs-rabbitmq]

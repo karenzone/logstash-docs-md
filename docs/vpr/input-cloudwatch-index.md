@@ -1,7 +1,9 @@
 ---
-navigation_title: "cloudwatch"
+navigation_title: cloudwatch
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-cloudwatch-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned cloudwatch input plugin docs [input-cloudwatch-index]

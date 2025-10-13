@@ -2,6 +2,8 @@
 navigation_title: tld
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-tld.html
+applies_to:
+  stack: ga
 
 ---
 

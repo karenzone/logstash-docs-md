@@ -1,7 +1,9 @@
 ---
-navigation_title: "timber"
+navigation_title: timber
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-timber-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned timber output plugin docs [output-timber-index]

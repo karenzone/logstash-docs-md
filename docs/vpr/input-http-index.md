@@ -1,7 +1,9 @@
 ---
-navigation_title: "http"
+navigation_title: http
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-http-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned http input plugin docs [input-http-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "dots"
+navigation_title: dots
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-dots-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned dots codec plugin docs [codec-dots-index]

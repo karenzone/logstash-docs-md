@@ -1,7 +1,9 @@
 ---
-navigation_title: "yaml"
+navigation_title: yaml
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-yaml-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned yaml filter plugin docs [filter-yaml-index]

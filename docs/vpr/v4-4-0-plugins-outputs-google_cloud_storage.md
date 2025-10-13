@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.4.0"
+navigation_title: v4.4.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.4.0-plugins-outputs-google_cloud_storage.html
+applies_to:
+  stack: ga
 ---
 
 # Google Cloud Storage output plugin v4.4.0 [v4.4.0-plugins-outputs-google_cloud_storage]

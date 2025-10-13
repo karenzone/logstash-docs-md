@@ -2,6 +2,8 @@
 navigation_title: netflow
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-netflow.html
+applies_to:
+  stack: ga
 
 ---
 

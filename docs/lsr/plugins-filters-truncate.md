@@ -2,6 +2,8 @@
 navigation_title: truncate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-truncate.html
+applies_to:
+  stack: ga
 
 ---
 

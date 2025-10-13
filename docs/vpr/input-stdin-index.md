@@ -1,7 +1,9 @@
 ---
-navigation_title: "stdin"
+navigation_title: stdin
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-stdin-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned stdin input plugin docs [input-stdin-index]

@@ -2,6 +2,8 @@
 navigation_title: lumberjack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-lumberjack.html
+applies_to:
+  stack: ga
 
 ---
 

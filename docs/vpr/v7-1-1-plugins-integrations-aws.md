@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.1.1"
+navigation_title: v7.1.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.1.1-plugins-integrations-aws.html
+applies_to:
+  stack: ga
 ---
 
 # AWS Integration Plugin v7.1.1 [v7.1.1-plugins-integrations-aws]

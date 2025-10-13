@@ -2,6 +2,8 @@
 navigation_title: unix
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-unix.html
+applies_to:
+  stack: ga
 
 ---
 

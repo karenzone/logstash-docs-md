@@ -1,7 +1,9 @@
 ---
-navigation_title: "neo4j"
+navigation_title: neo4j
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-neo4j-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned neo4j output plugin docs [output-neo4j-index]

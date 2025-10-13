@@ -2,6 +2,8 @@
 navigation_title: syslog_pri
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-syslog_pri.html
+applies_to:
+  stack: ga
 
 ---
 

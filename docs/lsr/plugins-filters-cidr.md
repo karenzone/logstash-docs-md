@@ -2,6 +2,8 @@
 navigation_title: cidr
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-cidr.html
+applies_to:
+  stack: ga
 
 ---
 

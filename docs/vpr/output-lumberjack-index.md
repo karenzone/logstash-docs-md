@@ -1,7 +1,9 @@
 ---
-navigation_title: "lumberjack"
+navigation_title: lumberjack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-lumberjack-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned lumberjack output plugin docs [output-lumberjack-index]

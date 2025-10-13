@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.1.0"
+navigation_title: v5.1.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.1.0-plugins-outputs-sqs.html
+applies_to:
+  stack: ga
 ---
 
 # Sqs output plugin v5.1.0 [v5.1.0-plugins-outputs-sqs]

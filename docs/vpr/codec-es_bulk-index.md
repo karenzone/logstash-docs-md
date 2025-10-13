@@ -1,7 +1,9 @@
 ---
-navigation_title: "es_bulk"
+navigation_title: es_bulk
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-es_bulk-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned es_bulk codec plugin docs [codec-es_bulk-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.2.5"
+navigation_title: v3.2.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.2.5-plugins-inputs-stdin.html
+applies_to:
+  stack: ga
 ---
 
 # Stdin input plugin v3.2.5 [v3.2.5-plugins-inputs-stdin]

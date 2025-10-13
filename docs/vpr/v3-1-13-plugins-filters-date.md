@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.1.13"
+navigation_title: v3.1.13
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.1.13-plugins-filters-date.html
+applies_to:
+  stack: ga
 ---
 
 # Date filter plugin v3.1.13 [v3.1.13-plugins-filters-date]

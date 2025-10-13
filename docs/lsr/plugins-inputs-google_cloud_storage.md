@@ -2,6 +2,8 @@
 navigation_title: google_cloud_storage
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-google_cloud_storage.html
+applies_to:
+  stack: ga
 
 ---
 

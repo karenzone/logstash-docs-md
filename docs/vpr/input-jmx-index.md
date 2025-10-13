@@ -1,7 +1,9 @@
 ---
-navigation_title: "jmx"
+navigation_title: jmx
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-jmx-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jmx input plugin docs [input-jmx-index]

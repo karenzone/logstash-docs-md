@@ -1,7 +1,9 @@
 ---
-navigation_title: "sleep"
+navigation_title: sleep
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-sleep-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned sleep filter plugin docs [filter-sleep-index]

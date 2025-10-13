@@ -1,7 +1,9 @@
 ---
-navigation_title: "drop"
+navigation_title: drop
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-drop-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned drop filter plugin docs [filter-drop-index]

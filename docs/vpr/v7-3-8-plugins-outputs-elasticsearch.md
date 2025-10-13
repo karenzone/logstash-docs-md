@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.3.8"
+navigation_title: v7.3.8
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.3.8-plugins-outputs-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch output plugin v7.3.8 [v7.3.8-plugins-outputs-elasticsearch]

@@ -2,6 +2,8 @@
 navigation_title: s3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-s3.html
+applies_to:
+  stack: ga
 
 ---
 

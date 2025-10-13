@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.3.5"
+navigation_title: v3.3.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.3.5-plugins-filters-useragent.html
+applies_to:
+  stack: ga
 ---
 
 # Useragent filter plugin v3.3.5 [v3.3.5-plugins-filters-useragent]

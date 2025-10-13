@@ -2,6 +2,8 @@
 navigation_title: syslog
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-syslog.html
+applies_to:
+  stack: ga
 
 ---
 

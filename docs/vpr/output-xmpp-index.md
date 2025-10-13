@@ -1,7 +1,9 @@
 ---
-navigation_title: "xmpp"
+navigation_title: xmpp
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-xmpp-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned xmpp output plugin docs [output-xmpp-index]

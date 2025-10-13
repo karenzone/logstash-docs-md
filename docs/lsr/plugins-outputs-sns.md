@@ -2,6 +2,8 @@
 navigation_title: sns
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-sns.html
+applies_to:
+  stack: ga
 
 ---
 

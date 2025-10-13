@@ -1,7 +1,9 @@
 ---
-navigation_title: "elasticsearch"
+navigation_title: elasticsearch
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-elasticsearch-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elasticsearch filter plugin docs [filter-elasticsearch-index]

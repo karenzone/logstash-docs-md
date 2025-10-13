@@ -1,7 +1,9 @@
 ---
-navigation_title: "imap"
+navigation_title: imap
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-imap-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned imap input plugin docs [input-imap-index]

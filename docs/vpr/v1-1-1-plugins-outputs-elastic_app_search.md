@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.1.1"
+navigation_title: v1.1.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.1.1-plugins-outputs-elastic_app_search.html
+applies_to:
+  stack: ga
 ---
 
 # App Search output plugin v1.1.1 [v1.1.1-plugins-outputs-elastic_app_search]

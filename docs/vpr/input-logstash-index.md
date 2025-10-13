@@ -1,7 +1,9 @@
 ---
-navigation_title: "logstash"
+navigation_title: logstash
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-logstash-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned logstash input plugin docs [input-logstash-index]

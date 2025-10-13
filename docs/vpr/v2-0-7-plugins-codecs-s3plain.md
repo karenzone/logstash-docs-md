@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.7"
+navigation_title: v2.0.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.7-plugins-codecs-s3plain.html
+applies_to:
+  stack: ga
 ---
 
 # S3plain [v2.0.7-plugins-codecs-s3plain]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.3"
+navigation_title: v2.0.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.3-plugins-outputs-slack.html
+applies_to:
+  stack: ga
 ---
 
 # Slack output plugin v2.0.3 [v2.0.3-plugins-outputs-slack]

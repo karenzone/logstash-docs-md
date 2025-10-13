@@ -2,6 +2,8 @@
 navigation_title: pipe
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-pipe.html
+applies_to:
+  stack: ga
 
 ---
 

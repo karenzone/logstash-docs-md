@@ -1,7 +1,9 @@
 ---
-navigation_title: "cloudtrail"
+navigation_title: cloudtrail
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-cloudtrail-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned cloudtrail codec plugin docs [codec-cloudtrail-index]

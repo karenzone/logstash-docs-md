@@ -2,6 +2,8 @@
 navigation_title: google_pubsub
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-google_pubsub.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.5.3"
+navigation_title: v5.5.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.5.3-plugins-inputs-jdbc.html
+applies_to:
+  stack: ga
 ---
 
 # Jdbc input plugin v5.5.3 [v5.5.3-plugins-inputs-jdbc]

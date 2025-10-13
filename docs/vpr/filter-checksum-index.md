@@ -1,7 +1,9 @@
 ---
-navigation_title: "checksum"
+navigation_title: checksum
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-checksum-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned checksum filter plugin docs [filter-checksum-index]

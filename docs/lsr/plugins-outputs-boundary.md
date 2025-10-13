@@ -2,6 +2,8 @@
 navigation_title: boundary
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-boundary.html
+applies_to:
+  stack: ga
 
 ---
 

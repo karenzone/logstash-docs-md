@@ -2,6 +2,8 @@
 navigation_title: websocket
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-websocket.html
+applies_to:
+  stack: ga
 
 ---
 

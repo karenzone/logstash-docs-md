@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.7"
+navigation_title: v2.0.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.7-plugins-inputs-zenoss.html
+applies_to:
+  stack: ga
 ---
 
 # Zenoss input plugin v2.0.7 [v2.0.7-plugins-inputs-zenoss]

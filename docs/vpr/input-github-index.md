@@ -1,7 +1,9 @@
 ---
-navigation_title: "github"
+navigation_title: github
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-github-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned github input plugin docs [input-github-index]

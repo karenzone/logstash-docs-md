@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.4.10"
+navigation_title: v5.4.10
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.4.10-plugins-filters-jdbc_streaming.html
+applies_to:
+  stack: ga
 ---
 
 # Jdbc_streaming filter plugin v5.4.10 [v5.4.10-plugins-filters-jdbc_streaming]

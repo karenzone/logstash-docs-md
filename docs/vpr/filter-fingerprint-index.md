@@ -1,7 +1,9 @@
 ---
-navigation_title: "fingerprint"
+navigation_title: fingerprint
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-fingerprint-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned fingerprint filter plugin docs [filter-fingerprint-index]

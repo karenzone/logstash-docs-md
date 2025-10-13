@@ -1,7 +1,9 @@
 ---
-navigation_title: "metricize"
+navigation_title: metricize
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-metricize-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned metricize filter plugin docs [filter-metricize-index]

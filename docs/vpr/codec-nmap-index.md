@@ -1,7 +1,9 @@
 ---
-navigation_title: "nmap"
+navigation_title: nmap
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-nmap-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned nmap codec plugin docs [codec-nmap-index]

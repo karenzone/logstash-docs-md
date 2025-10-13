@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.0.2"
+navigation_title: v7.0.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.0.2-plugins-inputs-beats.html
+applies_to:
+  stack: ga
 ---
 
 # Beats input plugin v7.0.2 [v7.0.2-plugins-inputs-beats]

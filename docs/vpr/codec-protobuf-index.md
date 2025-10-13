@@ -1,7 +1,9 @@
 ---
-navigation_title: "protobuf"
+navigation_title: protobuf
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-protobuf-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned protobuf codec plugin docs [codec-protobuf-index]

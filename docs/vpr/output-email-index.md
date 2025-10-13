@@ -1,7 +1,9 @@
 ---
-navigation_title: "email"
+navigation_title: email
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-email-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned email output plugin docs [output-email-index]

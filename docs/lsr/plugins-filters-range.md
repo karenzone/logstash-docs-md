@@ -2,6 +2,8 @@
 navigation_title: range
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-range.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -1,7 +1,9 @@
 ---
-navigation_title: "opentsdb"
+navigation_title: opentsdb
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-opentsdb-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned opentsdb output plugin docs [output-opentsdb-index]

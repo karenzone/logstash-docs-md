@@ -9,6 +9,8 @@ export function introPages(type, versionData) {
   content += '---\n'
   content += 'mapped_pages:\n'
   content += `  - https://www.elastic.co/guide/en/logstash/current/${id}.html\n`
+  content += `applies_to:\n`
+  content += `  stack: ga\n`
   content += '---\n'
   content += '\n'
   content += `# ${title}\n`

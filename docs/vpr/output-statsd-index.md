@@ -1,7 +1,9 @@
 ---
-navigation_title: "statsd"
+navigation_title: statsd
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-statsd-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned statsd output plugin docs [output-statsd-index]

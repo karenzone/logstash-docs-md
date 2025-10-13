@@ -1,7 +1,9 @@
 ---
-navigation_title: "graphite"
+navigation_title: graphite
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-graphite-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned graphite input plugin docs [input-graphite-index]

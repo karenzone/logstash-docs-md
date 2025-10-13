@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.2"
+navigation_title: v2.0.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.2-plugins-inputs-journald.html
+applies_to:
+  stack: ga
 ---
 
 # Journald input plugin v2.0.2 [v2.0.2-plugins-inputs-journald]

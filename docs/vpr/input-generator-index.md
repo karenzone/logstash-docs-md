@@ -1,7 +1,9 @@
 ---
-navigation_title: "generator"
+navigation_title: generator
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-generator-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned generator input plugin docs [input-generator-index]

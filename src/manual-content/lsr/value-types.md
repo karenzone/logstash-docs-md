@@ -1,3 +1,8 @@
+---
+applies_to:
+  stack: ga
+---
+
 # Plugin value types [plugin-value-types]
 
 A plugin can require that the value for a setting be a certain type, such as boolean, list, or hash. These value types are supported.

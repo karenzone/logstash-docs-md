@@ -2,6 +2,8 @@
 navigation_title: aggregate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-aggregate.html
+applies_to:
+  stack: ga
 
 ---
 

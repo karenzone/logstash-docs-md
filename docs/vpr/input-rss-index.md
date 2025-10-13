@@ -1,7 +1,9 @@
 ---
-navigation_title: "rss"
+navigation_title: rss
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-rss-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned rss input plugin docs [input-rss-index]

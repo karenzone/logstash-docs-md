@@ -2,6 +2,8 @@
 navigation_title: useragent
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-useragent.html
+applies_to:
+  stack: ga
 
 ---
 

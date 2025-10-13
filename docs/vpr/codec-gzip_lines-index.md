@@ -1,7 +1,9 @@
 ---
-navigation_title: "gzip_lines"
+navigation_title: gzip_lines
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-gzip_lines-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned gzip_lines codec plugin docs [codec-gzip_lines-index]

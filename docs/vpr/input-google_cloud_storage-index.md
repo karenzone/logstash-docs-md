@@ -1,7 +1,9 @@
 ---
-navigation_title: "google_cloud_storage"
+navigation_title: google_cloud_storage
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-google_cloud_storage-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned google_cloud_storage input plugin docs [input-google_cloud_storage-index]

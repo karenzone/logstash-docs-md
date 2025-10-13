@@ -1,7 +1,9 @@
 ---
-navigation_title: "uuid"
+navigation_title: uuid
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-uuid-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned uuid filter plugin docs [filter-uuid-index]

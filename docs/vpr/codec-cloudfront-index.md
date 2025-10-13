@@ -1,7 +1,9 @@
 ---
-navigation_title: "cloudfront"
+navigation_title: cloudfront
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-cloudfront-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned cloudfront codec plugin docs [codec-cloudfront-index]

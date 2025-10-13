@@ -1,7 +1,9 @@
 ---
-navigation_title: "v6.0.10"
+navigation_title: v6.0.10
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v6.0.10-plugins-inputs-tcp.html
+applies_to:
+  stack: ga
 ---
 
 # Tcp input plugin v6.0.10 [v6.0.10-plugins-inputs-tcp]

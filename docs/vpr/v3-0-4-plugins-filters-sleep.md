@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.4"
+navigation_title: v3.0.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.4-plugins-filters-sleep.html
+applies_to:
+  stack: ga
 ---
 
 # Sleep filter plugin v3.0.4 [v3.0.4-plugins-filters-sleep]

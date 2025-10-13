@@ -2,6 +2,8 @@
 navigation_title: twitter
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-twitter.html
+applies_to:
+  stack: ga
 
 ---
 

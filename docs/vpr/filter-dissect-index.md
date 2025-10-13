@@ -1,7 +1,9 @@
 ---
-navigation_title: "dissect"
+navigation_title: dissect
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-dissect-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned dissect filter plugin docs [filter-dissect-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "Codec plugins"
+navigation_title: Codec plugins
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Codec plugins [codec-plugins]

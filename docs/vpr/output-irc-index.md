@@ -1,7 +1,9 @@
 ---
-navigation_title: "irc"
+navigation_title: irc
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-irc-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned irc output plugin docs [output-irc-index]

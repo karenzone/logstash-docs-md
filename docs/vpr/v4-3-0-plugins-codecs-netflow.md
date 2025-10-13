@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.3.0"
+navigation_title: v4.3.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.3.0-plugins-codecs-netflow.html
+applies_to:
+  stack: ga
 ---
 
 # Netflow codec plugin v4.3.0 [v4.3.0-plugins-codecs-netflow]

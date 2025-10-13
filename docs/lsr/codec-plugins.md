@@ -1,6 +1,8 @@
 ---
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/codec-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Codec plugins

@@ -1,7 +1,9 @@
 ---
-navigation_title: "zeromq"
+navigation_title: zeromq
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-zeromq-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned zeromq output plugin docs [output-zeromq-index]

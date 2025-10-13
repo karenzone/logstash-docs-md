@@ -1,7 +1,9 @@
 ---
-navigation_title: "graphtastic"
+navigation_title: graphtastic
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-graphtastic-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned graphtastic output plugin docs [output-graphtastic-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.2.0"
+navigation_title: v3.2.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.2.0-plugins-outputs-statsd.html
+applies_to:
+  stack: ga
 ---
 
 # Statsd output plugin v3.2.0 [v3.2.0-plugins-outputs-statsd]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.4.2"
+navigation_title: v4.4.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.4.2-plugins-inputs-file.html
+applies_to:
+  stack: ga
 ---
 
 # File input plugin v4.4.2 [v4.4.2-plugins-inputs-file]

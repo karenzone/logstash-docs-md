@@ -2,6 +2,8 @@
 navigation_title: es_bulk
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-es_bulk.html
+applies_to:
+  stack: ga
 
 ---
 

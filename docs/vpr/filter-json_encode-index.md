@@ -1,7 +1,9 @@
 ---
-navigation_title: "json_encode"
+navigation_title: json_encode
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-json_encode-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned json_encode filter plugin docs [filter-json_encode-index]

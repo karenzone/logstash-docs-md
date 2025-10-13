@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.4"
+navigation_title: v4.0.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.4-plugins-outputs-sns.html
+applies_to:
+  stack: ga
 ---
 
 # Sns output plugin v4.0.4 [v4.0.4-plugins-outputs-sns]

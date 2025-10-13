@@ -1,7 +1,9 @@
 ---
-navigation_title: "journald"
+navigation_title: journald
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-journald-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned journald input plugin docs [input-journald-index]

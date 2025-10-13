@@ -1,7 +1,9 @@
 ---
-navigation_title: "i18n"
+navigation_title: i18n
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-i18n-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned i18n filter plugin docs [filter-i18n-index]

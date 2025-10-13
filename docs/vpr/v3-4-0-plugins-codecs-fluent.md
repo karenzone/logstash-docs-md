@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.4.0"
+navigation_title: v3.4.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.4.0-plugins-codecs-fluent.html
+applies_to:
+  stack: ga
 ---
 
 # Fluent codec plugin v3.4.0 [v3.4.0-plugins-codecs-fluent]

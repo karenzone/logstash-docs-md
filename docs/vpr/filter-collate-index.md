@@ -1,7 +1,9 @@
 ---
-navigation_title: "collate"
+navigation_title: collate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-collate-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned collate filter plugin docs [filter-collate-index]

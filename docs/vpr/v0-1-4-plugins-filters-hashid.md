@@ -1,7 +1,9 @@
 ---
-navigation_title: "v0.1.4"
+navigation_title: v0.1.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v0.1.4-plugins-filters-hashid.html
+applies_to:
+  stack: ga
 ---
 
 # Hashid filter plugin v0.1.4 [v0.1.4-plugins-filters-hashid]

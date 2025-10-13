@@ -1,7 +1,9 @@
 ---
-navigation_title: "mongodb"
+navigation_title: mongodb
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-mongodb-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned mongodb output plugin docs [output-mongodb-index]

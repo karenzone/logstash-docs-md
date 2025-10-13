@@ -2,6 +2,8 @@
 navigation_title: log4j
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-log4j.html
+applies_to:
+  stack: ga
 
 ---
 

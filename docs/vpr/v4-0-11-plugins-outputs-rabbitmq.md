@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.11"
+navigation_title: v4.0.11
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.11-plugins-outputs-rabbitmq.html
+applies_to:
+  stack: ga
 ---
 
 # Rabbitmq output plugin v4.0.11 [v4.0.11-plugins-outputs-rabbitmq]

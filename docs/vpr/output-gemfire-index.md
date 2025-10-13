@@ -1,7 +1,9 @@
 ---
-navigation_title: "gemfire"
+navigation_title: gemfire
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-gemfire-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned gemfire output plugin docs [output-gemfire-index]

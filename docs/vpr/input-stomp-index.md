@@ -1,7 +1,9 @@
 ---
-navigation_title: "stomp"
+navigation_title: stomp
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-stomp-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned stomp input plugin docs [input-stomp-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "datadog_metrics"
+navigation_title: datadog_metrics
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-datadog_metrics-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned datadog_metrics output plugin docs [output-datadog_metrics-index]

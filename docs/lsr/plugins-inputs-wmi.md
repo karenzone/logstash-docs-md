@@ -2,6 +2,8 @@
 navigation_title: wmi
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-wmi.html
+applies_to:
+  stack: ga
 
 ---
 

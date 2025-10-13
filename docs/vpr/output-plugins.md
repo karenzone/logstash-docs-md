@@ -1,7 +1,9 @@
 ---
-navigation_title: "Output plugins"
+navigation_title: Output plugins
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned output plugins for Logstash  [output-plugins]

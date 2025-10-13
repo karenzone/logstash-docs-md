@@ -2,6 +2,8 @@
 navigation_title: http_poller
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-http_poller.html
+applies_to:
+  stack: ga
 
 ---
 

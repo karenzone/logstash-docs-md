@@ -11,6 +11,7 @@ import { visit } from 'unist-util-visit'
 import { cleanHtml } from './clean-html.js'
 import { getToc } from '../toc.js'
 import { cleanMarkdown } from '../util.js'
+import yaml from 'yaml'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -80,6 +81,7 @@ export async function generateVprFiles() {
  * Build out the frontmatter needed by docs-builder
  */
 function buildFrontmatter(toc, bookId, basename, newFilename) {
+  const frontmatterObj = {}
   let navigationTitle = ''
   /**
    * Go through the toc data, find the page,
@@ -87,10 +89,16 @@ function buildFrontmatter(toc, bookId, basename, newFilename) {
    * as the `navigation_title`
    */
   visit(toc, (node) => {
-    if (node.file === newFilename) navigationTitle = `\nnavigation_title: "${node.navigation_title}"`
+    if (node.file === newFilename) {
+      frontmatterObj['navigation_title'] = node.navigation_title
+    }
   })
-  /** Add mapped pages */
-  const mapped_pages = `\nmapped_pages:\n  - https://www.elastic.co/guide/en/${bookId}/current/${basename}.html`
-  const frontmatter = `---${navigationTitle}${mapped_pages}\n---`
-  return frontmatter
+  /** Add mapped_pages */
+  frontmatterObj['mapped_pages'] = [
+    `https://www.elastic.co/guide/en/${bookId}/current/${basename}.html`
+  ]
+  /** Add applies_to */
+  frontmatterObj['applies_to'] = {}
+  frontmatterObj['applies_to']['stack'] = 'ga'
+  return `---\n${yaml.stringify(frontmatterObj)}---`
 }

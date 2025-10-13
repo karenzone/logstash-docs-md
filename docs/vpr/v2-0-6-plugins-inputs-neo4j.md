@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.6"
+navigation_title: v2.0.6
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.6-plugins-inputs-neo4j.html
+applies_to:
+  stack: ga
 ---
 
 # Neo4j input plugin v2.0.6 [v2.0.6-plugins-inputs-neo4j]

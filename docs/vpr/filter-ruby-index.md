@@ -1,7 +1,9 @@
 ---
-navigation_title: "ruby"
+navigation_title: ruby
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-ruby-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned ruby filter plugin docs [filter-ruby-index]

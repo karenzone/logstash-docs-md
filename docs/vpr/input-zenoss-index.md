@@ -1,7 +1,9 @@
 ---
-navigation_title: "zenoss"
+navigation_title: zenoss
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-zenoss-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned zenoss input plugin docs [input-zenoss-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "jdbc"
+navigation_title: jdbc
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-jdbc-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jdbc input plugin docs [input-jdbc-index]

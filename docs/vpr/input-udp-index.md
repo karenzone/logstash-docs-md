@@ -1,7 +1,9 @@
 ---
-navigation_title: "udp"
+navigation_title: udp
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-udp-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned udp input plugin docs [input-udp-index]

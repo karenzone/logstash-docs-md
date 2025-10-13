@@ -1,7 +1,9 @@
 ---
-navigation_title: "v0.1.13"
+navigation_title: v0.1.13
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v0.1.13-plugins-filters-elastic_integration.html
+applies_to:
+  stack: ga
 ---
 
 # Elastic Integration filter plugin v0.1.13 [v0.1.13-plugins-filters-elastic_integration]

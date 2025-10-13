@@ -2,6 +2,8 @@
 navigation_title: beats
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-beats.html
+applies_to:
+  stack: ga
 
 ---
 

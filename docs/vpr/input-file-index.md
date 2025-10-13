@@ -1,7 +1,9 @@
 ---
-navigation_title: "file"
+navigation_title: file
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-file-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned file input plugin docs [input-file-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "rackspace"
+navigation_title: rackspace
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-rackspace-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned rackspace input plugin docs [input-rackspace-index]

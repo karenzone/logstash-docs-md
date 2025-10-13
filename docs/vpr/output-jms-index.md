@@ -1,7 +1,9 @@
 ---
-navigation_title: "jms"
+navigation_title: jms
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-jms-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jms output plugin docs [output-jms-index]

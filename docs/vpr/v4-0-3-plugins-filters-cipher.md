@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.3"
+navigation_title: v4.0.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.3-plugins-filters-cipher.html
+applies_to:
+  stack: ga
 ---
 
 # Cipher filter plugin v4.0.3 [v4.0.3-plugins-filters-cipher]

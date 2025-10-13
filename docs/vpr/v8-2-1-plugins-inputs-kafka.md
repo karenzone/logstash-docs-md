@@ -1,7 +1,9 @@
 ---
-navigation_title: "v8.2.1"
+navigation_title: v8.2.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v8.2.1-plugins-inputs-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka input plugin v8.2.1 [v8.2.1-plugins-inputs-kafka]

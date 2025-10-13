@@ -1,7 +1,9 @@
 ---
-navigation_title: "line"
+navigation_title: line
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-line-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned line codec plugin docs [codec-line-index]

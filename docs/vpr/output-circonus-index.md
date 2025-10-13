@@ -1,7 +1,9 @@
 ---
-navigation_title: "circonus"
+navigation_title: circonus
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-circonus-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned circonus output plugin docs [output-circonus-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "boundary"
+navigation_title: boundary
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-boundary-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned boundary output plugin docs [output-boundary-index]

@@ -2,6 +2,8 @@
 navigation_title: plain
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-plain.html
+applies_to:
+  stack: ga
 
 ---
 

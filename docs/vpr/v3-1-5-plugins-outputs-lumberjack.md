@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.1.5"
+navigation_title: v3.1.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.1.5-plugins-outputs-lumberjack.html
+applies_to:
+  stack: ga
 ---
 
 # Lumberjack output plugin v3.1.5 [v3.1.5-plugins-outputs-lumberjack]

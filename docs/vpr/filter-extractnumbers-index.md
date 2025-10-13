@@ -1,7 +1,9 @@
 ---
-navigation_title: "extractnumbers"
+navigation_title: extractnumbers
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-extractnumbers-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned extractnumbers filter plugin docs [filter-extractnumbers-index]

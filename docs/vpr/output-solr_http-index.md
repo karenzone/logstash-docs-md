@@ -1,7 +1,9 @@
 ---
-navigation_title: "solr_http"
+navigation_title: solr_http
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-solr_http-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned solr_http output plugin docs [output-solr_http-index]

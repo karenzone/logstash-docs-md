@@ -1,7 +1,9 @@
 ---
-navigation_title: "csv"
+navigation_title: csv
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-csv-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned csv codec plugin docs [codec-csv-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.7"
+navigation_title: v3.0.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.7-plugins-outputs-nagios_nsca.html
+applies_to:
+  stack: ga
 ---
 
 # Nagios_nsca output plugin v3.0.7 [v3.0.7-plugins-outputs-nagios_nsca]

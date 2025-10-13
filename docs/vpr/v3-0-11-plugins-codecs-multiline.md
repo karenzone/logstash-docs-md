@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.11"
+navigation_title: v3.0.11
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.11-plugins-codecs-multiline.html
+applies_to:
+  stack: ga
 ---
 
 # Multiline codec plugin v3.0.11 [v3.0.11-plugins-codecs-multiline]

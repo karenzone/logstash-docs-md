@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.2"
+navigation_title: v3.0.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.2-plugins-filters-extractnumbers.html
+applies_to:
+  stack: ga
 ---
 
 # Extractnumbers filter plugin v3.0.2 [v3.0.2-plugins-filters-extractnumbers]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "juggernaut"
+navigation_title: juggernaut
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-juggernaut-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned juggernaut output plugin docs [output-juggernaut-index]

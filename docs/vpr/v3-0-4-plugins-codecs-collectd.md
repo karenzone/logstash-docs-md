@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.4"
+navigation_title: v3.0.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.4-plugins-codecs-collectd.html
+applies_to:
+  stack: ga
 ---
 
 # Collectd [v3.0.4-plugins-codecs-collectd]

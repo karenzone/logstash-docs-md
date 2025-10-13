@@ -1,7 +1,9 @@
 ---
-navigation_title: "split"
+navigation_title: split
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-split-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned split filter plugin docs [filter-split-index]

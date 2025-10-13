@@ -1,7 +1,9 @@
 ---
-navigation_title: "beats"
+navigation_title: beats
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-beats-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned beats input plugin docs [input-beats-index]

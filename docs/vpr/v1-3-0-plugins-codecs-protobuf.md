@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.3.0"
+navigation_title: v1.3.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.3.0-plugins-codecs-protobuf.html
+applies_to:
+  stack: ga
 ---
 
 # Protobuf codec plugin v1.3.0 [v1.3.0-plugins-codecs-protobuf]

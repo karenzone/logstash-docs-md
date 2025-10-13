@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_agent"
+navigation_title: elastic_agent
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-elastic_agent-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_agent input plugin [input-elastic_agent-index]

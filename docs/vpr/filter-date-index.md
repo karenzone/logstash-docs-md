@@ -1,7 +1,9 @@
 ---
-navigation_title: "date"
+navigation_title: date
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-date-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned date filter plugin docs [filter-date-index]

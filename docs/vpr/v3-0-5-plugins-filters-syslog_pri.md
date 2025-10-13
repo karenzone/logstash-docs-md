@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.5"
+navigation_title: v3.0.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.5-plugins-filters-syslog_pri.html
+applies_to:
+  stack: ga
 ---
 
 # Syslog_pri filter plugin v3.0.5 [v3.0.5-plugins-filters-syslog_pri]

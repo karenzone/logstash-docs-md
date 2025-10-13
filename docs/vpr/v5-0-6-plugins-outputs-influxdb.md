@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.0.6"
+navigation_title: v5.0.6
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.0.6-plugins-outputs-influxdb.html
+applies_to:
+  stack: ga
 ---
 
 # Influxdb output plugin v5.0.6 [v5.0.6-plugins-outputs-influxdb]

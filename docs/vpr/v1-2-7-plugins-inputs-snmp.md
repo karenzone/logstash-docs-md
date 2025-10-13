@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.2.7"
+navigation_title: v1.2.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.2.7-plugins-inputs-snmp.html
+applies_to:
+  stack: ga
 ---
 
 # SNMP input plugin v1.2.7 [v1.2.7-plugins-inputs-snmp]

@@ -2,6 +2,8 @@
 navigation_title: elastic_integration
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-elastic_integration.html
+applies_to:
+  stack: ga
 
 ---
 

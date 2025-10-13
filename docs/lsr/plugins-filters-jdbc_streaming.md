@@ -2,6 +2,8 @@
 navigation_title: jdbc_streaming
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-jdbc_streaming.html
+applies_to:
+  stack: ga
 
 ---
 

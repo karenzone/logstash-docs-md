@@ -1,7 +1,9 @@
 ---
-navigation_title: "dns"
+navigation_title: dns
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-dns-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned dns filter plugin docs [filter-dns-index]

@@ -2,6 +2,8 @@
 navigation_title: sqlite
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-sqlite.html
+applies_to:
+  stack: ga
 
 ---
 

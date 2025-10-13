@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.9.3"
+navigation_title: v3.9.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.9.3-plugins-filters-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch filter plugin v3.9.3 [v3.9.3-plugins-filters-elasticsearch]

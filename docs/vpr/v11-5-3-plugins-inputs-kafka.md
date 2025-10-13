@@ -1,7 +1,9 @@
 ---
-navigation_title: "v11.5.3"
+navigation_title: v11.5.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v11.5.3-plugins-inputs-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka input plugin v11.5.3 [v11.5.3-plugins-inputs-kafka]

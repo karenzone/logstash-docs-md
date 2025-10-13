@@ -1,7 +1,9 @@
 ---
-navigation_title: "v10.8.2"
+navigation_title: v10.8.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v10.8.2-plugins-outputs-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch output plugin v10.8.2 [v10.8.2-plugins-outputs-elasticsearch]

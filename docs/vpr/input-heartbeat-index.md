@@ -1,7 +1,9 @@
 ---
-navigation_title: "heartbeat"
+navigation_title: heartbeat
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-heartbeat-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned heartbeat input plugin docs [input-heartbeat-index]

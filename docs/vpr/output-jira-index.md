@@ -1,7 +1,9 @@
 ---
-navigation_title: "jira"
+navigation_title: jira
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-jira-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jira output plugin docs [output-jira-index]

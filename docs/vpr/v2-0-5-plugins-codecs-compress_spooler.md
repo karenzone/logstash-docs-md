@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.5"
+navigation_title: v2.0.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.5-plugins-codecs-compress_spooler.html
+applies_to:
+  stack: ga
 ---
 
 # Compress_spooler codec plugin v2.0.5 [v2.0.5-plugins-codecs-compress_spooler]

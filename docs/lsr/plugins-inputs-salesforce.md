@@ -2,6 +2,8 @@
 navigation_title: salesforce
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-salesforce.html
+applies_to:
+  stack: ga
 
 ---
 

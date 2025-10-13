@@ -2,6 +2,8 @@
 navigation_title: kinesis
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kinesis.html
+applies_to:
+  stack: ga
 
 ---
 

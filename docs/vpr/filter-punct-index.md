@@ -1,7 +1,9 @@
 ---
-navigation_title: "punct"
+navigation_title: punct
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-punct-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned punct filter plugin docs [filter-punct-index]

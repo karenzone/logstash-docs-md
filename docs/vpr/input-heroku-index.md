@@ -1,7 +1,9 @@
 ---
-navigation_title: "heroku"
+navigation_title: heroku
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-heroku-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned heroku input plugin docs [input-heroku-index]

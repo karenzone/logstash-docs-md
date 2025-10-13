@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.0.6"
+navigation_title: v1.0.6
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.0.6-plugins-inputs-dead_letter_queue.html
+applies_to:
+  stack: ga
 ---
 
 # Dead_letter_queue input plugin v1.0.6 [v1.0.6-plugins-inputs-dead_letter_queue]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.1.3"
+navigation_title: v3.1.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.1.3-plugins-inputs-couchdb_changes.html
+applies_to:
+  stack: ga
 ---
 
 # Couchdb_changes input plugin v3.1.3 [v3.1.3-plugins-inputs-couchdb_changes]

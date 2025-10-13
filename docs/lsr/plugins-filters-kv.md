@@ -2,6 +2,8 @@
 navigation_title: kv
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-kv.html
+applies_to:
+  stack: ga
 
 ---
 

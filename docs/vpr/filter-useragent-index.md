@@ -1,7 +1,9 @@
 ---
-navigation_title: "useragent"
+navigation_title: useragent
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-useragent-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned useragent filter plugin docs [filter-useragent-index]

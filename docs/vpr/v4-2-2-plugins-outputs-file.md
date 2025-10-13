@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.2.2"
+navigation_title: v4.2.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.2.2-plugins-outputs-file.html
+applies_to:
+  stack: ga
 ---
 
 # File output plugin v4.2.2 [v4.2.2-plugins-outputs-file]

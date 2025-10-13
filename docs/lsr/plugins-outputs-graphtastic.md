@@ -2,6 +2,8 @@
 navigation_title: graphtastic
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-graphtastic.html
+applies_to:
+  stack: ga
 
 ---
 

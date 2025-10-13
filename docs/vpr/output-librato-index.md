@@ -1,7 +1,9 @@
 ---
-navigation_title: "librato"
+navigation_title: librato
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-librato-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned librato output plugin docs [output-librato-index]

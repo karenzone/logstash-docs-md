@@ -1,7 +1,9 @@
 ---
-navigation_title: "truncate"
+navigation_title: truncate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-truncate-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned truncate filter plugin docs [filter-truncate-index]

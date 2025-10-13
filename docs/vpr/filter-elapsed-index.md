@@ -1,7 +1,9 @@
 ---
-navigation_title: "elapsed"
+navigation_title: elapsed
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-elapsed-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elapsed filter plugin docs [filter-elapsed-index]

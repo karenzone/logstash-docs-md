@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.0.2"
+navigation_title: v1.0.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.0.2-plugins-filters-truncate.html
+applies_to:
+  stack: ga
 ---
 
 # Truncate filter plugin v1.0.2 [v1.0.2-plugins-filters-truncate]

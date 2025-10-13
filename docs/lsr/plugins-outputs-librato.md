@@ -2,6 +2,8 @@
 navigation_title: librato
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-librato.html
+applies_to:
+  stack: ga
 
 ---
 

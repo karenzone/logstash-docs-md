@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.1.0"
+navigation_title: v4.1.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.1.0-plugins-outputs-google_bigquery.html
+applies_to:
+  stack: ga
 ---
 
 # Google BigQuery output plugin v4.1.0 [v4.1.0-plugins-outputs-google_bigquery]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "nagios_nsca"
+navigation_title: nagios_nsca
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-nagios_nsca-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned nagios_nsca output plugin docs [output-nagios_nsca-index]

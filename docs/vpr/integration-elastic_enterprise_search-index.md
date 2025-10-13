@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_enterprise_search"
+navigation_title: elastic_enterprise_search
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/integration-elastic_enterprise_search-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_enterprise_search integration plugin docs [integration-elastic_enterprise_search-index]

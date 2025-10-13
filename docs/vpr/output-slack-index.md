@@ -1,7 +1,9 @@
 ---
-navigation_title: "slack"
+navigation_title: slack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-slack-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned slack output plugin docs [output-slack-index]

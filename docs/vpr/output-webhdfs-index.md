@@ -1,7 +1,9 @@
 ---
-navigation_title: "webhdfs"
+navigation_title: webhdfs
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-webhdfs-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned webhdfs output plugin docs [output-webhdfs-index]

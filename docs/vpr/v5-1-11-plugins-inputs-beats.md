@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.1.11"
+navigation_title: v5.1.11
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.1.11-plugins-inputs-beats.html
+applies_to:
+  stack: ga
 ---
 
 # Beats input plugin v5.1.11 [v5.1.11-plugins-inputs-beats]

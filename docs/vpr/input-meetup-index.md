@@ -1,7 +1,9 @@
 ---
-navigation_title: "meetup"
+navigation_title: meetup
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-meetup-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned meetup input plugin docs [input-meetup-index]

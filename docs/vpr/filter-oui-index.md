@@ -1,7 +1,9 @@
 ---
-navigation_title: "oui"
+navigation_title: oui
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-oui-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned oui filter plugin docs [filter-oui-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "redmine"
+navigation_title: redmine
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-redmine-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned redmine output plugin docs [output-redmine-index]

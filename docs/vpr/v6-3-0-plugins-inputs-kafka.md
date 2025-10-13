@@ -1,7 +1,9 @@
 ---
-navigation_title: "v6.3.0"
+navigation_title: v6.3.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v6.3.0-plugins-inputs-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka [v6.3.0-plugins-inputs-kafka]

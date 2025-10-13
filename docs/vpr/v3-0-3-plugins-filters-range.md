@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.3"
+navigation_title: v3.0.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.3-plugins-filters-range.html
+applies_to:
+  stack: ga
 ---
 
 # Range filter plugin v3.0.3 [v3.0.3-plugins-filters-range]

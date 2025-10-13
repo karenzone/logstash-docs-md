@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.2.2"
+navigation_title: v3.2.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.2.2-plugins-inputs-redis.html
+applies_to:
+  stack: ga
 ---
 
 # Redis input plugin v3.2.2 [v3.2.2-plugins-inputs-redis]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.5.1"
+navigation_title: v1.5.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.5.1-plugins-filters-http.html
+applies_to:
+  stack: ga
 ---
 
 # HTTP filter plugin v1.5.1 [v1.5.1-plugins-filters-http]

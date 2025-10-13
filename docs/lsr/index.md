@@ -1,6 +1,7 @@
 ---
 navigation_title: "Logstash Plugins"
-mapped_pages:
+applies_to:
+  stack: ga
 ---
 
 # Logstash Plugins [introduction]

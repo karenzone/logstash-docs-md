@@ -2,6 +2,8 @@
 navigation_title: "sink"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-sink.html
+applies_to:
+  stack: ga
 ---
 
 # Sink output plugin [plugins-outputs-sink]
@@ -65,7 +67,7 @@ output {
 }
 ```
 
-::::{note} 
+::::{note}
 Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
 ::::
 

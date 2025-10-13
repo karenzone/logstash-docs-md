@@ -2,6 +2,8 @@
 navigation_title: elapsed
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-elapsed.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -1,7 +1,9 @@
 ---
-navigation_title: "s3"
+navigation_title: s3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-s3-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned s3 output plugin docs [output-s3-index]

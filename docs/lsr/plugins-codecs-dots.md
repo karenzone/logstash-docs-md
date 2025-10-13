@@ -2,6 +2,8 @@
 navigation_title: dots
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-dots.html
+applies_to:
+  stack: ga
 
 ---
 

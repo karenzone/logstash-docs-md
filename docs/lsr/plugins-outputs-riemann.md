@@ -2,6 +2,8 @@
 navigation_title: riemann
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-riemann.html
+applies_to:
+  stack: ga
 
 ---
 

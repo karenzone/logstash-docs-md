@@ -1,7 +1,9 @@
 ---
-navigation_title: "sqs"
+navigation_title: sqs
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-sqs-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned sqs output plugin docs [output-sqs-index]

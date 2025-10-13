@@ -1,7 +1,9 @@
 ---
-navigation_title: "emoji"
+navigation_title: emoji
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-emoji-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned emoji filter plugin docs [filter-emoji-index]

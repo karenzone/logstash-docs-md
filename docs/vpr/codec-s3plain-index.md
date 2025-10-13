@@ -1,7 +1,9 @@
 ---
-navigation_title: "s3plain"
+navigation_title: s3plain
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-s3plain-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned s3plain codec plugin docs [codec-s3plain-index]

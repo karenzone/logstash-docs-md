@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_workplace_search"
+navigation_title: elastic_workplace_search
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-elastic_workplace_search-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_workplace_search output plugin docs [output-elastic_workplace_search-index]

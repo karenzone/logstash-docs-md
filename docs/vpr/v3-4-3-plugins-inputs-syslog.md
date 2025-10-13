@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.4.3"
+navigation_title: v3.4.3
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.4.3-plugins-inputs-syslog.html
+applies_to:
+  stack: ga
 ---
 
 # Syslog input plugin v3.4.3 [v3.4.3-plugins-inputs-syslog]

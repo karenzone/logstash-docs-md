@@ -2,6 +2,8 @@
 navigation_title: extractnumbers
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-extractnumbers.html
+applies_to:
+  stack: ga
 
 ---
 

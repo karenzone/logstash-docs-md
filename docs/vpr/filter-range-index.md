@@ -1,7 +1,9 @@
 ---
-navigation_title: "range"
+navigation_title: range
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-range-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned range filter plugin docs [filter-range-index]

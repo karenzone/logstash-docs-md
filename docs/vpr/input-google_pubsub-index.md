@@ -1,7 +1,9 @@
 ---
-navigation_title: "google_pubsub"
+navigation_title: google_pubsub
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-google_pubsub-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned google_pubsub input plugin docs [input-google_pubsub-index]

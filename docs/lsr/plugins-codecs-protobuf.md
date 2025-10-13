@@ -2,6 +2,8 @@
 navigation_title: protobuf
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-protobuf.html
+applies_to:
+  stack: ga
 
 ---
 

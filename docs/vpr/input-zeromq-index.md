@@ -1,7 +1,9 @@
 ---
-navigation_title: "zeromq"
+navigation_title: zeromq
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-zeromq-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned zeromq input plugin docs [input-zeromq-index]

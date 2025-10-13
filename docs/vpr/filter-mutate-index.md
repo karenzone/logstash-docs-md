@@ -1,7 +1,9 @@
 ---
-navigation_title: "mutate"
+navigation_title: mutate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-mutate-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned mutate filter plugin docs [filter-mutate-index]

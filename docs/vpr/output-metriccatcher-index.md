@@ -1,7 +1,9 @@
 ---
-navigation_title: "metriccatcher"
+navigation_title: metriccatcher
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-metriccatcher-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned metriccatcher output plugin docs [output-metriccatcher-index]

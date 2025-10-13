@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_integration"
+navigation_title: elastic_integration
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-elastic_integration-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_integration filter plugin docs [filter-elastic_integration-index]

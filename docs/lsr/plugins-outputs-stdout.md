@@ -2,6 +2,8 @@
 navigation_title: stdout
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-stdout.html
+applies_to:
+  stack: ga
 
 ---
 

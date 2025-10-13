@@ -1,7 +1,9 @@
 ---
-navigation_title: "Integration plugins"
+navigation_title: Integration plugins
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/integration-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Integration plugins [integration-plugins]

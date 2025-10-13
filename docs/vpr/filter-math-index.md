@@ -1,7 +1,9 @@
 ---
-navigation_title: "math"
+navigation_title: math
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-math-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned math filter plugin docs [filter-math-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "throttle"
+navigation_title: throttle
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-throttle-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned throttle filter plugin docs [filter-throttle-index]

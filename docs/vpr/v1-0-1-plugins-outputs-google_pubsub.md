@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.0.1"
+navigation_title: v1.0.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.0.1-plugins-outputs-google_pubsub.html
+applies_to:
+  stack: ga
 ---
 
 # Google Cloud Pub/Sub Output Plugin [v1.0.1-plugins-outputs-google_pubsub]

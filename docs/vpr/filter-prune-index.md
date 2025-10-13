@@ -1,7 +1,9 @@
 ---
-navigation_title: "prune"
+navigation_title: prune
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-prune-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned prune filter plugin docs [filter-prune-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.1.5"
+navigation_title: v7.1.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.1.5-plugins-outputs-sns.html
+applies_to:
+  stack: ga
 ---
 
 # Sns output plugin v7.1.5 [v7.1.5-plugins-outputs-sns]

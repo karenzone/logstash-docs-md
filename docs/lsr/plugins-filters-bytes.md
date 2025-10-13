@@ -2,6 +2,8 @@
 navigation_title: bytes
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-bytes.html
+applies_to:
+  stack: ga
 
 ---
 

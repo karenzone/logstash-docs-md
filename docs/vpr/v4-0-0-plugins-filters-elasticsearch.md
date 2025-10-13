@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.0"
+navigation_title: v4.0.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.0-plugins-filters-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch filter plugin v4.0.0 [v4.0.0-plugins-filters-elasticsearch]

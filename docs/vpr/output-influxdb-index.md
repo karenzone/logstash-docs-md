@@ -1,7 +1,9 @@
 ---
-navigation_title: "influxdb"
+navigation_title: influxdb
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-influxdb-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned influxdb output plugin docs [output-influxdb-index]

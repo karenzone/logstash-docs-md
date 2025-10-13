@@ -1,7 +1,9 @@
 ---
-navigation_title: "anonymize"
+navigation_title: anonymize
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-anonymize-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned anonymize filter plugin docs [filter-anonymize-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "v7.1.4"
+navigation_title: v7.1.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v7.1.4-plugins-inputs-sqs.html
+applies_to:
+  stack: ga
 ---
 
 # Sqs input plugin v7.1.4 [v7.1.4-plugins-inputs-sqs]

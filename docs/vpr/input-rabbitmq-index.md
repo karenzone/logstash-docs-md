@@ -1,7 +1,9 @@
 ---
-navigation_title: "rabbitmq"
+navigation_title: rabbitmq
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-rabbitmq-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned rabbitmq input plugin docs [input-rabbitmq-index]

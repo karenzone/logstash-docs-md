@@ -1,7 +1,9 @@
 ---
-navigation_title: "alter"
+navigation_title: alter
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-alter-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned alter filter plugin docs [filter-alter-index]

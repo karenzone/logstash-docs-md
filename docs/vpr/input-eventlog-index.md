@@ -1,7 +1,9 @@
 ---
-navigation_title: "eventlog"
+navigation_title: eventlog
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-eventlog-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned eventlog input plugin docs [input-eventlog-index]

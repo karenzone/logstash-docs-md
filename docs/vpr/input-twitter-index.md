@@ -1,7 +1,9 @@
 ---
-navigation_title: "twitter"
+navigation_title: twitter
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-twitter-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned twitter input plugin docs [input-twitter-index]

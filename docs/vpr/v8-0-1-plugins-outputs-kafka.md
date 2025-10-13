@@ -1,7 +1,9 @@
 ---
-navigation_title: "v8.0.1"
+navigation_title: v8.0.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v8.0.1-plugins-outputs-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka output plugin v8.0.1 [v8.0.1-plugins-outputs-kafka]

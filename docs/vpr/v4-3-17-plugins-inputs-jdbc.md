@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.3.17"
+navigation_title: v4.3.17
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.3.17-plugins-inputs-jdbc.html
+applies_to:
+  stack: ga
 ---
 
 # Jdbc input plugin v4.3.17 [v4.3.17-plugins-inputs-jdbc]

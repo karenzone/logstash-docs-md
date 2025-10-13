@@ -1,7 +1,9 @@
 ---
-navigation_title: "csv"
+navigation_title: csv
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-csv-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned csv filter plugin docs [filter-csv-index]

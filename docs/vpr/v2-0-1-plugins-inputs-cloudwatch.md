@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.1"
+navigation_title: v2.0.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.1-plugins-inputs-cloudwatch.html
+applies_to:
+  stack: ga
 ---
 
 # Cloudwatch input plugin v2.0.1 [v2.0.1-plugins-inputs-cloudwatch]

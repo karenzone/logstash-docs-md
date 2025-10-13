@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.1.2"
+navigation_title: v5.1.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.1.2-plugins-outputs-http.html
+applies_to:
+  stack: ga
 ---
 
 # Http output plugin v5.1.2 [v5.1.2-plugins-outputs-http]

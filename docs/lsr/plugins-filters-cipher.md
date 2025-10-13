@@ -2,6 +2,8 @@
 navigation_title: cipher
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-cipher.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -2,6 +2,8 @@
 navigation_title: csv
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-csv.html
+applies_to:
+  stack: ga
 
 ---
 

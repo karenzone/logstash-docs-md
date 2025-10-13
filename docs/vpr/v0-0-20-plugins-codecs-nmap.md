@@ -1,7 +1,9 @@
 ---
-navigation_title: "v0.0.20"
+navigation_title: v0.0.20
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v0.0.20-plugins-codecs-nmap.html
+applies_to:
+  stack: ga
 ---
 
 # Nmap codec plugin v0.0.20 [v0.0.20-plugins-codecs-nmap]

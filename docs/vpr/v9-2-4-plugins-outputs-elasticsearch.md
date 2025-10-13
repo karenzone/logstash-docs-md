@@ -1,7 +1,9 @@
 ---
-navigation_title: "v9.2.4"
+navigation_title: v9.2.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v9.2.4-plugins-outputs-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch output plugin v9.2.4 [v9.2.4-plugins-outputs-elasticsearch]

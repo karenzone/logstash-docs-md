@@ -1,7 +1,9 @@
 ---
-navigation_title: "snmptrap"
+navigation_title: snmptrap
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-snmptrap-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned snmptrap input plugin docs [input-snmptrap-index]

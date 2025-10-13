@@ -2,6 +2,8 @@
 navigation_title: rabbitmq
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-rabbitmq.html
+applies_to:
+  stack: ga
 
 ---
 

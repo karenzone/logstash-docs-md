@@ -2,6 +2,8 @@
 navigation_title: elastic_workplace_search
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elastic_workplace_search.html
+applies_to:
+  stack: ga
 
 ---
 

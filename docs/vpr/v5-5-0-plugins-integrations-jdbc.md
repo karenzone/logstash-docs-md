@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.5.0"
+navigation_title: v5.5.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.5.0-plugins-integrations-jdbc.html
+applies_to:
+  stack: ga
 ---
 
 # JDBC Integration Plugin v5.5.0 [v5.5.0-plugins-integrations-jdbc]

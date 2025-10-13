@@ -1,7 +1,9 @@
 ---
-navigation_title: "log4j"
+navigation_title: log4j
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-log4j-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned log4j input plugin docs [input-log4j-index]

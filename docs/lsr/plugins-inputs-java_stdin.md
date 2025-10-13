@@ -2,6 +2,8 @@
 navigation_title: "java_stdin"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-java_stdin.html
+applies_to:
+  stack: ga
 ---
 
 # Java_stdin input plugin [plugins-inputs-java_stdin]
@@ -78,7 +80,7 @@ input {
 }
 ```
 
-::::{note} 
+::::{note}
 Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
 ::::
 

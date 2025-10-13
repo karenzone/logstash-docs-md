@@ -2,6 +2,8 @@
 navigation_title: http
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-http.html
+applies_to:
+  stack: ga
 
 ---
 

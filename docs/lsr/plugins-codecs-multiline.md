@@ -2,6 +2,8 @@
 navigation_title: multiline
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-multiline.html
+applies_to:
+  stack: ga
 
 ---
 

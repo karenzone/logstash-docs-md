@@ -1,7 +1,9 @@
 ---
-navigation_title: "xml"
+navigation_title: xml
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-xml-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned xml filter plugin docs [filter-xml-index]

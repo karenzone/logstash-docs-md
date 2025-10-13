@@ -2,6 +2,8 @@
 navigation_title: avro
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-avro.html
+applies_to:
+  stack: ga
 
 ---
 

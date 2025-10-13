@@ -1,7 +1,9 @@
 ---
-navigation_title: "monasca_log_api"
+navigation_title: monasca_log_api
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-monasca_log_api-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned monasca_log_api output plugin docs [output-monasca_log_api-index]

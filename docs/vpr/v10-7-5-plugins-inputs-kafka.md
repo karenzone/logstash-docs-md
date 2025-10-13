@@ -1,7 +1,9 @@
 ---
-navigation_title: "v10.7.5"
+navigation_title: v10.7.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v10.7.5-plugins-inputs-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka input plugin v10.7.5 [v10.7.5-plugins-inputs-kafka]

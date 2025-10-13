@@ -2,6 +2,8 @@
 navigation_title: redis
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-redis.html
+applies_to:
+  stack: ga
 
 ---
 

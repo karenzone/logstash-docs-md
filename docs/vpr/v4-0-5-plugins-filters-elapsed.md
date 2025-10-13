@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.5"
+navigation_title: v4.0.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.5-plugins-filters-elapsed.html
+applies_to:
+  stack: ga
 ---
 
 # Elapsed filter plugin v4.0.5 [v4.0.5-plugins-filters-elapsed]

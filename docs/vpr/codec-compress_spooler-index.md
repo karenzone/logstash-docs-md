@@ -1,7 +1,9 @@
 ---
-navigation_title: "compress_spooler"
+navigation_title: compress_spooler
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-compress_spooler-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned compress_spooler codec plugin docs [codec-compress_spooler-index]

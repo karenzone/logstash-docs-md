@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.6"
+navigation_title: v4.0.6
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.6-plugins-outputs-email.html
+applies_to:
+  stack: ga
 ---
 
 # Email output plugin v4.0.6 [v4.0.6-plugins-outputs-email]

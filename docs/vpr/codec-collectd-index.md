@@ -1,7 +1,9 @@
 ---
-navigation_title: "collectd"
+navigation_title: collectd
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-collectd-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned collectd codec plugin docs [codec-collectd-index]

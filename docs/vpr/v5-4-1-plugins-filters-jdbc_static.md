@@ -1,7 +1,9 @@
 ---
-navigation_title: "v5.4.1"
+navigation_title: v5.4.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v5.4.1-plugins-filters-jdbc_static.html
+applies_to:
+  stack: ga
 ---
 
 # Jdbc_static filter plugin v5.4.1 [v5.4.1-plugins-filters-jdbc_static]

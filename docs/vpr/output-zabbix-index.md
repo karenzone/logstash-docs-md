@@ -1,7 +1,9 @@
 ---
-navigation_title: "zabbix"
+navigation_title: zabbix
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-zabbix-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned zabbix output plugin docs [output-zabbix-index]

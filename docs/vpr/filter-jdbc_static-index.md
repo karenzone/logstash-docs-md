@@ -1,7 +1,9 @@
 ---
-navigation_title: "jdbc_static"
+navigation_title: jdbc_static
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-jdbc_static-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jdbc_static filter plugin docs [filter-jdbc_static-index]

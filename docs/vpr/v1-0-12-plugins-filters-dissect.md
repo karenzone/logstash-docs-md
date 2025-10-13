@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.0.12"
+navigation_title: v1.0.12
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.0.12-plugins-filters-dissect.html
+applies_to:
+  stack: ga
 ---
 
 # Dissect filter plugin v1.0.12 [v1.0.12-plugins-filters-dissect]

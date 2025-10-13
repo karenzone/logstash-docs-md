@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.9.2"
+navigation_title: v2.9.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.9.2-plugins-filters-aggregate.html
+applies_to:
+  stack: ga
 ---
 
 # Aggregate filter plugin v2.9.2 [v2.9.2-plugins-filters-aggregate]

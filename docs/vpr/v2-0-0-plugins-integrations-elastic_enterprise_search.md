@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.0"
+navigation_title: v2.0.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.0-plugins-integrations-elastic_enterprise_search.html
+applies_to:
+  stack: ga
 ---
 
 # Elastic Enterprise Search integration plugin v2.0.0 [v2.0.0-plugins-integrations-elastic_enterprise_search]

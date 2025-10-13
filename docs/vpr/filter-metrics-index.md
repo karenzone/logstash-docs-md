@@ -1,7 +1,9 @@
 ---
-navigation_title: "metrics"
+navigation_title: metrics
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-metrics-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned metrics filter plugin docs [filter-metrics-index]

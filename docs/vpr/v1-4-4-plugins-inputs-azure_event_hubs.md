@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.4.4"
+navigation_title: v1.4.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.4.4-plugins-inputs-azure_event_hubs.html
+applies_to:
+  stack: ga
 ---
 
 # Azure Event Hubs plugin v1.4.4 [v1.4.4-plugins-inputs-azure_event_hubs]

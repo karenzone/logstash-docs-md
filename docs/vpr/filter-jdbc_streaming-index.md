@@ -1,7 +1,9 @@
 ---
-navigation_title: "jdbc_streaming"
+navigation_title: jdbc_streaming
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-jdbc_streaming-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned jdbc_streaming filter plugin docs [filter-jdbc_streaming-index]

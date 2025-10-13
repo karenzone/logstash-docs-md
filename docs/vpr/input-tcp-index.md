@@ -1,7 +1,9 @@
 ---
-navigation_title: "tcp"
+navigation_title: tcp
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-tcp-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned tcp input plugin docs [input-tcp-index]

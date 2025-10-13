@@ -1,7 +1,9 @@
 ---
-navigation_title: "msgpack"
+navigation_title: msgpack
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-msgpack-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned msgpack codec plugin docs [codec-msgpack-index]

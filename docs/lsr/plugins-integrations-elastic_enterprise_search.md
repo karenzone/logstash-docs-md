@@ -2,6 +2,8 @@
 navigation_title: elastic_enterprise_search
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-integrations-elastic_enterprise_search.html
+applies_to:
+  stack: ga
 
 ---
 

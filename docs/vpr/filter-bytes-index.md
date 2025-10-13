@@ -1,7 +1,9 @@
 ---
-navigation_title: "bytes"
+navigation_title: bytes
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-bytes-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned bytes filter plugin docs [filter-bytes-index]

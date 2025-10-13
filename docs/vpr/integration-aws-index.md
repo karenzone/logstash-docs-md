@@ -1,7 +1,9 @@
 ---
-navigation_title: "aws"
+navigation_title: aws
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/integration-aws-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned aws integration plugin docs [integration-aws-index]

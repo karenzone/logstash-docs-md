@@ -1,7 +1,9 @@
 ---
-navigation_title: "file"
+navigation_title: file
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-file-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned file output plugin docs [output-file-index]

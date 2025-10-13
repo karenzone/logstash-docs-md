@@ -2,11 +2,13 @@
 navigation_title: "elastic_agent"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-elastic_agent.html
+applies_to:
+  stack: ga
 ---
 
 # Elastic Agent input plugin [plugins-inputs-elastic_agent]
 
-::::{note} 
+::::{note}
 The `input-elastic_agent` plugin is the next generation of the `input-beats` plugin. They currently share code and a [common codebase](https://github.com/logstash-plugins/logstash-input-beats).
 ::::
 
@@ -50,7 +52,7 @@ Events indexed into Elasticsearch with the Logstash configuration shown here wil
 
 This plugin uses "off-heap" direct memory in addition to heap memory. By default, a JVM’s off-heap direct memory limit is the same as the heap size. For example, setting `-Xmx10G` without setting the direct memory limit will allocate `10GB` for heap and an additional `10GB` for direct memory, for a total of `20GB` allocated. You can set the amount of direct memory with `-XX:MaxDirectMemorySize` in [Logstash JVM Settings](logstash://reference/jvm-settings.md). Consider setting direct memory to half of the heap size. Setting direct memory too low decreases the performance of ingestion.
 
-::::{note} 
+::::{note}
 Be sure that heap and direct memory combined does not exceed the total memory available on the server to avoid an OutOfDirectMemoryError
 ::::
 
@@ -88,7 +90,7 @@ The location of these enrichment fields depends on whether [ECS compatibility mo
 
 This plugin supports the following configuration options plus the [Common options](plugins-inputs-elastic_agent.md#plugins-inputs-elastic_agent-common-options) described later.
 
-::::{note} 
+::::{note}
 As of version `7.0.0` of this plugin, a number of previously deprecated settings related to SSL have been removed. Please check out [Beats Input Obsolete Configuration Options](plugins-inputs-elastic_agent.md#plugins-inputs-elastic_agent-obsolete-options) for details.
 ::::
 
@@ -285,7 +287,7 @@ Controls the server’s behavior in regard to requesting a certificate from clie
 
 When mutual TLS is enabled (`required` or `optional`), the certificate presented by the client must be signed by trusted [`ssl_certificate_authorities`](plugins-inputs-elastic_agent.md#plugins-inputs-elastic_agent-ssl_certificate_authorities) (CAs). Please note that the server does not validate the client certificate CN (Common Name) or SAN (Subject Alternative Name).
 
-::::{note} 
+::::{note}
 This setting can be used only if [`ssl_certificate_authorities`](plugins-inputs-elastic_agent.md#plugins-inputs-elastic_agent-ssl_certificate_authorities) is set.
 ::::
 
@@ -337,7 +339,7 @@ List of allowed SSL/TLS versions to use when establishing a connection to the HT
 
 For Java 8 `'TLSv1.3'` is supported  only since ***8u262*** (AdoptOpenJDK), but requires that you set the `LS_JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.3"` system property in Logstash.
 
-::::{note} 
+::::{note}
 If you configure the plugin to use `'TLSv1.1'` on any recent JVM, such as the one packaged with Logstash, the protocol is disabled by default and needs to be enabled manually by changing `jdk.tls.disabledAlgorithms` in the **$JDK_HOME/conf/security/java.security** configuration file. That is, `TLSv1.1` needs to be removed from the list.
 ::::
 
@@ -346,7 +348,7 @@ If you configure the plugin to use `'TLSv1.1'` on any recent JVM, such as the on
 
 ## Beats Input Obsolete Configuration Options [plugins-inputs-elastic_agent-obsolete-options]
 
-::::{warning} 
+::::{warning}
 As of version `7.0.0` of this plugin, some configuration options have been replaced. The plugin will fail to start if it contains any of these obsolete options.
 ::::
 
@@ -413,7 +415,7 @@ input {
 }
 ```
 
-::::{note} 
+::::{note}
 Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
 ::::
 

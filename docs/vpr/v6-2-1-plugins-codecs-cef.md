@@ -1,7 +1,9 @@
 ---
-navigation_title: "v6.2.1"
+navigation_title: v6.2.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v6.2.1-plugins-codecs-cef.html
+applies_to:
+  stack: ga
 ---
 
 # Cef codec plugin v6.2.1 [v6.2.1-plugins-codecs-cef]

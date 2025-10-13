@@ -1,7 +1,9 @@
 ---
-navigation_title: "unix"
+navigation_title: unix
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-unix-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned unix input plugin docs [input-unix-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "de_dot"
+navigation_title: de_dot
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-de_dot-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned de_dot filter plugin docs [filter-de_dot-index]

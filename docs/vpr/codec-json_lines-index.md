@@ -1,7 +1,9 @@
 ---
-navigation_title: "json_lines"
+navigation_title: json_lines
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-json_lines-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned json_lines codec plugin docs [codec-json_lines-index]

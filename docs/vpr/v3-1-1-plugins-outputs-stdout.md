@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.1.1"
+navigation_title: v3.1.1
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.1.1-plugins-outputs-stdout.html
+applies_to:
+  stack: ga
 ---
 
 # Stdout output plugin v3.1.1 [v3.1.1-plugins-outputs-stdout]

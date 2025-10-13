@@ -2,6 +2,8 @@
 navigation_title: "threats_classifier"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-filters-threats_classifier.html
+applies_to:
+  stack: ga
 ---
 
 # Threats_classifier filter plugin [plugins-filters-threats_classifier]

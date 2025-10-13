@@ -1,7 +1,9 @@
 ---
-navigation_title: "drupal_dblog"
+navigation_title: drupal_dblog
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-drupal_dblog-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned drupal_dblog input plugin docs [input-drupal_dblog-index]

@@ -2,6 +2,8 @@
 navigation_title: datadog_metrics
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-datadog_metrics.html
+applies_to:
+  stack: ga
 
 ---
 

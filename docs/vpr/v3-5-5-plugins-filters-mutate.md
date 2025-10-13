@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.5.5"
+navigation_title: v3.5.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.5.5-plugins-filters-mutate.html
+applies_to:
+  stack: ga
 ---
 
 # Mutate filter plugin v3.5.5 [v3.5.5-plugins-filters-mutate]

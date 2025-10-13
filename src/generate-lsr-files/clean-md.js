@@ -32,6 +32,8 @@ function updateFrontmatter(updatedTree, pluginName) {
         return mp.replace(/\/logstash-versioned-plugins\//, '/logstash/')
                  .replace(/v\d+\.\d+\.\d+-/, '')
       })
+      frontmatter['applies_to'] = {}
+      frontmatter['applies_to']['stack'] = 'ga'
       node.value = yaml.stringify(frontmatter)
     }
   })

@@ -1,7 +1,9 @@
 ---
-navigation_title: "clone"
+navigation_title: clone
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-clone-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned clone filter plugin docs [filter-clone-index]

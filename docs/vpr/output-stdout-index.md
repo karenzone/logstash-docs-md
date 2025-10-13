@@ -1,7 +1,9 @@
 ---
-navigation_title: "stdout"
+navigation_title: stdout
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-stdout-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned stdout output plugin docs [output-stdout-index]

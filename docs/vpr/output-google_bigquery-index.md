@@ -1,7 +1,9 @@
 ---
-navigation_title: "google_bigquery"
+navigation_title: google_bigquery
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-google_bigquery-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned google_bigquery output plugin docs [output-google_bigquery-index]

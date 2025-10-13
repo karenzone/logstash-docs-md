@@ -2,6 +2,8 @@
 navigation_title: json_lines
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-json_lines.html
+applies_to:
+  stack: ga
 
 ---
 

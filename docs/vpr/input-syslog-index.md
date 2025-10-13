@@ -1,7 +1,9 @@
 ---
-navigation_title: "syslog"
+navigation_title: syslog
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-syslog-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned syslog input plugin docs [input-syslog-index]

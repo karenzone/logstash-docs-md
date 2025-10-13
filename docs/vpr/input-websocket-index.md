@@ -1,7 +1,9 @@
 ---
-navigation_title: "websocket"
+navigation_title: websocket
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-websocket-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned websocket input plugin docs [input-websocket-index]

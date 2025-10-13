@@ -1,7 +1,9 @@
 ---
-navigation_title: "snmp"
+navigation_title: snmp
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/integration-snmp-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned snmp integration plugin docs [integration-snmp-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "memcached"
+navigation_title: memcached
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-memcached-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned memcached filter plugin docs [filter-memcached-index]

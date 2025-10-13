@@ -1,7 +1,9 @@
 ---
-navigation_title: "sns"
+navigation_title: sns
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-sns-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned sns output plugin docs [output-sns-index]

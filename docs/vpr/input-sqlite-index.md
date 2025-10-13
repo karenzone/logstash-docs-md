@@ -1,7 +1,9 @@
 ---
-navigation_title: "sqlite"
+navigation_title: sqlite
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-sqlite-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned sqlite input plugin docs [input-sqlite-index]

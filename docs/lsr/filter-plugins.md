@@ -1,6 +1,8 @@
 ---
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/filter-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Filter plugins

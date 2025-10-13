@@ -1,7 +1,9 @@
 ---
-navigation_title: "v0.10.0"
+navigation_title: v0.10.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v0.10.0-plugins-inputs-google_cloud_storage.html
+applies_to:
+  stack: ga
 ---
 
 # Google Cloud Storage Input Plugin [v0.10.0-plugins-inputs-google_cloud_storage]

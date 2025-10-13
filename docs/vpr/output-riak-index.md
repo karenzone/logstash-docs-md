@@ -1,7 +1,9 @@
 ---
-navigation_title: "riak"
+navigation_title: riak
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-riak-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned riak output plugin docs [output-riak-index]

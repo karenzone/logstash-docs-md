@@ -2,6 +2,8 @@
 navigation_title: file
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-file.html
+applies_to:
+  stack: ga
 
 ---
 

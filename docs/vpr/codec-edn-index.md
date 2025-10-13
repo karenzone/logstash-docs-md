@@ -1,7 +1,9 @@
 ---
-navigation_title: "edn"
+navigation_title: edn
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-edn-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned edn codec plugin docs [codec-edn-index]

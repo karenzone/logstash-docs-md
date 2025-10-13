@@ -1,7 +1,9 @@
 ---
-navigation_title: "v11.15.9"
+navigation_title: v11.15.9
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v11.15.9-plugins-outputs-elasticsearch.html
+applies_to:
+  stack: ga
 ---
 
 # Elasticsearch output plugin v11.15.9 [v11.15.9-plugins-outputs-elasticsearch]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "azure_event_hubs"
+navigation_title: azure_event_hubs
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-azure_event_hubs-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned azure_event_hubs input plugin docs [input-azure_event_hubs-index]

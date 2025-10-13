@@ -1,7 +1,9 @@
 ---
-navigation_title: "loggly"
+navigation_title: loggly
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-loggly-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned loggly output plugin docs [output-loggly-index]

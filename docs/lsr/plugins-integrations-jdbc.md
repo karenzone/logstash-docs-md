@@ -2,6 +2,8 @@
 navigation_title: jdbc
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-integrations-jdbc.html
+applies_to:
+  stack: ga
 
 ---
 

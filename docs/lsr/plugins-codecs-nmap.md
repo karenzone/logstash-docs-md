@@ -2,6 +2,8 @@
 navigation_title: nmap
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-codecs-nmap.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -1,7 +1,9 @@
 ---
-navigation_title: "redis"
+navigation_title: redis
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-redis-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned redis input plugin docs [input-redis-index]

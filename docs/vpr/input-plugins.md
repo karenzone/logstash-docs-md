@@ -1,7 +1,9 @@
 ---
-navigation_title: "Input plugins"
+navigation_title: Input plugins
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-plugins.html
+applies_to:
+  stack: ga
 ---
 
 # Input plugins [input-plugins]

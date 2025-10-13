@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.0.2"
+navigation_title: v4.0.2
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.0.2-plugins-outputs-tcp.html
+applies_to:
+  stack: ga
 ---
 
 # Tcp output plugin v4.0.2 [v4.0.2-plugins-outputs-tcp]

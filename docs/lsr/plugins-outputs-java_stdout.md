@@ -2,6 +2,8 @@
 navigation_title: "java_stdout"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-java_stdout.html
+applies_to:
+  stack: ga
 ---
 
 # Java_stdout output plugin [plugins-outputs-java_stdout]
@@ -83,7 +85,7 @@ output {
 }
 ```
 
-::::{note} 
+::::{note}
 Variable substitution in the `id` field only supports environment variables and does not support the use of values from the secret store.
 ::::
 

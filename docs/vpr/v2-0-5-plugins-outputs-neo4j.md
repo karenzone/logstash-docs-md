@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.5"
+navigation_title: v2.0.5
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.5-plugins-outputs-neo4j.html
+applies_to:
+  stack: ga
 ---
 
 # Neo4j output plugin v2.0.5 [v2.0.5-plugins-outputs-neo4j]

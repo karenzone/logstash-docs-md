@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_app_search"
+navigation_title: elastic_app_search
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-elastic_app_search-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_app_search output plugin docs [output-elastic_app_search-index]

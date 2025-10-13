@@ -2,6 +2,8 @@
 navigation_title: solr_http
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-solr_http.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -1,7 +1,9 @@
 ---
-navigation_title: "exec"
+navigation_title: exec
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-exec-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned exec output plugin docs [output-exec-index]

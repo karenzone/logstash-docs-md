@@ -2,6 +2,8 @@
 navigation_title: statsd
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-statsd.html
+applies_to:
+  stack: ga
 
 ---
 

@@ -2,6 +2,8 @@
 navigation_title: puppet_facter
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-puppet_facter.html
+applies_to:
+  stack: ga
 
 ---
 

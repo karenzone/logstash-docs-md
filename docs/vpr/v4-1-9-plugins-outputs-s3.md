@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.1.9"
+navigation_title: v4.1.9
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.1.9-plugins-outputs-s3.html
+applies_to:
+  stack: ga
 ---
 
 # S3 output plugin v4.1.9 [v4.1.9-plugins-outputs-s3]

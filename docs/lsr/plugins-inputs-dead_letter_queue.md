@@ -2,6 +2,8 @@
 navigation_title: dead_letter_queue
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-inputs-dead_letter_queue.html
+applies_to:
+  stack: ga
 
 ---
 

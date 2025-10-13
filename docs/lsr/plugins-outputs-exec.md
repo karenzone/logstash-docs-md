@@ -2,6 +2,8 @@
 navigation_title: exec
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-exec.html
+applies_to:
+  stack: ga
 
 ---
 

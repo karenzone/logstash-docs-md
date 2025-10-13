@@ -2,6 +2,8 @@
 navigation_title: "null"
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-null-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned null output plugin docs [output-null-index]

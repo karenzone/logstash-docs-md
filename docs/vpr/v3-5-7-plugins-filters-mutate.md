@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.5.7"
+navigation_title: v3.5.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.5.7-plugins-filters-mutate.html
+applies_to:
+  stack: ga
 ---
 
 # Mutate filter plugin v3.5.7 [v3.5.7-plugins-filters-mutate]

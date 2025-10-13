@@ -1,7 +1,9 @@
 ---
-navigation_title: "dead_letter_queue"
+navigation_title: dead_letter_queue
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-dead_letter_queue-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned dead_letter_queue input plugin docs [input-dead_letter_queue-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "hashid"
+navigation_title: hashid
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-hashid-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned hashid filter plugin docs [filter-hashid-index]

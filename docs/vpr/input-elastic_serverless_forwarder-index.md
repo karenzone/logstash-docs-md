@@ -1,7 +1,9 @@
 ---
-navigation_title: "elastic_serverless_forwarder"
+navigation_title: elastic_serverless_forwarder
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-elastic_serverless_forwarder-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned elastic_serverless_forwarder input plugin docs [input-elastic_serverless_forwarder-index]

@@ -1,7 +1,9 @@
 ---
-navigation_title: "riemann"
+navigation_title: riemann
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-riemann-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned riemann output plugin docs [output-riemann-index]

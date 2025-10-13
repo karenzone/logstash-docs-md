@@ -2,6 +2,8 @@
 navigation_title: sqs
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash/current/plugins-outputs-sqs.html
+applies_to:
+  stack: ga
 
 ---
 

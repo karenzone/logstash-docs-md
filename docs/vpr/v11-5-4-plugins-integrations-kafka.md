@@ -1,7 +1,9 @@
 ---
-navigation_title: "v11.5.4"
+navigation_title: v11.5.4
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v11.5.4-plugins-integrations-kafka.html
+applies_to:
+  stack: ga
 ---
 
 # Kafka Integration Plugin v11.5.4 [v11.5.4-plugins-integrations-kafka]

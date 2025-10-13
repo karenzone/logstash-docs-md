@@ -1,7 +1,9 @@
 ---
-navigation_title: "v3.0.0"
+navigation_title: v3.0.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v3.0.0-plugins-outputs-elastic_workplace_search.html
+applies_to:
+  stack: ga
 ---
 
 # Elastic Workplace Search output plugin v3.0.0 [v3.0.0-plugins-outputs-elastic_workplace_search]

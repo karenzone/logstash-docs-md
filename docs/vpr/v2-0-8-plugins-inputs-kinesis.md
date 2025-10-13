@@ -1,7 +1,9 @@
 ---
-navigation_title: "v2.0.8"
+navigation_title: v2.0.8
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v2.0.8-plugins-inputs-kinesis.html
+applies_to:
+  stack: ga
 ---
 
 # Kinesis input plugin v2.0.8 [v2.0.8-plugins-inputs-kinesis]

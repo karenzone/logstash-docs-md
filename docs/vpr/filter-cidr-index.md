@@ -1,7 +1,9 @@
 ---
-navigation_title: "cidr"
+navigation_title: cidr
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-cidr-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned cidr filter plugin docs [filter-cidr-index]

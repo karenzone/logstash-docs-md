@@ -1,7 +1,9 @@
 ---
-navigation_title: "aggregate"
+navigation_title: aggregate
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-aggregate-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned aggregate filter plugin docs [filter-aggregate-index]

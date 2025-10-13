@@ -1,7 +1,9 @@
 ---
-navigation_title: "v4.3.7"
+navigation_title: v4.3.7
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v4.3.7-plugins-outputs-s3.html
+applies_to:
+  stack: ga
 ---
 
 # S3 output plugin v4.3.7 [v4.3.7-plugins-outputs-s3]

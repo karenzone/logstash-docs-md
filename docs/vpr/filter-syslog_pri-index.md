@@ -1,7 +1,9 @@
 ---
-navigation_title: "syslog_pri"
+navigation_title: syslog_pri
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-syslog_pri-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned syslog_pri filter plugin docs [filter-syslog_pri-index]

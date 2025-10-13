@@ -1,7 +1,9 @@
 ---
-navigation_title: "v1.1.0"
+navigation_title: v1.1.0
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/v1.1.0-plugins-filters-de_dot.html
+applies_to:
+  stack: ga
 ---
 
 # De_dot filter plugin v1.1.0 [v1.1.0-plugins-filters-de_dot]

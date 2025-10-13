@@ -1,7 +1,9 @@
 ---
-navigation_title: "environment"
+navigation_title: environment
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-environment-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned environment filter plugin docs [filter-environment-index]

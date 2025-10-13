@@ -1,7 +1,9 @@
 ---
-navigation_title: "couchdb_changes"
+navigation_title: couchdb_changes
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-couchdb_changes-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned couchdb_changes input plugin docs [input-couchdb_changes-index]

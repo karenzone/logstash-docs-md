@@ -1,7 +1,9 @@
 ---
-navigation_title: "kinesis"
+navigation_title: kinesis
 mapped_pages:
   - https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-kinesis-index.html
+applies_to:
+  stack: ga
 ---
 
 # Versioned kinesis input plugin docs [input-kinesis-index]
