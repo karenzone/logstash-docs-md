@@ -9,9 +9,9 @@ applies_to:
 
 # Dead_letter_queue input plugin
 
-* Plugin version: v2.0.0 ([Other versions](/vpr/input-dead_letter_queue-index.md))
-* Released on: 2022-08-02
-* [Changelog](https://github.com/logstash-plugins/logstash-input-dead_letter_queue/blob/v2.0.0/CHANGELOG.md)
+* Plugin version: v2.0.1 ([Other versions](/vpr/input-dead_letter_queue-index.md))
+* Released on: 2024-09-04
+* [Changelog](https://github.com/logstash-plugins/logstash-input-dead_letter_queue/blob/v2.0.1/CHANGELOG.md)
 
 
 

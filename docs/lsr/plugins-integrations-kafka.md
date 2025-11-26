@@ -9,9 +9,9 @@ applies_to:
 
 # Kafka Integration Plugin
 
-* Plugin version: v11.6.3 ([Other versions](/vpr/integration-kafka-index.md))
-* Released on: 2025-06-12
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v11.6.3/CHANGELOG.md)
+* Plugin version: v12.0.0 ([Other versions](/vpr/integration-kafka-index.md))
+* Released on: 2025-10-16
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v12.0.0/CHANGELOG.md)
 
 
 
@@ -28,4 +28,4 @@ The Kafka Integration Plugin provides integrated plugins for working with the [K
 * [Kafka Input Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html)
 * [Kafka Output Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-kafka.html)
 
-This plugin uses Kafka Client 3.9.1. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.
+This plugin uses Kafka Client 4.1.0. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.

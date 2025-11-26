@@ -10,9 +10,9 @@ applies_to:
 # Jdbc_static filter plugin
 
 * A component of the [jdbc integration plugin](/vpr/integration-jdbc-index.md)
-* Integration version: v5.5.3
-* Released on: 2025-03-07
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.5.3/CHANGELOG.md)
+* Integration version: v5.6.1
+* Released on: 2025-09-30
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.6.1/CHANGELOG.md)
 
 
 

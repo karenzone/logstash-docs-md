@@ -50,7 +50,7 @@ For more info on sending data from Logstash to Elasticsearch Serverless, check o
 
 ## Hosted Elasticsearch Service on Elastic Cloud [v11.22.8-plugins-outputs-elasticsearch-ess]
 
-You can run Elasticsearch on your own hardware or use our hosted Elasticsearch Service that is available on AWS, GCP, and Azure. [Try the Elasticsearch Service for free](https://cloud.elastic.co/registration?page=docs\&placement=docs-body).
+You can run Elasticsearch on your own hardware or use Elastic Cloud Hosted, available on AWS, GCP, and Azure. [Try Elastic Cloud Hosted for free](https://cloud.elastic.co/registration?page=docs\&placement=docs-body).
 
 ## Compatibility with the Elastic Common Schema (ECS) [_compatibility_with_the_elastic_common_schema_ecs]
 

@@ -9,9 +9,9 @@ applies_to:
 
 # Elasticsearch filter plugin
 
-* Plugin version: v4.2.0 ([Other versions](/vpr/filter-elasticsearch-index.md))
-* Released on: 2025-05-07
-* [Changelog](https://github.com/logstash-plugins/logstash-filter-elasticsearch/blob/v4.2.0/CHANGELOG.md)
+* Plugin version: v4.3.1 ([Other versions](/vpr/filter-elasticsearch-index.md))
+* Released on: 2025-09-23
+* [Changelog](https://github.com/logstash-plugins/logstash-filter-elasticsearch/blob/v4.3.1/CHANGELOG.md)
 
 
 
@@ -99,6 +99,104 @@ Authentication to a secure Elasticsearch cluster is possible using *one* of the 
 
 Authorization to a secure Elasticsearch cluster requires `read` permission at index level and `monitoring` permissions at cluster level. The `monitoring` permission at cluster level is necessary to perform periodic connectivity checks.
 
+## ES|QL support [plugins-filters-elasticsearch-esql]
+
+**Technical Preview**
+
+The ES|QL feature that allows using ES|QL queries with this plugin is in Technical Preview. Configuration options and implementation details are subject to change in minor releases without being preceded by deprecation warnings.
+
+Elasticsearch Query Language (ES|QL) provides a SQL-like interface for querying your Elasticsearch data.
+
+To use ES|QL, this plugin needs to be installed in Logstash 8.17.4 or newer, and must be connected to Elasticsearch 8.11 or newer.
+
+To configure ES|QL query in the plugin, set your ES|QL query in the `query` parameter.
+
+We recommend understanding [ES|QL current limitations](https://www.elastic.co/guide/en/elasticsearch/reference/current/esql-limitations.html) before using it in production environments.
+
+The following is a basic ES|QL query that sets the food name to transaction event based on upstream event’s food ID:
+
+```
+    filter {
+      elasticsearch {
+        hosts => [ 'https://..']
+        api_key => '....'
+        query => '
+          FROM food-index
+            | WHERE id == ?food_id
+        '
+        query_params => {
+          "food_id" => "[food][id]"
+        }
+      }
+    }
+```
+
+Set `config.support_escapes: true` in `logstash.yml` if you need to escape special chars in the query.
+
+In the result event, the plugin sets total result size in `[@metadata][total_values]` field.
+
+### Mapping ES|QL result to Logstash event [plugins-filters-elasticsearch-esql-event-mapping]
+
+ES|QL returns query results in a structured tabular format, where data is organized into *columns* (fields) and *values* (entries). The plugin maps each value entry to an event, populating corresponding fields. For example, a query might produce a table like:
+
+| `timestamp` | `user_id` | `action` | `status.code` | `status.desc` |
+| :- | :- | :- | :- | :- |
+| 2025-04-10T12:00:00 | 123 | login | 200 | Success |
+| 2025-04-10T12:05:00 | 456 | purchase | 403 | Forbidden (unauthorized user) |
+
+For this case, the plugin creates two JSON look like objects as below and places them into the `target` field of the event if `target` is defined. If `target` is not defined, the plugin places the *only* first result at the root of the event.
+
+```
+[
+  {
+    "timestamp": "2025-04-10T12:00:00",
+    "user_id": 123,
+    "action": "login",
+    "status": {
+        "code": 200,
+        "desc": "Success"
+    }
+  },
+  {
+    "timestamp": "2025-04-10T12:05:00",
+    "user_id": 456,
+    "action": "purchase",
+    "status": {
+        "code": 403,
+        "desc": "Forbidden (unauthorized user)"
+    }
+  }
+]
+```
+
+If your index has a mapping with sub-objects where `status.code` and `status.desc` actually dotted fields, they appear in Logstash events as a nested structure.
+
+### Conflict on multi-fields [plugins-filters-elasticsearch-esql-multifields]
+
+ES|QL query fetches all parent and sub-fields fields if your Elasticsearch index has [multi-fields](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/multi-fields) or [subobjects](https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/subobjects). Since Logstash events cannot contain parent field’s concrete value and sub-field values together, the plugin ignores sub-fields with warning and includes parent. We recommend using the `RENAME` (or `DROP` to avoid warning) keyword in your ES|QL query explicitly rename the fields to include sub-fields into the event.
+
+This is a common occurrence if your template or mapping follows the pattern of always indexing strings as "text" (`field`) + " keyword" (`field.keyword`) multi-field. In this case it’s recommended to do `KEEP field` if the string is identical and there is only one subfield as the engine will optimize and retrieve the keyword, otherwise you can do `KEEP field.keyword | RENAME field.keyword as field`.
+
+To illustrate the situation with example, assuming your mapping has a time `time` field with `time.min` and `time.max` sub-fields as following:
+
+```
+    "properties": {
+        "time": { "type": "long" },
+        "time.min": { "type": "long" },
+        "time.max": { "type": "long" }
+    }
+```
+
+The ES|QL result will contain all three fields but the plugin cannot map them into Logstash event. To avoid this, you can use the `RENAME` keyword to rename the `time` parent field to get all three fields with unique fields.
+
+```
+    ...
+    query => 'FROM my-index | RENAME time AS time.current'
+    ...
+```
+
+For comprehensive ES|QL syntax reference and best practices, see the [ES|QL documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/esql-syntax.html).
+
 ## Elasticsearch Filter Configuration Options [plugins-filters-elasticsearch-options]
 
 This plugin supports the following configuration options plus the [Common options](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-common-options) described later.
@@ -121,6 +219,8 @@ As of version `4.0.0` of this plugin, a number of previously deprecated settings
 | [`password`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-password) | [password](/lsr/value-types.md#password) | No |
 | [`proxy`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-proxy) | [uri](/lsr/value-types.md#uri) | No |
 | [`query`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query) | [string](/lsr/value-types.md#string) | No |
+| [`query_type`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query_type) | [string](/lsr/value-types.md#string), one of `["dsl", "esql"]` | No |
+| [`query_params`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query_params) | [hash](/lsr/value-types.md#hash) or [hash](/lsr/value-types.md#hash) | No |
 | [`query_template`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query_template) | [string](/lsr/value-types.md#string) | No |
 | [`result_size`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-result_size) | [number](/lsr/value-types.md#number) | No |
 | [`retry_on_failure`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-retry_on_failure) | [number](/lsr/value-types.md#number) | No |
@@ -300,7 +400,21 @@ Set the address of a forward HTTP proxy. An empty string is treated as if proxy 
 * Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
-Elasticsearch query string. More information is available in the [Elasticsearch query string documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax). Use either `query` or `query_template`.
+The query to be executed. The accepted query shape is DSL query string or ES|QL. For the DSL query string, use either `query` or `query_template`. Read the [Elasticsearch query string documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) or [Elasticsearch ES|QL documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/esql.html) for more information.
+
+### `query_type` [plugins-filters-elasticsearch-query_type]
+
+* Value can be `dsl` or `esql`
+* Default value is `dsl`
+
+Defines the [`query`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query) shape. When `dsl`, the query shape must be valid Elasticsearch JSON-style string. When `esql`, the query shape must be a valid ES|QL string and `index`, `query_template` and `sort` parameters are not allowed.
+
+### `query_params` [plugins-filters-elasticsearch-query_params]
+
+* The value type is [hash](/lsr/value-types.md#hash) or [array](/lsr/value-types.md#array). When an array provided, the array elements are pairs of `key` and `value`.
+* There is no default value for this setting
+
+Named parameters in ES|QL to send to Elasticsearch together with [`query`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-query). Visit [passing parameters to query page](https://www.elastic.co/guide/en/elasticsearch/reference/current/esql-rest.html#esql-rest-params) for more information.
 
 ### `query_template` [plugins-filters-elasticsearch-query_template]
 
@@ -463,9 +577,9 @@ Tags the event on failure to look up previous log event information. This can be
 * Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
-Define the target field for placing the result data. If this setting is omitted, the target will be the root (top level) of the event.
+Define the target field for placing the result data. If this setting is omitted, the target will be the root (top level) of the event. It is highly recommended to set when using `query_type=>'esql'` to set all query results into the event.
 
-The destination fields specified in [`fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-fields), [`aggregation_fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-aggregation_fields), and [`docinfo_fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-docinfo_fields) are relative to this target.
+When `query_type=>'dsl'`, the destination fields specified in [`fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-fields), [`aggregation_fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-aggregation_fields), and [`docinfo_fields`](plugins-filters-elasticsearch.md#plugins-filters-elasticsearch-docinfo_fields) are relative to this target.
 
 For example, if you want the data to be put in the `operation` field:
 

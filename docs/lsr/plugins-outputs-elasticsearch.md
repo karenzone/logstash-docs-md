@@ -9,9 +9,9 @@ applies_to:
 
 # Elasticsearch output plugin
 
-* Plugin version: v12.0.6 ([Other versions](/vpr/output-elasticsearch-index.md))
-* Released on: 2025-07-29
-* [Changelog](https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v12.0.6/CHANGELOG.md)
+* Plugin version: v12.1.0 ([Other versions](/vpr/output-elasticsearch-index.md))
+* Released on: 2025-10-07
+* [Changelog](https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v12.1.0/CHANGELOG.md)
 
 
 
@@ -223,9 +223,11 @@ This plugin attempts to send batches of events to the [Elasticsearch Bulk API](h
 
 ## DNS Caching [_dns_caching]
 
-This plugin uses the JVM to lookup DNS entries and is subject to the value of [networkaddress.cache.ttl](https://docs.oracle.com/javase/7/docs/technotes/guides/net/properties.html), a global setting for the JVM.
+This plugin uses the JVM to lookup DNS entries and is subject to the value of [Address Cache settings](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/doc-files/net-properties.html#address-cache-heading) such as `networkaddress.cache.ttl` and `networkaddress.cache.negative.ttl`, global settings for the JVM.
 
 As an example, to set your DNS TTL to 1 second you would set the `LS_JAVA_OPTS` environment variable to `-Dnetworkaddress.cache.ttl=1`.
+
+The default value for `networkaddress.cache.ttl` depends on the JVM implementation, which is 30 seconds for the JDK bundled with Logstash. The `networkaddress.cache.negative.ttl` setting, that controls how long Java caches the result of failed DNS lookups, defaults to 10 seconds.
 
 Keep in mind that a connection with keepalive enabled will not reevaluate its DNS value while the keepalive is in effect.
 
@@ -274,6 +276,7 @@ As of version 12.0.0 of this plugin, a number of previously deprecated SSL setti
 | [`doc_as_upsert`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-doc_as_upsert) | [boolean](/lsr/value-types.md#boolean) | No |
 | [`document_id`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-document_id) | [string](/lsr/value-types.md#string) | No |
 | [`document_type`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-document_type) | [string](/lsr/value-types.md#string) | No |
+| [`drop_error_types`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-drop_error_types) | [array](/lsr/value-types.md#array) | No |
 | [`ecs_compatibility`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-ecs_compatibility) | [string](/lsr/value-types.md#string) | No |
 | [`failure_type_logging_whitelist`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-failure_type_logging_whitelist) | [array](/lsr/value-types.md#array) | No |
 | [`healthcheck_path`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-healthcheck_path) | [string](/lsr/value-types.md#string) | No |
@@ -489,6 +492,21 @@ This sets the document type to write events to. Generally you should try to writ
 
 * for elasticsearch clusters 8.x: no value will be used;
 * for elasticsearch clusters 7.x: the value of *_doc* will be used.
+
+### `drop_error_types` [plugins-outputs-elasticsearch-drop_error_types]
+
+* Value type is [array](/lsr/value-types.md#array)
+* Default value is `[]`
+
+Lists the set of error types for which individual bulk request actions will not be retried. Unless an individual - document level - action returns 409 or an error from this list, failures will be retried indefinitely. A warning message will be logged indicating that the action failed, unless the error type is listed in the [`silence_errors_in_log`](plugins-outputs-elasticsearch.md#plugins-outputs-elasticsearch-silence_errors_in_log) config option. Note that the events are not added to the Dead Letter Queue (DLQ), regardless of whether it is enabled.
+
+```
+    output {
+      elasticsearch {
+        drop_error_types => ["index_closed_exception"]
+      }
+    }
+```
 
 ### `ecs_compatibility` [plugins-outputs-elasticsearch-ecs_compatibility]
 

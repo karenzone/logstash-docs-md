@@ -9,9 +9,9 @@ applies_to:
 
 # Riak output plugin
 
-* Plugin version: v3.0.4 ([Other versions](/vpr/output-riak-index.md))
-* Released on: 2018-04-06
-* [Changelog](https://github.com/logstash-plugins/logstash-output-riak/blob/v3.0.4/CHANGELOG.md)
+* Plugin version: v3.0.5 ([Other versions](/vpr/output-riak-index.md))
+* Released on: 2019-10-09
+* [Changelog](https://github.com/logstash-plugins/logstash-output-riak/blob/v3.0.5/CHANGELOG.md)
 
 
 
@@ -63,11 +63,15 @@ Bucket properties (NYI) Logstash hash of properties for the bucket i.e.
         "w" => "one"
         "dw", "one
      }
-or
-[source,ruby]
-    bucket_props => { "n_val" => "3" }
-Properties will be passed as-is
 ```
+
+or
+
+```
+    bucket_props => { "n_val" => "3" }
+```
+
+Properties will be passed as-is
 
 ### `enable_search` [plugins-outputs-riak-enable_search]
 
@@ -92,8 +96,9 @@ Indices Array of fields to add 2i on e.g.
 
 ```
     `indices => ["source_host", "type"]
-Off by default as not everyone runs eleveldb
 ```
+
+Off by default as not everyone runs eleveldb
 
 ### `key_name` [plugins-outputs-riak-key_name]
 
@@ -130,7 +135,9 @@ The protocol to use HTTP or ProtoBuf Applies to ALL backends listed above No mix
 * Value type is [hash](/lsr/value-types.md#hash)
 * There is no default value for this setting.
 
-SSL Options Options for SSL connections Only applied if SSL is enabled Logstash hash that maps to the riak-client options here: <https://github.com/basho/riak-ruby-client/wiki/Connecting-to-Riak> You’ll likely want something like this:
+Options for SSL connections. Only applied if SSL is enabled. Logstash hash that maps to the riak-client options here: <https://github.com/basho/riak-ruby-client/wiki/Connecting-to-Riak>.
+
+You’ll likely want something like this:
 
 ```
     ssl_opts => {

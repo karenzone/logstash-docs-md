@@ -204,6 +204,7 @@ toc:
       - file: plugins-codecs-netflow.md
       - file: plugins-codecs-nmap.md
       - file: plugins-codecs-plain.md
+      - file: plugins-codecs-pretty.md
       - file: plugins-codecs-protobuf.md
       - file: plugins-codecs-rubydebug.md
     file: codec-plugins.md

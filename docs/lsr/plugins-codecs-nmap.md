@@ -9,9 +9,9 @@ applies_to:
 
 # Nmap codec plugin
 
-* Plugin version: v0.0.21 ([Other versions](/vpr/codec-nmap-index.md))
-* Released on: 2017-11-07
-* [Changelog](https://github.com/logstash-plugins/logstash-codec-nmap/blob/v0.0.21/CHANGELOG.md)
+* Plugin version: v0.0.22 ([Other versions](/vpr/codec-nmap-index.md))
+* Released on: 2022-11-16
+* [Changelog](https://github.com/logstash-plugins/logstash-codec-nmap/blob/v0.0.22/CHANGELOG.md)
 
 
 
@@ -23,7 +23,7 @@ For questions about the plugin, open a topic in the [Discuss](http://discuss.ela
 
 ## Description [_description]
 
-This codec is used to parse [namp](https://nmap.org/) output data which is serialized in XML format. Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing. For more information on nmap, see <https://nmap.org/>.
+This codec is used to parse [nmap](https://nmap.org/) output data which is serialized in XML format. Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing. For more information on nmap, see <https://nmap.org/>.
 
 This codec can only be used for decoding data.
 

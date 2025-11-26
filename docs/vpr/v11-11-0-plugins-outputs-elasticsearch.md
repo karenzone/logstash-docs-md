@@ -36,7 +36,7 @@ If you are using a custom [`template`](v11-11-0-plugins-outputs-elasticsearch.md
 
 ### Hosted Elasticsearch Service on Elastic Cloud [_hosted_elasticsearch_service_on_elastic_cloud]
 
-You can run Elasticsearch on your own hardware or use our hosted Elasticsearch Service that is available on AWS, GCP, and Azure. [Try the Elasticsearch Service for free](https://cloud.elastic.co/registration?page=docs\&placement=docs-body).
+You can run Elasticsearch on your own hardware or use Elastic Cloud Hosted, available on AWS, GCP, and Azure. [Try Elastic Cloud Hosted for free](https://cloud.elastic.co/registration?page=docs\&placement=docs-body).
 
 ## Compatibility with the Elastic Common Schema (ECS) [_compatibility_with_the_elastic_common_schema_ecs]
 

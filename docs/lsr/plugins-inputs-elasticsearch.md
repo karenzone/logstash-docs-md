@@ -9,9 +9,9 @@ applies_to:
 
 # Elasticsearch input plugin
 
-* Plugin version: v5.2.0 ([Other versions](/vpr/input-elasticsearch-index.md))
-* Released on: 2025-06-06
-* [Changelog](https://github.com/logstash-plugins/logstash-input-elasticsearch/blob/v5.2.0/CHANGELOG.md)
+* Plugin version: v5.2.1 ([Other versions](/vpr/input-elasticsearch-index.md))
+* Released on: 2025-09-23
+* [Changelog](https://github.com/logstash-plugins/logstash-input-elasticsearch/blob/v5.2.1/CHANGELOG.md)
 
 
 
@@ -425,7 +425,7 @@ Example
 ```
     input {
       elasticsearch {
-        hosts => "es.production.mysite.org"
+        hosts => "es.production.example.com"
         index => "mydata-2018.09.*"
         query => '{ "query": { "query_string": { "query": "*" } } }'
         size => 500

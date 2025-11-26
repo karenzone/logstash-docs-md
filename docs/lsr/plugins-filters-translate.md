@@ -9,9 +9,9 @@ applies_to:
 
 # Translate filter plugin
 
-* Plugin version: v3.4.2 ([Other versions](/vpr/filter-translate-index.md))
-* Released on: 2023-06-14
-* [Changelog](https://github.com/logstash-plugins/logstash-filter-translate/blob/v3.4.2/CHANGELOG.md)
+* Plugin version: v3.5.0 ([Other versions](/vpr/filter-translate-index.md))
+* Released on: 2025-08-04
+* [Changelog](https://github.com/logstash-plugins/logstash-filter-translate/blob/v3.5.0/CHANGELOG.md)
 
 
 
@@ -86,6 +86,7 @@ This plugin supports the following configuration options plus the [Common option
 | [`refresh_behaviour`](plugins-filters-translate.md#plugins-filters-translate-refresh_behaviour) | [string](/lsr/value-types.md#string) | No |
 | [`target`](plugins-filters-translate.md#plugins-filters-translate-target) | [string](/lsr/value-types.md#string) | No |
 | [`yaml_dictionary_code_point_limit`](plugins-filters-translate.md#plugins-filters-translate-yaml_dictionary_code_point_limit) | [number](/lsr/value-types.md#number) | No |
+| [`yaml_load_strategy`](plugins-filters-translate.md#plugins-filters-translate-yaml_load_strategy) | [string](/lsr/value-types.md#string), one of `["one_shot", "streaming"]` | No |
 
 Also see [Common options](plugins-filters-translate.md#plugins-filters-translate-common-options) for a list of options supported by all filter plugins.
 
@@ -366,6 +367,19 @@ The target field you wish to populate with the translated code. If you set this 
 * Default value is 134217728 (128MB for 1 byte code points)
 
 The max amount of code points in the YAML file in `dictionary_path`. Please be aware that byte limit depends on the encoding. This setting is effective for YAML file only. YAML over the limit throws exception.
+
+### `yaml_load_strategy` [plugins-filters-translate-yaml_load_strategy]
+
+* Value can be any of: `one_shot`, `streaming`
+* Default value is `one_shot`
+
+How to load and parse the YAML file. This setting defaults to `one_shot`, which loads the entire YAML file into the parser in one go, emitting the final dictionary from the fully parsed YAML document.
+
+Setting to `streaming` will instead instruct the parser to emit one "YAML element" at a time, constructing the dictionary during parsing. This mode drastically reduces the amount of memory required to load or refresh the dictionary and it is also faster.
+
+Due to underlying implementation differences this mode only supports basic types such as Arrays, Objects, Strings, numbers and booleans, and does not support tags.
+
+If you have a lot of translate filters with large YAML documents consider changing this setting to `streaming` instead.
 
 ## Common options [plugins-filters-translate-common-options]
 

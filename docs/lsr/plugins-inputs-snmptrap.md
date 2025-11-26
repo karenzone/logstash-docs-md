@@ -10,9 +10,9 @@ applies_to:
 # SNMP trap input plugin
 
 * A component of the [snmp integration plugin](/vpr/integration-snmp-index.md)
-* Integration version: v4.0.6
-* Released on: 2025-01-23
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.0.6/CHANGELOG.md)
+* Integration version: v4.2.0
+* Released on: 2025-10-07
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.2.0/CHANGELOG.md)
 
 
 
@@ -54,6 +54,8 @@ This plugin also adds the trap PDU metadata to each event. The value is stored i
 | ECS disabled, v1, v8 | *Availability* | *Description* |
 | [@metadata][input][snmptrap][pdu][agent_addr] | *`SNMPv1`* | *Network address of the object generating the trap* |
 | [@metadata][input][snmptrap][pdu][community] | *`SNMPv1` `SNMPv2c`* | *SNMP community* |
+| [@metadata][input][snmptrap][pdu][context_engine_id] | *`SNMPv3`* | *SNMP context engine ID* |
+| [@metadata][input][snmptrap][pdu][context_name] | *`SNMPv3`* | *SNMP context name* |
 | [@metadata][input][snmptrap][pdu][enterprise] | *`SNMPv1`* | *Type of object generating the trap* |
 | [@metadata][input][snmptrap][pdu][error_index] | *`SNMPv2c` `SNMPv3`* | *Provides additional information by identifying which variable binding in the list caused the error* |
 | [@metadata][input][snmptrap][pdu][error_status] | *`SNMPv2c` `SNMPv3`* | *Error status code* |
@@ -101,7 +103,7 @@ This plugin supports the following SNMPv3 authentication options.
 | [`auth_pass`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_pass) | [password](/lsr/value-types.md#password) | No |
 | [`auth_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_protocol) | [string](/lsr/value-types.md#string), one of `["md5", "sha", "sha2", "hmac128sha224", "hmac192sha256", "hmac256sha384", "hmac384sha512"]` | No |
 | [`priv_pass`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-priv_pass) | [password](/lsr/value-types.md#password) | No |
-| [`priv_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-priv_protocol) | [string](/lsr/value-types.md#string), one of `["des", "3des", "aes", "aes128", "aes192", "aes256"]` | No |
+| [`priv_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-priv_protocol) | [string](/lsr/value-types.md#string), one of `["des", "3des", "aes", "aes128", "aes192", "aes256", "aes256with3desKey"]` | No |
 | [`security_level`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-security_level) | [string](/lsr/value-types.md#string), one of `["noAuthNoPriv", "authNoPriv", "authPriv"]` | No |
 | [`security_name`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-security_name) | [string](/lsr/value-types.md#string) | No |
 
@@ -289,7 +291,7 @@ The `priv_pass` option specifies the SNMPv3 encryption password.
 
 ### `priv_protocol` [plugins-inputs-snmptrap-priv_protocol]
 
-* Value can be any of: `des`, `3des`, `aes`, `aes128`, `aes192`, `aes256`
+* Value can be any of: `des`, `3des`, `aes`, `aes128`, `aes192`, `aes256`, `aes256with3desKey`
 * Note that `aes` and `aes128` are equivalent
 * There is no default value for this setting
 
@@ -297,8 +299,13 @@ The `priv_protocol` option specifies the SNMPv3 privacy/encryption protocol.
 
 ### `security_level` [plugins-inputs-snmptrap-security_level]
 
-* Value can be any of: `noAuthNoPriv`, `authNoPriv`, `authPriv`
-* There is no default value for this setting
+* Value can be any of:
+
+  * `noAuthNoPriv`: allows receiving traps messages without authentication or encryption.
+  * `authNoPriv`: trap messages must be authenticated according to [`security_name`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-security_name)/[`auth_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_protocol)/[`auth_pass`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_pass). Encrypted messages are allowed but not required.
+  * `authPriv`: trap messages must be both authenticated according to [`security_name`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-security_name)/[`auth_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_protocol)/[`auth_pass`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-auth_pass) and encrypted according to [`priv_protocol`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-priv_protocol)/[`priv_pass`](plugins-inputs-snmptrap.md#plugins-inputs-snmptrap-priv_pass).
+
+* The default value is `noAuthNoPriv`.
 
 The `security_level` option specifies the SNMPv3 security level between Authentication, No Privacy; Authentication, Privacy; or no Authentication, no Privacy.
 

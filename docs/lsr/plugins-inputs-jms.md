@@ -9,9 +9,9 @@ applies_to:
 
 # Jms input plugin
 
-* Plugin version: v3.3.0 ([Other versions](/vpr/input-jms-index.md))
-* Released on: 2025-03-07
-* [Changelog](https://github.com/logstash-plugins/logstash-input-jms/blob/v3.3.0/CHANGELOG.md)
+* Plugin version: v3.3.1 ([Other versions](/vpr/input-jms-index.md))
+* Released on: 2025-09-08
+* [Changelog](https://github.com/logstash-plugins/logstash-input-jms/blob/v3.3.1/CHANGELOG.md)
 
 
 

@@ -9,9 +9,9 @@ applies_to:
 
 # Azure Event Hubs plugin
 
-* Plugin version: v1.5.1 ([Other versions](/vpr/input-azure_event_hubs-index.md))
-* Released on: 2025-01-03
-* [Changelog](https://github.com/logstash-plugins/logstash-input-azure_event_hubs/blob/v1.5.1/CHANGELOG.md)
+* Plugin version: v1.5.2 ([Other versions](/vpr/input-azure_event_hubs-index.md))
+* Released on: 2025-07-11
+* [Changelog](https://github.com/logstash-plugins/logstash-input-azure_event_hubs/blob/v1.5.2/CHANGELOG.md)
 
 
 

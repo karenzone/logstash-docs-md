@@ -9,9 +9,9 @@ applies_to:
 
 # Librato output plugin
 
-* Plugin version: v3.0.6 ([Other versions](/vpr/output-librato-index.md))
-* Released on: 2018-04-06
-* [Changelog](https://github.com/logstash-plugins/logstash-output-librato/blob/v3.0.6/CHANGELOG.md)
+* Plugin version: v3.0.7 ([Other versions](/vpr/output-librato-index.md))
+* Released on: 2019-10-09
+* [Changelog](https://github.com/logstash-plugins/logstash-output-librato/blob/v3.0.7/CHANGELOG.md)
 
 
 
@@ -64,8 +64,11 @@ Example:
       "title" => "Logstash event on %{host}"
       "name" => "logstash_stream"
   }
+```
+
 or
-[source,ruby]
+
+```
    {
       "title" => "Logstash event"
       "description" => "%{message}"
@@ -114,8 +117,9 @@ Additionally, you can override the `measure_time` for the event. Must be a unix 
         "name" => "messages_received"
         "measure_time" => "%{my_unixtime_field}"
     }
-Default is to use the event's timestamp
 ```
+
+Default is to use the event’s timestamp
 
 ### `gauge` [plugins-outputs-librato-gauge]
 
@@ -132,16 +136,20 @@ Example:
         "source" => "%{host}"
         "name" => "apache_bytes"
     }
+```
+
 Additionally, you can override the `measure_time` for the event. Must be a unix timestamp:
-[source,ruby]
+
+```
     {
         "value" => "%{bytes_received}"
         "source" => "%{host}"
         "name" => "apache_bytes"
         "measure_time" => "%{my_unixtime_field}
     }
-Default is to use the event's timestamp
 ```
+
+Default is to use the event’s timestamp
 
 ## Common options [plugins-outputs-librato-common-options]
 

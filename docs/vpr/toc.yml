@@ -73,6 +73,8 @@ toc:
           - hidden: v5-0-0-plugins-integrations-jdbc.md
         file: integration-jdbc-index.md
       - children:
+          - hidden: v12-0-0-plugins-integrations-kafka.md
+          - hidden: v11-8-0-plugins-integrations-kafka.md
           - hidden: v11-7-0-plugins-integrations-kafka.md
           - hidden: v11-6-4-plugins-integrations-kafka.md
           - hidden: v11-6-3-plugins-integrations-kafka.md
@@ -749,6 +751,8 @@ toc:
           - hidden: v2-0-1-plugins-inputs-journald.md
         file: input-journald-index.md
       - children:
+          - hidden: v12-0-0-plugins-inputs-kafka.md
+          - hidden: v11-8-0-plugins-inputs-kafka.md
           - hidden: v11-7-0-plugins-inputs-kafka.md
           - hidden: v11-6-4-plugins-inputs-kafka.md
           - hidden: v11-6-3-plugins-inputs-kafka.md
@@ -1630,6 +1634,8 @@ toc:
           - hidden: v3-0-3-plugins-outputs-juggernaut.md
         file: output-juggernaut-index.md
       - children:
+          - hidden: v12-0-0-plugins-outputs-kafka.md
+          - hidden: v11-8-0-plugins-outputs-kafka.md
           - hidden: v11-7-0-plugins-outputs-kafka.md
           - hidden: v11-6-4-plugins-outputs-kafka.md
           - hidden: v11-6-3-plugins-outputs-kafka.md

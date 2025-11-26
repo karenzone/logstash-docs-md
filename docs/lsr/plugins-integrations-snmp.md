@@ -9,9 +9,9 @@ applies_to:
 
 # SNMP Integration Plugin
 
-* Plugin version: v4.0.6 ([Other versions](/vpr/integration-snmp-index.md))
-* Released on: 2025-01-23
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.0.6/CHANGELOG.md)
+* Plugin version: v4.2.0 ([Other versions](/vpr/integration-snmp-index.md))
+* Released on: 2025-10-07
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.2.0/CHANGELOG.md)
 
 
 

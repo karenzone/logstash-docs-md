@@ -9,9 +9,9 @@ applies_to:
 
 # Datadog_metrics output plugin
 
-* Plugin version: v3.0.6 ([Other versions](/vpr/output-datadog_metrics-index.md))
-* Released on: 2024-08-09
-* [Changelog](https://github.com/logstash-plugins/logstash-output-datadog_metrics/blob/v3.0.6/CHANGELOG.md)
+* Plugin version: v3.0.7 ([Other versions](/vpr/output-datadog_metrics-index.md))
+* Released on: 2024-10-25
+* [Changelog](https://github.com/logstash-plugins/logstash-output-datadog_metrics/blob/v3.0.7/CHANGELOG.md)
 
 
 

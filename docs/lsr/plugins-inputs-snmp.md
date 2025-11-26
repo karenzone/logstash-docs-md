@@ -10,9 +10,9 @@ applies_to:
 # SNMP input plugin
 
 * A component of the [snmp integration plugin](/vpr/integration-snmp-index.md)
-* Integration version: v4.0.6
-* Released on: 2025-01-23
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.0.6/CHANGELOG.md)
+* Integration version: v4.2.0
+* Released on: 2025-10-07
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-snmp/blob/v4.2.0/CHANGELOG.md)
 
 
 
@@ -81,7 +81,7 @@ This plugin supports the following SNMPv3 authentication options.
 | [`auth_pass`](plugins-inputs-snmp.md#plugins-inputs-snmp-auth_pass) | [password](/lsr/value-types.md#password) | No |
 | [`auth_protocol`](plugins-inputs-snmp.md#plugins-inputs-snmp-auth_protocol) | [string](/lsr/value-types.md#string), one of `["md5", "sha", "sha2", "hmac128sha224", "hmac192sha256", "hmac256sha384", "hmac384sha512"]` | No |
 | [`priv_pass`](plugins-inputs-snmp.md#plugins-inputs-snmp-priv_pass) | [password](/lsr/value-types.md#password) | No |
-| [`priv_protocol`](plugins-inputs-snmp.md#plugins-inputs-snmp-priv_protocol) | [string](/lsr/value-types.md#string), one of `["des", "3des", "aes", "aes128", "aes192", "aes256"]` | No |
+| [`priv_protocol`](plugins-inputs-snmp.md#plugins-inputs-snmp-priv_protocol) | [string](/lsr/value-types.md#string), one of `["des", "3des", "aes", "aes128", "aes192", "aes256", "aes256with3desKey"]` | No |
 | [`security_level`](plugins-inputs-snmp.md#plugins-inputs-snmp-security_level) | [string](/lsr/value-types.md#string), one of `["noAuthNoPriv", "authNoPriv", "authPriv"]` | No |
 | [`security_name`](plugins-inputs-snmp.md#plugins-inputs-snmp-security_name) | [string](/lsr/value-types.md#string) | No |
 
@@ -344,11 +344,15 @@ The `priv_pass` option specifies the SNMPv3 encryption password.
 
 ### `priv_protocol` [plugins-inputs-snmp-priv_protocol]
 
-* Value can be any of: `des`, `3des`, `aes`, `aes128`, `aes192`, `aes256`
+* Value can be any of: `des`, `3des`, `aes`, `aes128`, `aes192`, `aes256`, `aes256with3desKey`
 * Note that `aes` and `aes128` are equivalent
 * There is no default value for this setting
 
 The `priv_protocol` option specifies the SNMPv3 privacy/encryption protocol.
+
+**Technical Preview**
+
+The `aes256with3desKey` feature that allows using AES256 with 3DES key extension for `priv_protocol` is in Technical Preview. Configuration option and implementation details are subject to change in minor releases without being preceded by deprecation warnings.
 
 ### `security_level` [plugins-inputs-snmp-security_level]
 

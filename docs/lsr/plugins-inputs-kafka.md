@@ -10,9 +10,9 @@ applies_to:
 # Kafka input plugin
 
 * A component of the [kafka integration plugin](/vpr/integration-kafka-index.md)
-* Integration version: v11.6.3
-* Released on: 2025-06-12
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v11.6.3/CHANGELOG.md)
+* Integration version: v12.0.0
+* Released on: 2025-10-16
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v12.0.0/CHANGELOG.md)
 
 
 
@@ -26,7 +26,7 @@ For questions about the plugin, open a topic in the [Discuss](http://discuss.ela
 
 This input will read events from a Kafka topic.
 
-This plugin uses Kafka Client 3.9.1. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.
+This plugin uses Kafka Client 4.1.0. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.
 
 If you require features not yet available in this plugin (including client version upgrades), please file an issue with details about what you need.
 
@@ -47,9 +47,9 @@ Logstash instances by default form a single logical group to subscribe to Kafka 
 
 Ideally you should have as many threads as the number of partitions for a perfect balance—more threads than partitions means that some threads will be idle
 
-For more information see <https://kafka.apache.org/39/documentation.html#theconsumer>
+For more information see <https://kafka.apache.org/41/documentation.html#theconsumer>
 
-Kafka consumer configuration: <https://kafka.apache.org/39/documentation.html#consumerconfigs>
+Kafka consumer configuration: <https://kafka.apache.org/41/documentation.html#consumerconfigs>
 
 ## AWS MSK IAM authentication [plugins-inputs-kafka-aws_msk_iam_auth]
 
@@ -76,7 +76,7 @@ The following metadata from Kafka broker are added under the `[@metadata]` field
 * `[@metadata][kafka][partition]`: Partition info for this message.
 * `[@metadata][kafka][offset]`: Original record offset for this message.
 * `[@metadata][kafka][key]`: Record key, if any.
-* `[@metadata][kafka][timestamp]`: Timestamp in the Record. Depending on your broker configuration, this can be either when the record was created (default) or when it was received by the broker. See more about property log.message.timestamp.type at <https://kafka.apache.org/39/documentation.html#brokerconfigs>
+* `[@metadata][kafka][timestamp]`: Timestamp in the Record. Depending on your broker configuration, this can be either when the record was created (default) or when it was received by the broker. See more about property log.message.timestamp.type at <https://kafka.apache.org/41/documentation.html#brokerconfigs>
 
 Metadata is only added to the event if the `decorate_events` option is set to `basic` or `extended` (it defaults to `none`).
 
@@ -86,7 +86,7 @@ Please note that `@metadata` fields are not part of any of your events at output
 
 This plugin supports these configuration options plus the [Common options](plugins-inputs-kafka.md#plugins-inputs-kafka-common-options) described later.
 
-Some of these options map to a Kafka option. Defaults usually reflect the Kafka default setting, and might change if Kafka’s consumer defaults change. See the <https://kafka.apache.org/39/documentation> for more details.
+Some of these options map to a Kafka option. Defaults usually reflect the Kafka default setting, and might change if Kafka’s consumer defaults change. See the <https://kafka.apache.org/41/documentation> for more details.
 
 | Setting | Input type | Required |
 | :- | :- | :- |
@@ -108,6 +108,7 @@ Some of these options map to a Kafka option. Defaults usually reflect the Kafka 
 | [`fetch_min_bytes`](plugins-inputs-kafka.md#plugins-inputs-kafka-fetch_min_bytes) | [number](/lsr/value-types.md#number) | No |
 | [`group_id`](plugins-inputs-kafka.md#plugins-inputs-kafka-group_id) | [string](/lsr/value-types.md#string) | No |
 | [`group_instance_id`](plugins-inputs-kafka.md#plugins-inputs-kafka-group_instance_id) | [string](/lsr/value-types.md#string) | No |
+| [`group_protocol`](plugins-inputs-kafka.md#plugins-inputs-kafka-group_protocol) | [string](/lsr/value-types.md#string) | No |
 | [`heartbeat_interval_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-heartbeat_interval_ms) | [number](/lsr/value-types.md#number) | No |
 | [`isolation_level`](plugins-inputs-kafka.md#plugins-inputs-kafka-isolation_level) | [string](/lsr/value-types.md#string) | No |
 | [`jaas_path`](plugins-inputs-kafka.md#plugins-inputs-kafka-jaas_path) | a valid filesystem path | No |
@@ -121,6 +122,7 @@ Some of these options map to a Kafka option. Defaults usually reflect the Kafka 
 | [`poll_timeout_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-poll_timeout_ms) | [number](/lsr/value-types.md#number) | No |
 | [`receive_buffer_bytes`](plugins-inputs-kafka.md#plugins-inputs-kafka-receive_buffer_bytes) | [number](/lsr/value-types.md#number) | No |
 | [`reconnect_backoff_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-reconnect_backoff_ms) | [number](/lsr/value-types.md#number) | No |
+| [`reconnect_backoff_max_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-reconnect_backoff_max_ms) | [number](/lsr/value-types.md#number) | No |
 | [`request_timeout_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-request_timeout_ms) | [number](/lsr/value-types.md#number) | No |
 | [`retry_backoff_ms`](plugins-inputs-kafka.md#plugins-inputs-kafka-retry_backoff_ms) | [number](/lsr/value-types.md#number) | No |
 | [`sasl_client_callback_handler_class`](plugins-inputs-kafka.md#plugins-inputs-kafka-sasl_client_callback_handler_class) | [string](/lsr/value-types.md#string) | No |
@@ -320,6 +322,17 @@ The `group_instance_id` setting must be unique across all the clients belonging 
 
 In cases when multiple threads are configured and `consumer_threads` is greater than one, a suffix is appended to the `group_instance_id` to avoid collisions.
 
+### `group_protocol` [plugins-inputs-kafka-group_protocol]
+
+* Value can be either of: `classic`, `consumer`
+* Default value is `classic`.
+
+Specifies the consumer group rebalance protocol used by the Kafka client.
+
+`classic` is the default protocol. During a rebalance, all consumer instances pause message processing until partition assignments are complete.
+
+`consumer` is an incremental rebalance protocol introduced in Kafka 4. It avoids global synchronization barriers by only pausing partitions that are reassigned. When using `consumer`, the following settings **cannot be configured**: `partition_assignment_strategy`, `heartbeat_interval_ms`, and `session_timeout_ms`.
+
 ### `heartbeat_interval_ms` [plugins-inputs-kafka-heartbeat_interval_ms]
 
 * Value type is [number](/lsr/value-types.md#number)
@@ -406,7 +419,7 @@ The name of the partition assignment strategy that the client uses to distribute
 * `sticky`
 * `cooperative_sticky`
 
-These map to Kafka’s corresponding [`ConsumerPartitionAssignor`](https://kafka.apache.org/39/javadoc/org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html) implementations.
+These map to Kafka’s corresponding [`ConsumerPartitionAssignor`](https://kafka.apache.org/41/javadoc/org/apache/kafka/clients/consumer/ConsumerPartitionAssignor.html) implementations.
 
 ### `poll_timeout_ms` [plugins-inputs-kafka-poll_timeout_ms]
 
@@ -430,6 +443,13 @@ The size of the TCP receive buffer (SO_RCVBUF) to use when reading data.
 * Default value is `50` milliseconds.
 
 The amount of time to wait before attempting to reconnect to a given host. This avoids repeatedly connecting to a host in a tight loop. This backoff applies to all requests sent by the consumer to the broker.
+
+### `reconnect_backoff_max_ms` [plugins-inputs-kafka-reconnect_backoff_max_ms]
+
+* Value type is [number](/lsr/value-types.md#number)
+* Default value is `1000` milliseconds.
+
+The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum.
 
 ### `request_timeout_ms` [plugins-inputs-kafka-request_timeout_ms]
 

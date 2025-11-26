@@ -97,7 +97,7 @@ output {
   elastic_workplace_search {
     source => "%{[source_id]}"
     access_token => "abracadabra"
-    url => "http://workplace.search.com:3002"
+    url => "http://workplace.example.com:3002"
   }
 }
 ```
@@ -188,7 +188,7 @@ The value of the API endpoint in the form of a URL.
 
 On premise instance:
 
-`http://workplace.company.com:3002`
+`http://workplace.example.com:3002`
 
 Elastic Cloud instance:
 

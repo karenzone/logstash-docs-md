@@ -39,5 +39,6 @@ The following codec plugins are available below. For a list of Elastic supported
 | [netflow](plugins-codecs-netflow.md) | Reads Netflow v5 and Netflow v9 data | [logstash-codec-netflow](https://github.com/logstash-plugins/logstash-codec-netflow) |
 | [nmap](plugins-codecs-nmap.md) | Reads Nmap data in XML format | [logstash-codec-nmap](https://github.com/logstash-plugins/logstash-codec-nmap) |
 | [plain](plugins-codecs-plain.md) | Reads plaintext with no delimiting between events | [logstash-codec-plain](https://github.com/logstash-plugins/logstash-codec-plain) |
+| [pretty](plugins-codecs-pretty.md) | Prints your event data using the Ruby Awesome Print library | [logstash-codec-pretty](https://github.com/logstash-plugins/logstash-codec-pretty) |
 | [protobuf](plugins-codecs-protobuf.md) | Reads protobuf messages and converts to Logstash Events | [logstash-codec-protobuf](https://github.com/logstash-plugins/logstash-codec-protobuf) |
 | [rubydebug](plugins-codecs-rubydebug.md) | Applies the Ruby Awesome Print library to Logstash events | [logstash-codec-rubydebug](https://github.com/logstash-plugins/logstash-codec-rubydebug) |

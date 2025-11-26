@@ -9,9 +9,9 @@ applies_to:
 
 # Mutate filter plugin
 
-* Plugin version: v3.5.7 ([Other versions](/vpr/filter-mutate-index.md))
-* Released on: 2023-05-11
-* [Changelog](https://github.com/logstash-plugins/logstash-filter-mutate/blob/v3.5.7/CHANGELOG.md)
+* Plugin version: v3.5.8 ([Other versions](/vpr/filter-mutate-index.md))
+* Released on: 2023-11-22
+* [Changelog](https://github.com/logstash-plugins/logstash-filter-mutate/blob/v3.5.8/CHANGELOG.md)
 
 
 

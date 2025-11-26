@@ -9,9 +9,9 @@ applies_to:
 
 # JDBC Integration Plugin
 
-* Plugin version: v5.5.3 ([Other versions](/vpr/integration-jdbc-index.md))
-* Released on: 2025-03-07
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.5.3/CHANGELOG.md)
+* Plugin version: v5.6.1 ([Other versions](/vpr/integration-jdbc-index.md))
+* Released on: 2025-09-30
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.6.1/CHANGELOG.md)
 
 
 

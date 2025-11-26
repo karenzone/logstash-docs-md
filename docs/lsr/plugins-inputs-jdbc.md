@@ -10,9 +10,9 @@ applies_to:
 # Jdbc input plugin
 
 * A component of the [jdbc integration plugin](/vpr/integration-jdbc-index.md)
-* Integration version: v5.5.3
-* Released on: 2025-03-07
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.5.3/CHANGELOG.md)
+* Integration version: v5.6.1
+* Released on: 2025-09-30
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-jdbc/blob/v5.6.1/CHANGELOG.md)
 
 
 
@@ -34,9 +34,9 @@ See the [`jdbc_driver_library`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-jdbc_
 
 ## Scheduling [_scheduling]
 
-Input from this plugin can be scheduled to run periodically according to a specific schedule. This scheduling syntax is powered by [rufus-scheduler](https://github.com/jmettraux/rufus-scheduler). The syntax is cron-like with some extensions specific to Rufus (e.g. timezone support ).
+Input from this plugin can be scheduled to run periodically according to a specific schedule. This scheduling syntax is powered by [rufus-scheduler](https://github.com/jmettraux/rufus-scheduler). The syntax is either cron-like with some extensions specific to Rufus (e.g. timezone support ) if using the `schedule` option or periodic when using `period` or `interval` option.
 
-Examples:
+Examples for `schedule`:
 
 | | |
 | :- | :- |
@@ -44,7 +44,20 @@ Examples:
 | `0 * * * *` | will execute on the 0th minute of every hour every day. |
 | `0 6 * * * America/Chicago` | will execute at 6:00am (UTC/GMT -5) every day. |
 
+Examples for `period` or `interval`:
+
+| | |
+| :- | :- |
+| `1m` | will execute every minute |
+| `3h10m` | will execute every three hours and 10 minutes |
+
 Further documentation describing this syntax can be found [here](https://github.com/jmettraux/rufus-scheduler#parsing-cronlines-and-time-strings).
+
+`interval` jobs trigger, execute and then trigger again after the interval elapsed.
+
+`period` jobs try to trigger following the frequency they were scheduled with.
+
+You can only use one of `interval`, `period` or `schedule` at the same time.
 
 ## State [_state]
 
@@ -162,6 +175,7 @@ This plugin supports the following configuration options plus the [Common option
 | [`columns_charset`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-columns_charset) | [hash](/lsr/value-types.md#hash) | No |
 | [`connection_retry_attempts`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-connection_retry_attempts) | [number](/lsr/value-types.md#number) | No |
 | [`connection_retry_attempts_wait_time`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-connection_retry_attempts_wait_time) | [number](/lsr/value-types.md#number) | No |
+| [`interval`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-interval) | [string](/lsr/value-types.md#string) | No |
 | [`jdbc_connection_string`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-jdbc_connection_string) | [string](/lsr/value-types.md#string) | Yes |
 | [`jdbc_default_timezone`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-jdbc_default_timezone) | [string](/lsr/value-types.md#string) | No |
 | [`jdbc_driver_class`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-jdbc_driver_class) | [string](/lsr/value-types.md#string) | Yes |
@@ -179,6 +193,7 @@ This plugin supports the following configuration options plus the [Common option
 | [`last_run_metadata_path`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-last_run_metadata_path) | [string](/lsr/value-types.md#string) | No |
 | [`lowercase_column_names`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-lowercase_column_names) | [boolean](/lsr/value-types.md#boolean) | No |
 | [`parameters`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-parameters) | [hash](/lsr/value-types.md#hash) | No |
+| [`period`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-period) | [string](/lsr/value-types.md#string) | No |
 | [`plugin_timezone`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-plugin_timezone) | [string](/lsr/value-types.md#string), one of `["local", "utc"]` | No |
 | [`prepared_statement_bind_values`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-prepared_statement_bind_values) | [array](/lsr/value-types.md#array) | No |
 | [`prepared_statement_name`](plugins-inputs-jdbc.md#plugins-inputs-jdbc-prepared_statement_name) | [string](/lsr/value-types.md#string) | No |
@@ -239,6 +254,15 @@ Maximum number of times to try connecting to database
 * Default value is `0.5`
 
 Number of seconds to sleep between connection attempts
+
+### `interval` [plugins-inputs-jdbc-interval]
+
+* Value type is [string](/lsr/value-types.md#string)
+* There is no default value for this setting.
+
+This takes a string in the form of `1h`, `1m`, to denote a time interval. `interval` jobs trigger, execute and trigger again after the provided time interval has elapsed.
+
+There is no schedule by default. If no scheduling statement is given, then the statement is run exactly once.
 
 ### `jdbc_connection_string` [plugins-inputs-jdbc-jdbc_connection_string]
 
@@ -427,6 +451,15 @@ Whether to force the lowercasing of identifier fields
 
 Hash of query parameter, for example `{ "target_id" => "321" }`
 
+### `period` [plugins-inputs-jdbc-period]
+
+* Value type is [string](/lsr/value-types.md#string)
+* There is no default value for this setting.
+
+This takes a string in the form of `1h`, `1m`, to denote a time interval. `period` jobs try hard to trigger following the frequency they were scheduled with.
+
+There is no schedule by default. If no scheduling statement is given, then the statement is run exactly once.
+
 ### `prepared_statement_bind_values` [plugins-inputs-jdbc-prepared_statement_bind_values]
 
 * Value type is [array](/lsr/value-types.md#array)
@@ -455,7 +488,7 @@ Whether to save state or not in [`last_run_metadata_path`](plugins-inputs-jdbc.m
 
 Schedule of when to periodically run statement, in Cron format for example: "\* \* \* \* \*" (execute query every minute, on the minute)
 
-There is no schedule by default. If no schedule is given, then the statement is run exactly once.
+There is no schedule by default. If no scheduling statement is given, then the statement is run exactly once.
 
 ### `sequel_opts` [plugins-inputs-jdbc-sequel_opts]
 

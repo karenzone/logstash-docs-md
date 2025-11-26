@@ -9,9 +9,9 @@ applies_to:
 
 # Elastic Serverless Forwarder input plugin
 
-* Plugin version: v0.1.5 ([Other versions](/vpr/input-elastic_serverless_forwarder-index.md))
-* Released on: 2024-09-12
-* [Changelog](https://github.com/logstash-plugins/logstash-input-elastic_serverless_forwarder/blob/v0.1.5/CHANGELOG.md)
+* Plugin version: v2.0.0 ([Other versions](/vpr/input-elastic_serverless_forwarder-index.md))
+* Released on: 2024-12-23
+* [Changelog](https://github.com/logstash-plugins/logstash-input-elastic_serverless_forwarder/blob/v2.0.0/CHANGELOG.md)
 
 
 
@@ -30,12 +30,6 @@ Using this input you can receive events from Elastic Serverless Forwarder over h
 | SSL Enabled | SSL Disabled |
 | :- | :- |
 | input {<br> elastic_serverless_forwarder {<br> port => 8080<br> ssl_certificate => "/path/to/logstash.crt"<br> ssl_key => "/path/to/logstash.key"<br> }<br>} | input {<br> elastic_serverless_forwarder {<br> port => 8080<br> ssl_enabled => false<br> }<br>} |
-
-**Technical Preview**
-
-This Elastic Serverless Forwarder input plugin is part of a *Technical Preview*, which means that both configuration options and implementation details are subject to change in minor releases without being preceded by deprecation warnings.
-
-Before upgrading this plugin or Logstash itself, please pay special attention to this plugin’s [CHANGELOG.md](https://github.com/logstash-plugins/logstash-input-elastic_serverless_forwarder/blob/main/CHANGELOG.md) to avoid being caught by surprise.
 
 ## Enrichment [plugins-inputs-elastic_serverless_forwarder-enrichment]
 
@@ -110,13 +104,14 @@ Here are some tips for configuring the Elastic Serverless Forwarder input to wor
 
 This plugin supports the following configuration options plus the [Common options](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-common-options) described later.
 
+As of version `2.0.0` of this plugin, a previously deprecated SSL setting has been removed. Please check out [Elasticsearch Output Obsolete Configuration Options](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-obsolete-options) for details.
+
 | Setting | Input type | Required |
 | :- | :- | :- |
 | [`auth_basic_username`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-auth_basic_username) | [string](/lsr/value-types.md#string) | No |
 | [`auth_basic_password`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-auth_basic_password) | [password](/lsr/value-types.md#password) | No |
 | [`host`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-host) | [string](/lsr/value-types.md#string) | No |
 | [`port`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-port) | [number](/lsr/value-types.md#number) | No |
-| [`ssl`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl) | [boolean](/lsr/value-types.md#boolean) | *Deprecated* |
 | [`ssl_certificate`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_certificate) | a valid filesystem path | No |
 | [`ssl_certificate_authorities`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_certificate_authorities) | [array](/lsr/value-types.md#array) | No |
 | [`ssl_client_authentication`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_client_authentication) | [string](/lsr/value-types.md#string), one of `["none", "optional", "required"]` | No |
@@ -157,19 +152,6 @@ The host or ip to bind
 * Default value is `8080`
 
 The TCP port to bind to
-
-### `ssl` [plugins-inputs-elastic_serverless_forwarder-ssl]
-
-Deprecated in 0.1.3.
-
-Replaced by [`ssl_enabled`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_enabled)
-
-* Value type is [boolean](/lsr/value-types.md#boolean)
-* Default value is `true`
-
-Events are by default sent over SSL, which requires configuring this plugin to present an identity certificate using [`ssl_certificate`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_certificate) and key using [`ssl_key`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_key).
-
-You can disable SSL with `+ssl => false+`.
 
 ### `ssl_certificate` [plugins-inputs-elastic_serverless_forwarder-ssl_certificate]
 
@@ -271,6 +253,14 @@ If you configure the plugin to use `'TLSv1.1'` on any recent JVM, such as the on
 When [`ssl_client_authentication`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_client_authentication) causes a client to present a certificate, this setting controls how that certificate is verified.
 
 Client identity is not typically validated using SSL because the receiving server only has access to the client’s outbound-ip, which is not always constant and is frequently not represented in the certificate’s subject or subjectAltNames extensions. For more information, see [RFC2818 § 3.2 (HTTP over TLS—Client Identity)](https://www.rfc-editor.org/rfc/rfc2818#section-3.1)
+
+## Elasticsearch Output Obsolete Configuration Options [plugins-inputs-elastic_serverless_forwarder-obsolete-options]
+
+As of version `2.0.0` of this plugin, some configuration options have been replaced. The plugin will fail to start if it contains any of these obsolete options.
+
+| Setting | Replaced by |
+| :- | :- |
+| ssl | [`ssl_enabled`](plugins-inputs-elastic_serverless_forwarder.md#plugins-inputs-elastic_serverless_forwarder-ssl_enabled) |
 
 ## Common options [plugins-inputs-elastic_serverless_forwarder-common-options]
 

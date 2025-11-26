@@ -9,9 +9,9 @@ applies_to:
 
 # Tcp input plugin
 
-* Plugin version: v7.0.2 ([Other versions](/vpr/input-tcp-index.md))
-* Released on: 2025-02-12
-* [Changelog](https://github.com/logstash-plugins/logstash-input-tcp/blob/v7.0.2/CHANGELOG.md)
+* Plugin version: v7.0.3 ([Other versions](/vpr/input-tcp-index.md))
+* Released on: 2025-09-04
+* [Changelog](https://github.com/logstash-plugins/logstash-input-tcp/blob/v7.0.3/CHANGELOG.md)
 
 
 

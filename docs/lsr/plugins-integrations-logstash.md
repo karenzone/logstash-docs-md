@@ -9,9 +9,9 @@ applies_to:
 
 # Logstash Integration Plugin
 
-* Plugin version: v1.0.3 ([Other versions](/vpr/integration-logstash-index.md))
-* Released on: 2024-09-12
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-logstash/blob/v1.0.3/CHANGELOG.md)
+* Plugin version: v1.0.4 ([Other versions](/vpr/integration-logstash-index.md))
+* Released on: 2024-12-10
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-logstash/blob/v1.0.4/CHANGELOG.md)
 
 
 

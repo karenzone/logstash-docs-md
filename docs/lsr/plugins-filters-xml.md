@@ -9,9 +9,9 @@ applies_to:
 
 # Xml filter plugin
 
-* Plugin version: v4.3.1 ([Other versions](/vpr/filter-xml-index.md))
-* Released on: 2025-04-22
-* [Changelog](https://github.com/logstash-plugins/logstash-filter-xml/blob/v4.3.1/CHANGELOG.md)
+* Plugin version: v4.3.2 ([Other versions](/vpr/filter-xml-index.md))
+* Released on: 2025-07-24
+* [Changelog](https://github.com/logstash-plugins/logstash-filter-xml/blob/v4.3.2/CHANGELOG.md)
 
 
 

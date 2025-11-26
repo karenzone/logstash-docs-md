@@ -9,9 +9,9 @@ applies_to:
 
 # Csv output plugin
 
-* Plugin version: v3.0.10 ([Other versions](/vpr/output-csv-index.md))
-* Released on: 2023-12-19
-* [Changelog](https://github.com/logstash-plugins/logstash-output-csv/blob/v3.0.10/CHANGELOG.md)
+* Plugin version: v3.0.11 ([Other versions](/vpr/output-csv-index.md))
+* Released on: 2025-10-10
+* [Changelog](https://github.com/logstash-plugins/logstash-output-csv/blob/v3.0.11/CHANGELOG.md)
 
 
 
@@ -115,7 +115,7 @@ By default, this output writes one event per line in **json** format. You can cu
 
 ```
 output {
- file {
+ csv {
    path => ...
    codec => line { format => "custom format: %{message}"}
  }

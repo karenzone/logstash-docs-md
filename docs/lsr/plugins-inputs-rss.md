@@ -9,9 +9,9 @@ applies_to:
 
 # Rss input plugin
 
-* Plugin version: v3.0.5 ([Other versions](/vpr/input-rss-index.md))
-* Released on: 2018-04-06
-* [Changelog](https://github.com/logstash-plugins/logstash-input-rss/blob/v3.0.5/CHANGELOG.md)
+* Plugin version: v3.0.6 ([Other versions](/vpr/input-rss-index.md))
+* Released on: 2023-11-03
+* [Changelog](https://github.com/logstash-plugins/logstash-input-rss/blob/v3.0.6/CHANGELOG.md)
 
 
 

@@ -11,9 +11,9 @@ applies_to:
 
 The `input-elastic_agent` plugin is the next generation of the `input-beats` plugin. They currently share code and a [common codebase](https://github.com/logstash-plugins/logstash-input-beats).
 
-* Plugin version: v7.0.2 ([Other versions](/vpr/input-beats-index.md))
-* Released on: 2025-02-12
-* [Changelog](https://github.com/logstash-plugins/logstash-input-beats/blob/v7.0.2/CHANGELOG.md)
+* Plugin version: v7.0.3 ([Other versions](/vpr/input-beats-index.md))
+* Released on: 2025-09-04
+* [Changelog](https://github.com/logstash-plugins/logstash-input-beats/blob/v7.0.3/CHANGELOG.md)
 
 
 
@@ -80,7 +80,7 @@ index => "%{[@metadata][beat]}-%{[@metadata][version]}-%{+YYYY.MM.dd}"
 
   Sets the third part of the name to a date based on the Logstash `@timestamp` field.
 
-This configuration results in daily index names like `filebeat-{logstash_version}-2025-07-30`.
+This configuration results in daily index names like `filebeat-{logstash_version}-2025-10-23`.
 
 ## Event enrichment and the Elastic Common Schema (ECS) [plugins-inputs-beats-ecs_metadata]
 

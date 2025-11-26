@@ -81,7 +81,7 @@ As an example, the logstash event:
      "@timestamp":"2013-12-10T14:36:26.151+0000",
      "@version": 1,
      "message":"log message",
-     "host": "host.domain.com",
+     "host": "host.example.com",
      "nested_field": {
                        "key": "value"
                      }
@@ -93,7 +93,7 @@ Is mapped to this riemann event:
 ```
   {
     :time 1386686186,
-    :host host.domain.com,
+    :host host.example.com,
     :message log message,
     :nested_field.key value
   }

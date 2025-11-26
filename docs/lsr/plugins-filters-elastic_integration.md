@@ -9,9 +9,9 @@ applies_to:
 
 # Elastic Integration filter plugin
 
-* Plugin version: v9.1.1 ([Other versions](/vpr/filter-elastic_integration-index.md))
-* Released on: 2025-07-16
-* [Changelog](https://github.com/elastic/logstash-filter-elastic_integration/blob/v9.1.1/CHANGELOG.md)
+* Plugin version: v9.2.0 ([Other versions](/vpr/filter-elastic_integration-index.md))
+* Released on: 2025-10-02
+* [Changelog](https://github.com/elastic/logstash-filter-elastic_integration/blob/v9.2.0/CHANGELOG.md)
 
 
 

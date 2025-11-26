@@ -10,9 +10,9 @@ applies_to:
 # Logstash output plugin
 
 * A component of the [logstash integration plugin](/vpr/integration-logstash-index.md)
-* Integration version: v1.0.3
-* Released on: 2024-09-12
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-logstash/blob/v1.0.3/CHANGELOG.md)
+* Integration version: v1.0.4
+* Released on: 2024-12-10
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-logstash/blob/v1.0.4/CHANGELOG.md)
 
 
 

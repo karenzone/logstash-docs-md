@@ -9,9 +9,9 @@ applies_to:
 
 # Twitter input plugin
 
-* Plugin version: v4.1.0 ([Other versions](/vpr/input-twitter-index.md))
-* Released on: 2021-11-18
-* [Changelog](https://github.com/logstash-plugins/logstash-input-twitter/blob/v4.1.0/CHANGELOG.md)
+* Plugin version: v4.1.1 ([Other versions](/vpr/input-twitter-index.md))
+* Released on: 2023-11-16
+* [Changelog](https://github.com/logstash-plugins/logstash-input-twitter/blob/v4.1.1/CHANGELOG.md)
 
 
 

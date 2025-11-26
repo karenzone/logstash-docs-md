@@ -15,6 +15,8 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v12.0.0](v12-0-0-plugins-integrations-kafka.md) | 2025-10-16 |
+| [v11.8.0](v11-8-0-plugins-integrations-kafka.md) | 2025-10-16 |
 | [v11.7.0](v11-7-0-plugins-integrations-kafka.md) | 2025-10-03 |
 | [v11.6.4](v11-6-4-plugins-integrations-kafka.md) | 2025-08-28 |
 | [v11.6.3](v11-6-3-plugins-integrations-kafka.md) | 2025-06-12 |

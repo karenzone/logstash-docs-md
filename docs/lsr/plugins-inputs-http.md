@@ -9,9 +9,9 @@ applies_to:
 
 # Http input plugin
 
-* Plugin version: v4.1.2 ([Other versions](/vpr/input-http-index.md))
-* Released on: 2025-02-12
-* [Changelog](https://github.com/logstash-plugins/logstash-input-http/blob/v4.1.2/CHANGELOG.md)
+* Plugin version: v4.1.3 ([Other versions](/vpr/input-http-index.md))
+* Released on: 2025-09-04
+* [Changelog](https://github.com/logstash-plugins/logstash-input-http/blob/v4.1.3/CHANGELOG.md)
 
 
 

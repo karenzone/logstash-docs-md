@@ -10,9 +10,9 @@ applies_to:
 # Kafka output plugin
 
 * A component of the [kafka integration plugin](/vpr/integration-kafka-index.md)
-* Integration version: v11.6.3
-* Released on: 2025-06-12
-* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v11.6.3/CHANGELOG.md)
+* Integration version: v12.0.0
+* Released on: 2025-10-16
+* [Changelog](https://github.com/logstash-plugins/logstash-integration-kafka/blob/v12.0.0/CHANGELOG.md)
 
 
 
@@ -26,7 +26,7 @@ For questions about the plugin, open a topic in the [Discuss](http://discuss.ela
 
 Write events to a Kafka topic.
 
-This plugin uses Kafka Client 3.9.1. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.
+This plugin uses Kafka Client 4.1.0. For broker compatibility, see the official [Kafka compatibility reference](https://cwiki.apache.org/confluence/display/KAFKA/Compatibility+Matrix). If the linked compatibility wiki is not up-to-date, please contact Kafka support/community to confirm compatibility.
 
 If you require features not yet available in this plugin (including client version upgrades), please file an issue with details about what you need.
 
@@ -52,9 +52,9 @@ If you want the full content of your events to be sent as json, you should set t
     }
 ```
 
-For more information see <https://kafka.apache.org/39/documentation.html#theproducer>
+For more information see <https://kafka.apache.org/41/documentation.html#theproducer>
 
-Kafka producer configuration: <https://kafka.apache.org/39/documentation.html#producerconfigs>
+Kafka producer configuration: <https://kafka.apache.org/41/documentation.html#producerconfigs>
 
 This plugin does not support using a proxy when communicating to the Kafka broker.
 
@@ -78,7 +78,7 @@ For more IAM authentication configurations, see the [AWS MSK IAM authentication 
 
 This plugin supports the following configuration options plus the [Common options](plugins-outputs-kafka.md#plugins-outputs-kafka-common-options) described later.
 
-Some of these options map to a Kafka option. Defaults usually reflect the Kafka default setting, and might change if Kafka’s producer defaults change. See the <https://kafka.apache.org/39/documentation> for more details.
+Some of these options map to a Kafka option. Defaults usually reflect the Kafka default setting, and might change if Kafka’s producer defaults change. See the <https://kafka.apache.org/41/documentation> for more details.
 
 | Setting | Input type | Required |
 | :- | :- | :- |
@@ -102,6 +102,7 @@ Some of these options map to a Kafka option. Defaults usually reflect the Kafka 
 | [`partitioner`](plugins-outputs-kafka.md#plugins-outputs-kafka-partitioner) | [string](/lsr/value-types.md#string) | No |
 | [`receive_buffer_bytes`](plugins-outputs-kafka.md#plugins-outputs-kafka-receive_buffer_bytes) | [number](/lsr/value-types.md#number) | No |
 | [`reconnect_backoff_ms`](plugins-outputs-kafka.md#plugins-outputs-kafka-reconnect_backoff_ms) | [number](/lsr/value-types.md#number) | No |
+| [`reconnect_backoff_max_ms`](plugins-outputs-kafka.md#plugins-outputs-kafka-reconnect_backoff_max_ms) | [number](/lsr/value-types.md#number) | No |
 | [`request_timeout_ms`](plugins-outputs-kafka.md#plugins-outputs-kafka-request_timeout_ms) | [number](/lsr/value-types.md#number) | No |
 | [`retries`](plugins-outputs-kafka.md#plugins-outputs-kafka-retries) | [number](/lsr/value-types.md#number) | No |
 | [`retry_backoff_ms`](plugins-outputs-kafka.md#plugins-outputs-kafka-retry_backoff_ms) | [number](/lsr/value-types.md#number) | No |
@@ -232,7 +233,7 @@ Serializer class for the key of the message
 ### `linger_ms` [plugins-outputs-kafka-linger_ms]
 
 * Value type is [number](/lsr/value-types.md#number)
-* Default value is `0`
+* Default value is `5`
 
 The producer groups together any records that arrive in between request transmissions into a single batched request. Normally this occurs only under load when records arrive faster than they can be sent out. However in some circumstances the client may want to reduce the number of requests even under moderate load. This setting accomplishes this by adding a small amount of artificial delay—that is, rather than immediately sending out a record the producer will wait for up to the given delay to allow other records to be sent so that the sends can be batched together.
 
@@ -285,13 +286,11 @@ The max time in milliseconds before a metadata refresh is forced.
 * Value type is [string](/lsr/value-types.md#string)
 * There is no default value for this setting.
 
-The default behavior is to hash the `message_key` of an event to get the partition. When no message key is present, the plugin picks a partition in a round-robin fashion.
+By not setting this value, the plugin uses the built-in partitioning strategy provided by the Kafka client. Read more about the "partitioner.class" on the Kafka documentation.
 
-Available options for choosing a partitioning strategy are as follows:
+Available option is as follows:
 
-* `default` use the default partitioner as described above
 * `round_robin` distributes writes to all partitions equally, regardless of `message_key`
-* `uniform_sticky` sticks to a partition for the duration of a batch than randomly picks a new one
 
 ### `receive_buffer_bytes` [plugins-outputs-kafka-receive_buffer_bytes]
 
@@ -306,6 +305,13 @@ The size of the TCP receive buffer to use when reading data
 * Default value is `50`.
 
 The amount of time to wait before attempting to reconnect to a given host when a connection fails.
+
+### `reconnect_backoff_max_ms` [plugins-outputs-kafka-reconnect_backoff_max_ms]
+
+* Value type is [number](/lsr/value-types.md#number)
+* Default value is `1000`.
+
+The maximum amount of time in milliseconds to wait when reconnecting to a broker that has repeatedly failed to connect. If provided, the backoff per host will increase exponentially for each consecutive connection failure, up to this maximum.
 
 ### `request_timeout_ms` [plugins-outputs-kafka-request_timeout_ms]
 
@@ -325,7 +331,7 @@ If you choose to set `retries`, a value greater than zero will cause the client 
 
 A value less than zero is a configuration error.
 
-Starting with version 10.5.0, this plugin will only retry exceptions that are a subclass of [RetriableException](https://kafka.apache.org/39/javadoc/org/apache/kafka/common/errors/RetriableException.html) and [InterruptException](https://kafka.apache.org/39/javadoc/org/apache/kafka/common/errors/InterruptException.html). If producing a message throws any other exception, an error is logged and the message is dropped without retrying. This prevents the Logstash pipeline from hanging indefinitely.
+Starting with version 10.5.0, this plugin will only retry exceptions that are a subclass of [RetriableException](https://kafka.apache.org/41/javadoc/org/apache/kafka/common/errors/RetriableException.html) and [InterruptException](https://kafka.apache.org/41/javadoc/org/apache/kafka/common/errors/InterruptException.html). If producing a message throws any other exception, an error is logged and the message is dropped without retrying. This prevents the Logstash pipeline from hanging indefinitely.
 
 In versions prior to 10.5.0, any exception is retried indefinitely unless the `retries` option is configured.
 
