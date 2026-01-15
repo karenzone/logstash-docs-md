@@ -12,7 +12,7 @@
   "description": "",
   "dependencies": {
     "compare-versions": "^6.1.1",
-    "glob": "^11.0.3",
+    "glob": "^13.0.0",
     "hast-util-from-html": "^2.0.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
