@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v7.3.0](v7-3-0-plugins-outputs-sns.md) | 2025-12-19 |
 | [v7.2.1](v7-2-1-plugins-outputs-sns.md) | 2025-02-13 |
 | [v7.2.0](v7-2-0-plugins-outputs-sns.md) | 2025-02-10 |
 | [v7.1.8](v7-1-8-plugins-outputs-sns.md) | 2024-07-26 |

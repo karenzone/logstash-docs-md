@@ -15,10 +15,13 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v7.0.5](v7-0-5-plugins-inputs-beats.md) | 2025-12-17 |
+| [v7.0.4](v7-0-4-plugins-inputs-beats.md) | 2025-10-27 |
 | [v7.0.3](v7-0-3-plugins-inputs-beats.md) | 2025-09-04 |
 | [v7.0.2](v7-0-2-plugins-inputs-beats.md) | 2025-02-12 |
 | [v7.0.1](v7-0-1-plugins-inputs-beats.md) | 2025-01-30 |
 | [v7.0.0](v7-0-0-plugins-inputs-beats.md) | 2024-12-02 |
+| [v6.9.5](v6-9-5-plugins-inputs-beats.md) | 2025-12-17 |
 | [v6.9.4](v6-9-4-plugins-inputs-beats.md) | 2025-09-04 |
 | [v6.9.3](v6-9-3-plugins-inputs-beats.md) | 2025-02-12 |
 | [v6.9.2](v6-9-2-plugins-inputs-beats.md) | 2025-02-04 |

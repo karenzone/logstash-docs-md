@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.1.10](v3-1-10-plugins-filters-split.md) | 2025-11-19 |
 | [v3.1.8](v3-1-8-plugins-filters-split.md) | 2020-01-21 |
 | [v3.1.7](v3-1-7-plugins-filters-split.md) | 2019-01-04 |
 | [v3.1.6](v3-1-6-plugins-filters-split.md) | 2017-12-11 |

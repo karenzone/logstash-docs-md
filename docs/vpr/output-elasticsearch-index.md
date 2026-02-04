@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v12.1.1](v12-1-1-plugins-outputs-elasticsearch.md) | 2025-10-29 |
 | [v12.1.0](v12-1-0-plugins-outputs-elasticsearch.md) | 2025-10-07 |
 | [v12.0.7](v12-0-7-plugins-outputs-elasticsearch.md) | 2025-09-23 |
 | [v12.0.6](v12-0-6-plugins-outputs-elasticsearch.md) | 2025-07-29 |

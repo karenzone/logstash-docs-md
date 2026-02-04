@@ -15,11 +15,13 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v4.1.4](v4-1-4-plugins-inputs-http.md) | 2025-12-16 |
 | [v4.1.3](v4-1-3-plugins-inputs-http.md) | 2025-09-04 |
 | [v4.1.2](v4-1-2-plugins-inputs-http.md) | 2025-02-12 |
 | [v4.1.1](v4-1-1-plugins-inputs-http.md) | 2025-02-04 |
 | [v4.1.0](v4-1-0-plugins-inputs-http.md) | 2024-12-19 |
 | [v4.0.0](v4-0-0-plugins-inputs-http.md) | 2024-12-18 |
+| [v3.10.4](v3-10-4-plugins-inputs-http.md) | 2025-12-17 |
 | [v3.10.3](v3-10-3-plugins-inputs-http.md) | 2025-09-04 |
 | [v3.10.2](v3-10-2-plugins-inputs-http.md) | 2025-02-12 |
 | [v3.10.1](v3-10-1-plugins-inputs-http.md) | 2025-02-04 |

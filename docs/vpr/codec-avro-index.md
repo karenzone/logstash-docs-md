@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.5.0](v3-5-0-plugins-codecs-avro.md) | 2025-11-26 |
 | [v3.4.1](v3-4-1-plugins-codecs-avro.md) | 2023-10-16 |
 | [v3.4.0](v3-4-0-plugins-codecs-avro.md) | 2022-04-28 |
 | [v3.3.1](v3-3-1-plugins-codecs-avro.md) | 2021-12-07 |

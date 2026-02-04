@@ -15,10 +15,12 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v7.0.4](v7-0-4-plugins-inputs-tcp.md) | 2025-12-17 |
 | [v7.0.3](v7-0-3-plugins-inputs-tcp.md) | 2025-09-04 |
 | [v7.0.2](v7-0-2-plugins-inputs-tcp.md) | 2025-02-12 |
 | [v7.0.1](v7-0-1-plugins-inputs-tcp.md) | 2025-02-04 |
 | [v7.0.0](v7-0-0-plugins-inputs-tcp.md) | 2025-01-10 |
+| [v6.4.8](v6-4-8-plugins-inputs-tcp.md) | 2025-12-17 |
 | [v6.4.7](v6-4-7-plugins-inputs-tcp.md) | 2025-09-04 |
 | [v6.4.6](v6-4-6-plugins-inputs-tcp.md) | 2025-02-12 |
 | [v6.4.5](v6-4-5-plugins-inputs-tcp.md) | 2025-02-04 |

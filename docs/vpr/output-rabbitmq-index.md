@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v7.4.1](v7-4-1-plugins-outputs-rabbitmq.md) | 2025-11-04 |
 | [v7.4.0](v7-4-0-plugins-outputs-rabbitmq.md) | 2024-09-16 |
 | [v7.3.3](v7-3-3-plugins-outputs-rabbitmq.md) | 2023-06-09 |
 | [v7.3.2](v7-3-2-plugins-outputs-rabbitmq.md) | 2023-05-30 |

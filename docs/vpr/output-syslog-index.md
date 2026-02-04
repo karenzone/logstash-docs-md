@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.1.0](v3-1-0-plugins-outputs-syslog.md) | 2025-12-23 |
 | [v3.0.5](v3-0-5-plugins-outputs-syslog.md) | 2018-04-06 |
 | [v3.0.4](v3-0-4-plugins-outputs-syslog.md) | 2017-11-13 |
 | [v3.0.3](v3-0-3-plugins-outputs-syslog.md) | 2017-08-16 |

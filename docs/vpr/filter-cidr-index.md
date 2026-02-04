@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v3.2.0](v3-2-0-plugins-filters-cidr.md) | 2025-10-20 |
 | [v3.1.3](v3-1-3-plugins-filters-cidr.md) | 2019-09-18 |
 | [v3.1.2](v3-1-2-plugins-filters-cidr.md) | 2017-11-07 |
 | [v3.1.1](v3-1-1-plugins-filters-cidr.md) | 2017-08-15 |

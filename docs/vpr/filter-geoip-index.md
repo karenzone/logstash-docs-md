@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v7.3.2](v7-3-2-plugins-filters-geoip.md) | 2025-11-04 |
 | [v7.3.1](v7-3-1-plugins-filters-geoip.md) | 2024-10-11 |
 | [v7.3.0](v7-3-0-plugins-filters-geoip.md) | 2024-05-22 |
 | [v7.2.13](v7-2-13-plugins-filters-geoip.md) | 2023-02-07 |

@@ -15,6 +15,7 @@ Versioned plugin documentation is not available for plugins released prior to Lo
 | | |
 | :- | :- |
 | Version | Release Date |
+| [v9.3.0](v9-3-0-plugins-filters-elastic_integration.md) | 2025-12-29 |
 | [v9.2.0](v9-2-0-plugins-filters-elastic_integration.md) | 2025-10-02 |
 | [v9.1.1](v9-1-1-plugins-filters-elastic_integration.md) | 2025-07-16 |
 | [v9.1.0](v9-1-0-plugins-filters-elastic_integration.md) | 2025-07-10 |

@@ -39,7 +39,7 @@ This plugin looks for the following fields on events it receives:
 * `sns_subject` - The subject line that should be used. Optional. The "%{host}" will be used if `sns_subject` is not present. The subject will be truncated to 100 characters. If `sns_subject` is set to a non-string value a JSON version of that value will be saved.
 * `sns_message` - Optional string of message to be sent. If this is set to a non-string value it will be encoded with the specified `codec`. If this is not set the entire event will be encoded with the codec. with the @message truncated so that the length of the JSON fits in `32768` bytes.
 
-## Upgrading to 2.0.0 [_upgrading_to_2_0]
+## Upgrading to 2.0.0 [_upgrading_to_2_0_0]
 
 This plugin used to have a `format` option for controlling the encoding of messages prior to being sent to SNS. This plugin now uses the logstash standard [codec](/lsr/value-types.md#codec) option for encoding instead. If you want the same *plain* format as the v0/1 codec (`format => "plain"`) use `codec => "s3_plain"`.
 
